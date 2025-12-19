@@ -9,4 +9,4 @@ Route::get('/', function () {
  */
 Route::get('{any}', function(Request $request) {
     return view('frontend.index');
-})->where('any', '^(?!assets|api|admin|storage).*')
+})->where('any', '^(?!assets|api|admin|storage).*');
