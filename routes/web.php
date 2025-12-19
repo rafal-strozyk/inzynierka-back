@@ -8,5 +8,5 @@ Route::get('/', function () {
 });
  */
 Route::get('{any}', function(Request $request) {
-    return view('ftontend.index');
+    return view('frontend.index');
 })->where('any', '^(?!assets|api|admin|storage).*')
