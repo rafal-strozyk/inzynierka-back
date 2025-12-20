@@ -18,19 +18,13 @@ jobs:
       - name: Rsync deploy to server
         uses: burnett01/rsync-deployments@v8
         with:
-          switches: -avz --delete
+          switches: -avz --exclude='.env' --exclude='storage/' --exclude='public/favicon.ico' --exclude='node_modules/' --exclude='vendor/'
           path: .
           remote_path: /home/inzynierka/www/
           remote_host: ${{ secrets.SERVER_HOST }}
           remote_user: ${{ secrets.SERVER_USER }}
           remote_port: ${{ secrets.SERVER_PORT }}
           remote_key: ${{ secrets.SERVER_SSH_KEY }}
-          exclude: |
-            .env
-            storage/
-            public/favicon.ico
-            node_modules/
-            vendor/
 
       - name: SSH run (Laravel build)
         uses: appleboy/ssh-action@v1.0.3
