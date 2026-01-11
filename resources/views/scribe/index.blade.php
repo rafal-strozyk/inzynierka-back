@@ -80,6 +80,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="autoryzacja-GETapi-me">
                                 <a href="#autoryzacja-GETapi-me">Bieżący użytkownik</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="autoryzacja-POSTapi-register">
+                                <a href="#autoryzacja-POSTapi-register">Rejestracja</a>
+                            </li>
                                                                         </ul>
                             </ul>
             </div>
@@ -548,6 +551,349 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>application/json</code></p>
             </div>
                         </form>
+
+                    <h2 id="autoryzacja-POSTapi-register">Rejestracja</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Tworzy konto użytkownika (domyślnie rola tenant).
+Wymaga roli owner lub admin.</p>
+
+<span id="example-requests-POSTapi-register">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://inz.test/api/register" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"Jan Kowalski\",
+    \"email\": \"user@example.com\",
+    \"password\": \"secret123\",
+    \"role\": \"tenant\",
+    \"first_name\": \"Jan\",
+    \"last_name\": \"Kowalski\",
+    \"phone\": \"+48 500 000 001\",
+    \"address_registered\": \"ul. Główna 1\",
+    \"city\": \"Warszawa\",
+    \"birth_date\": \"1990-01-01\",
+    \"pesel\": \"90010112345\",
+    \"notes\": \"Nowy użytkownik.\",
+    \"password_confirmation\": \"secret123\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/register"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "Jan Kowalski",
+    "email": "user@example.com",
+    "password": "secret123",
+    "role": "tenant",
+    "first_name": "Jan",
+    "last_name": "Kowalski",
+    "phone": "+48 500 000 001",
+    "address_registered": "ul. Główna 1",
+    "city": "Warszawa",
+    "birth_date": "1990-01-01",
+    "pesel": "90010112345",
+    "notes": "Nowy użytkownik.",
+    "password_confirmation": "secret123"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-register">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;user&quot;: {
+        &quot;id&quot;: 1,
+        &quot;role&quot;: &quot;tenant&quot;,
+        &quot;name&quot;: &quot;Jan Kowalski&quot;,
+        &quot;email&quot;: &quot;user@example.com&quot;,
+        &quot;first_name&quot;: &quot;Jan&quot;,
+        &quot;last_name&quot;: &quot;Kowalski&quot;,
+        &quot;created_at&quot;: &quot;2026-01-11T10:00:00+00:00&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-11T10:00:00+00:00&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (403):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Forbidden.&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;The email has already been taken.&quot;,
+    &quot;errors&quot;: {
+        &quot;email&quot;: [
+            &quot;The email has already been taken.&quot;
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-register"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-register">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-register" data-method="POST"
+      data-path="api/register"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-register"
+                    onclick="tryItOut('POSTapi-register');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-register"
+                    onclick="cancelTryOut('POSTapi-register');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-register"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/register</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-register"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-register"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-register"
+               value="Jan Kowalski"
+               data-component="body">
+    <br>
+<p>Imię i nazwisko. Example: <code>Jan Kowalski</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-register"
+               value="user@example.com"
+               data-component="body">
+    <br>
+<p>Email użytkownika. Example: <code>user@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-register"
+               value="secret123"
+               data-component="body">
+    <br>
+<p>Hasło (min. 8 znaków). Example: <code>secret123</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="role"                data-endpoint="POSTapi-register"
+               value="tenant"
+               data-component="body">
+    <br>
+<p>Rola użytkownika (owner/tenant). Example: <code>tenant</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="first_name"                data-endpoint="POSTapi-register"
+               value="Jan"
+               data-component="body">
+    <br>
+<p>Imię. Example: <code>Jan</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="last_name"                data-endpoint="POSTapi-register"
+               value="Kowalski"
+               data-component="body">
+    <br>
+<p>Nazwisko. Example: <code>Kowalski</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="phone"                data-endpoint="POSTapi-register"
+               value="+48 500 000 001"
+               data-component="body">
+    <br>
+<p>Numer telefonu. Example: <code>+48 500 000 001</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>address_registered</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="address_registered"                data-endpoint="POSTapi-register"
+               value="ul. Główna 1"
+               data-component="body">
+    <br>
+<p>Adres zameldowania. Example: <code>ul. Główna 1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="city"                data-endpoint="POSTapi-register"
+               value="Warszawa"
+               data-component="body">
+    <br>
+<p>Miasto. Example: <code>Warszawa</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="birth_date"                data-endpoint="POSTapi-register"
+               value="1990-01-01"
+               data-component="body">
+    <br>
+<p>Data urodzenia (YYYY-MM-DD). Example: <code>1990-01-01</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pesel</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pesel"                data-endpoint="POSTapi-register"
+               value="90010112345"
+               data-component="body">
+    <br>
+<p>PESEL. Example: <code>90010112345</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="POSTapi-register"
+               value="Nowy użytkownik."
+               data-component="body">
+    <br>
+<p>Uwagi. Example: <code>Nowy użytkownik.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password_confirmation"                data-endpoint="POSTapi-register"
+               value="secret123"
+               data-component="body">
+    <br>
+<p>Potwierdzenie hasła. Example: <code>secret123</code></p>
+        </div>
+        </form>
 
             
 

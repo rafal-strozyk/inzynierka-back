@@ -8,4 +8,6 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth.token')->group(function (): void {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
+    Route::post('/register', [AuthController::class, 'register'])
+        ->middleware('role:owner,admin');
 });

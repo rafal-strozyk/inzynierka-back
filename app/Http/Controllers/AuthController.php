@@ -9,11 +9,98 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class AuthController extends Controller
 {
     private const TOKEN_BYTES = 48;
     private const SESSION_DAYS = 7;
+
+    /**
+     * Rejestracja
+     *
+     * Tworzy konto użytkownika (domyślnie rola tenant).
+     * Wymaga roli owner lub admin.
+     *
+     * @group Autoryzacja
+     * @authenticated
+     *
+     * @bodyParam name string required Imię i nazwisko. Example: Jan Kowalski
+     * @bodyParam email string required Email użytkownika. Example: user@example.com
+     * @bodyParam password string required Hasło (min. 8 znaków). Example: secret123
+     * @bodyParam password_confirmation string required Potwierdzenie hasła. Example: secret123
+     * @bodyParam role string Rola użytkownika (owner/tenant). Example: tenant
+     * @bodyParam first_name string Imię. Example: Jan
+     * @bodyParam last_name string Nazwisko. Example: Kowalski
+     * @bodyParam phone string Numer telefonu. Example: +48 500 000 001
+     * @bodyParam address_registered string Adres zameldowania. Example: ul. Główna 1
+     * @bodyParam city string Miasto. Example: Warszawa
+     * @bodyParam birth_date date Data urodzenia (YYYY-MM-DD). Example: 1990-01-01
+     * @bodyParam pesel string PESEL. Example: 90010112345
+     * @bodyParam notes string Uwagi. Example: Nowy użytkownik.
+     *
+     * @response 201 {
+     *  "user": {
+     *    "id": 1,
+     *    "role": "tenant",
+     *    "name": "Jan Kowalski",
+     *    "email": "user@example.com",
+     *    "first_name": "Jan",
+     *    "last_name": "Kowalski",
+     *    "created_at": "2026-01-11T10:00:00+00:00",
+     *    "updated_at": "2026-01-11T10:00:00+00:00"
+     *  }
+     * }
+     * @response 403 {
+     *  "message": "Forbidden."
+     * }
+     * @response 422 {
+     *  "message": "The email has already been taken.",
+     *  "errors": {
+     *    "email": ["The email has already been taken."]
+     *  }
+     * }
+     */
+    public function register(Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255', 'unique:users,email'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role' => ['nullable', Rule::in(['owner', 'tenant'])],
+            'first_name' => ['nullable', 'string', 'max:100'],
+            'last_name' => ['nullable', 'string', 'max:100'],
+            'phone' => ['nullable', 'string', 'max:20'],
+            'address_registered' => ['nullable', 'string', 'max:255'],
+            'city' => ['nullable', 'string', 'max:100'],
+            'birth_date' => ['nullable', 'date'],
+            'pesel' => ['nullable', 'string', 'max:11'],
+            'notes' => ['nullable', 'string'],
+        ]);
+
+        $role = $validated['role'] ?? 'tenant';
+        $passwordHash = Hash::make($validated['password']);
+
+        $user = User::query()->create([
+            'role' => $role,
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => $passwordHash,
+            'first_name' => $validated['first_name'] ?? null,
+            'last_name' => $validated['last_name'] ?? null,
+            'phone' => $validated['phone'] ?? null,
+            'address_registered' => $validated['address_registered'] ?? null,
+            'city' => $validated['city'] ?? null,
+            'birth_date' => $validated['birth_date'] ?? null,
+            'pesel' => $validated['pesel'] ?? null,
+            'notes' => $validated['notes'] ?? null,
+            'password_hash' => $passwordHash,
+        ]);
+
+        return response()->json([
+            'user' => $user,
+        ], 201);
+    }
 
     /**
      * Logowanie
