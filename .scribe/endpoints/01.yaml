@@ -1,0 +1,128 @@
+name: Nieruchomości
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/properties
+    metadata:
+      custom: []
+      groupName: Nieruchomości
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lista nieruchomości.'
+      description: 'Zwraca listę nieruchomości wraz z podstawowymi informacjami.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":[{"id":1,"nazwa":"eius et","adres":"Okuneva Villages 85625, m. 144","miasto":"East Cecil","czynsz":2586.7,"media":726.33,"balkon":true},{"id":2,"nazwa":"enim non","adres":"Leuschke Throughway 427, m. 124","miasto":"Considinehaven","czynsz":4713.03,"media":163.44,"balkon":true}]}'
+        headers: []
+        description: ''
+    responseFields:
+      id:
+        custom: []
+        name: id
+        description: 'ID nieruchomości.'
+        required: false
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      nazwa:
+        custom: []
+        name: nazwa
+        description: 'Nazwa nieruchomości.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      adres:
+        custom: []
+        name: adres
+        description: 'Adres w formacie: [ulica] [nr], m. [nr mieszkania]'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      miasto:
+        custom: []
+        name: miasto
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      czynsz:
+        custom: []
+        name: czynsz
+        description: 'Czynsz (np. 123.09).'
+        required: false
+        example: null
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      media:
+        custom: []
+        name: media
+        description: 'Koszt mediów (np. 123.09).'
+        required: false
+        example: null
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      balkon:
+        custom: []
+        name: balkon
+        description: 'Czy nieruchomość posiada balkon (true/false).'
+        required: false
+        example: null
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      taras:
+        custom: []
+        name: taras
+        description: 'Czy nieruchomość posiada taras (true/false).'
+        required: false
+        example: null
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    auth: []
+    controller: null
+    method: null
+    route: null
