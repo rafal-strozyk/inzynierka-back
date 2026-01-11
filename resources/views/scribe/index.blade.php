@@ -85,6 +85,16 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-nieruchomosci" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="nieruchomosci">
+                    <a href="#nieruchomosci">Nieruchomości</a>
+                </li>
+                                    <ul id="tocify-subheader-nieruchomosci" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="nieruchomosci-GETapi-properties">
+                                <a href="#nieruchomosci-GETapi-properties">Lista nieruchomości.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
             </div>
 
     <ul class="toc-footer" id="toc-footer">
@@ -895,7 +905,215 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-            
+                <h1 id="nieruchomosci">Nieruchomości</h1>
+
+    
+
+                                <h2 id="nieruchomosci-GETapi-properties">Lista nieruchomości.</h2>
+
+<p>
+</p>
+
+<p>Zwraca listę nieruchomości wraz z podstawowymi informacjami.</p>
+
+<span id="example-requests-GETapi-properties">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://inz.test/api/properties" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/properties"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-properties">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;nazwa&quot;: &quot;eius et&quot;,
+            &quot;adres&quot;: &quot;Okuneva Villages 85625, m. 144&quot;,
+            &quot;miasto&quot;: &quot;East Cecil&quot;,
+            &quot;czynsz&quot;: 2586.7,
+            &quot;media&quot;: 726.33,
+            &quot;balkon&quot;: true
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;nazwa&quot;: &quot;enim non&quot;,
+            &quot;adres&quot;: &quot;Leuschke Throughway 427, m. 124&quot;,
+            &quot;miasto&quot;: &quot;Considinehaven&quot;,
+            &quot;czynsz&quot;: 4713.03,
+            &quot;media&quot;: 163.44,
+            &quot;balkon&quot;: true
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-properties" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-properties"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-properties"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-properties" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-properties">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-properties" data-method="GET"
+      data-path="api/properties"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-properties', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-properties"
+                    onclick="tryItOut('GETapi-properties');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-properties"
+                    onclick="cancelTryOut('GETapi-properties');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-properties"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/properties</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-properties"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-properties"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>ID nieruchomości.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>nazwa</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Nazwa nieruchomości.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>adres</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Adres w formacie: [ulica] [nr], m. [nr mieszkania]</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>miasto</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>czynsz</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Czynsz (np. 123.09).</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>media</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Koszt mediów (np. 123.09).</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>balkon</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Czy nieruchomość posiada balkon (true/false).</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>taras</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Czy nieruchomość posiada taras (true/false).</p>
+        </div>
+                
 
         
     </div>

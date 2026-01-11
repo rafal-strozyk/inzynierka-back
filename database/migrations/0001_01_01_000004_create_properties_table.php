@@ -14,7 +14,6 @@ return new class extends Migration {
                 ->constrained('users')
                 ->cascadeOnDelete();
 
-            $table->enum('property_type', ['mieszkanie'])->default('mieszkanie');
             $table->string('name', 150);
 
             $table->string('street', 150);
@@ -33,7 +32,6 @@ return new class extends Migration {
             $table->decimal('area_total', 7, 2)->nullable();
             $table->unsignedTinyInteger('bathrooms_count')->nullable();
             $table->boolean('has_balcony')->default(false);
-            $table->boolean('has_terrace')->default(false);
             $table->boolean('rent_by_rooms')->default(false);
 
             $table->timestamps();
