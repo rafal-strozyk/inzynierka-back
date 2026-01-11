@@ -27,6 +27,12 @@ class PropertyController extends Controller
      * @responseField media number Koszt mediów (np. 123.09).
      * @responseField balkon boolean Czy nieruchomość posiada balkon (true/false).
      * @responseField taras boolean Czy nieruchomość posiada taras (true/false).
+     * 
+     * @queryParam page int Numer strony. Example: 2
+     * @queryParam per_page int Liczba rekordów na stronę. Example: 10
+     *
+     * @apiResourceCollection App\Http\Resources\PropertyResource
+     * @apiResourceModel App\Models\Property
      */
 
     public function index(){
