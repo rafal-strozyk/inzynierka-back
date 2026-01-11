@@ -922,7 +922,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://inz.test/api/properties" \
+    --get "http://inz.test/api/properties?page=2&amp;per_page=10" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -931,6 +931,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-javascript">const url = new URL(
     "http://inz.test/api/properties"
 );
+
+const params = {
+    "page": "2",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "Content-Type": "application/json",
@@ -953,22 +960,22 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 1,
-            &quot;nazwa&quot;: &quot;eius et&quot;,
-            &quot;adres&quot;: &quot;Okuneva Villages 85625, m. 144&quot;,
-            &quot;miasto&quot;: &quot;East Cecil&quot;,
-            &quot;czynsz&quot;: 2586.7,
-            &quot;media&quot;: 726.33,
-            &quot;balkon&quot;: true
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;eius et&quot;,
+            &quot;address&quot;: &quot;Okuneva Villages 85625, m. 144&quot;,
+            &quot;city&quot;: &quot;East Cecil&quot;,
+            &quot;rent_cost&quot;: 2586.7,
+            &quot;utilities_cost&quot;: 726.33,
+            &quot;has_balcony&quot;: true
         },
         {
-            &quot;id&quot;: 2,
-            &quot;nazwa&quot;: &quot;enim non&quot;,
-            &quot;adres&quot;: &quot;Leuschke Throughway 427, m. 124&quot;,
-            &quot;miasto&quot;: &quot;Considinehaven&quot;,
-            &quot;czynsz&quot;: 4713.03,
-            &quot;media&quot;: 163.44,
-            &quot;balkon&quot;: true
+            &quot;id&quot;: 4,
+            &quot;name&quot;: &quot;enim non&quot;,
+            &quot;address&quot;: &quot;Leuschke Throughway 427, m. 124&quot;,
+            &quot;city&quot;: &quot;Considinehaven&quot;,
+            &quot;rent_cost&quot;: 4713.03,
+            &quot;utilities_cost&quot;: 163.44,
+            &quot;has_balcony&quot;: true
         }
     ]
 }</code>
@@ -1045,7 +1052,32 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="page"                data-endpoint="GETapi-properties"
+               value="2"
+               data-component="query">
+    <br>
+<p>Numer strony. Example: <code>2</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-properties"
+               value="10"
+               data-component="query">
+    <br>
+<p>Liczba rekordów na stronę. Example: <code>10</code></p>
+            </div>
+                </form>
 
     <h3>Response</h3>
     <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>

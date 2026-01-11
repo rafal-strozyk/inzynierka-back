@@ -16,16 +16,16 @@ class PropertyResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'nazwa' => $this->name,
+            'name' => $this->name,
 
-            'adres' => trim(sprintf('%s %s%s, m. %s',
+            'address' => trim(sprintf('%s %s%s, m. %s',
             $this -> street, $this -> street_number, '', $this-> apartment_number ?? '-')),
 
-            'miasto' => $this-> city,
-            'czynsz' => (float) $this -> rent_cost,
-            'media' => (float) $this -> utilities_cost,
+            'city' => $this-> city,
+            'rent_cost' => (float) $this -> rent_cost,
+            'utilities_cost' => (float) $this -> utilities_cost,
 
-            'balkon' => (bool) $this -> has_balcony,
+            'has_balcony' => (bool) $this -> has_balcony,
         ];
     }
 }
