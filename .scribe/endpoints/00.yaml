@@ -187,3 +187,231 @@ endpoints:
     controller: null
     method: null
     route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/register
+    metadata:
+      custom: []
+      groupName: Autoryzacja
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Rejestracja
+      description: |-
+        Tworzy konto użytkownika (domyślnie rola tenant).
+        Wymaga roli owner lub admin.
+      authenticated: true
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Imię i nazwisko.'
+        required: true
+        example: 'Jan Kowalski'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      email:
+        custom: []
+        name: email
+        description: 'Email użytkownika.'
+        required: true
+        example: user@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: 'Hasło (min. 8 znaków).'
+        required: true
+        example: secret123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      role:
+        custom: []
+        name: role
+        description: 'Rola użytkownika (owner/tenant).'
+        required: false
+        example: tenant
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      first_name:
+        custom: []
+        name: first_name
+        description: Imię.
+        required: false
+        example: Jan
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      last_name:
+        custom: []
+        name: last_name
+        description: Nazwisko.
+        required: false
+        example: Kowalski
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      phone:
+        custom: []
+        name: phone
+        description: 'Numer telefonu.'
+        required: false
+        example: '+48 500 000 001'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      address_registered:
+        custom: []
+        name: address_registered
+        description: 'Adres zameldowania.'
+        required: false
+        example: 'ul. Główna 1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      city:
+        custom: []
+        name: city
+        description: Miasto.
+        required: false
+        example: Warszawa
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      birth_date:
+        custom: []
+        name: birth_date
+        description: 'Data urodzenia (YYYY-MM-DD).'
+        required: false
+        example: '1990-01-01'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      pesel:
+        custom: []
+        name: pesel
+        description: PESEL.
+        required: false
+        example: '90010112345'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      notes:
+        custom: []
+        name: notes
+        description: Uwagi.
+        required: false
+        example: 'Nowy użytkownik.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      password_confirmation:
+        custom: []
+        name: password_confirmation
+        description: 'Potwierdzenie hasła.'
+        required: true
+        example: secret123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name: 'Jan Kowalski'
+      email: user@example.com
+      password: secret123
+      role: tenant
+      first_name: Jan
+      last_name: Kowalski
+      phone: '+48 500 000 001'
+      address_registered: 'ul. Główna 1'
+      city: Warszawa
+      birth_date: '1990-01-01'
+      pesel: '90010112345'
+      notes: 'Nowy użytkownik.'
+      password_confirmation: secret123
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 201
+        content: |-
+          {
+           "user": {
+             "id": 1,
+             "role": "tenant",
+             "name": "Jan Kowalski",
+             "email": "user@example.com",
+             "first_name": "Jan",
+             "last_name": "Kowalski",
+             "created_at": "2026-01-11T10:00:00+00:00",
+             "updated_at": "2026-01-11T10:00:00+00:00"
+           }
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 403
+        content: |-
+          {
+           "message": "Forbidden."
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 422
+        content: |-
+          {
+           "message": "The email has already been taken.",
+           "errors": {
+             "email": ["The email has already been taken."]
+           }
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
