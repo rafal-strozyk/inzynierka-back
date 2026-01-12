@@ -35,8 +35,10 @@ class PropertyController extends Controller
      * @apiResourceModel App\Models\Property
      */
 
-    public function index(){
-        return PropertyResource::collection(Property::query()->latest()->paginate(10));
+    public function index(Request $request){
+        $perPage= (int) $request -> query('per_page',10);
+        $perPage = max(1, min($perPage,100));
+        return PropertyResource::collection(Property::query()->latest()->paginate($perPage));
     }
 
     /**
