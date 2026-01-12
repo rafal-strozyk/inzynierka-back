@@ -31,7 +31,7 @@ class PropertyFactory extends Factory
 
             'description' => $this->faker->optional()->sentence(),
 
-            'status' => $this->faker->randomElement(['wolna','zajęta','w_remoncie','nieaktywna']),
+            'status' => $this->faker->randomElement(['wolna','zajęta','remontowana','nieaktywna']),
 
             'rent_cost' => $this->faker->randomFloat(2, 800, 5000),
             'utilities_cost' => $this->faker->randomFloat(2, 0, 1200),
