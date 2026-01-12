@@ -11,4 +11,5 @@ Route::middleware('auth.token')->group(function (): void {
     Route::post('/register', [AuthController::class, 'register'])
         ->middleware('role:owner,admin');
     Route::get('/properties', [\App\Http\Controllers\Api\PropertyController::class, 'index']);
+    Route::get('/properties/property', [\App\Http\Controllers\Api\PropertyController::class, 'show']);
 });

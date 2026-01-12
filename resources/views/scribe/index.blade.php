@@ -93,6 +93,9 @@
                                                     <li class="tocify-item level-2" data-unique="nieruchomosci-GETapi-properties">
                                 <a href="#nieruchomosci-GETapi-properties">Lista nieruchomości.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="nieruchomosci-GETapi-properties-property">
+                                <a href="#nieruchomosci-GETapi-properties-property">Szczegóły nieruchomości.</a>
+                            </li>
                                                                         </ul>
                             </ul>
             </div>
@@ -104,7 +107,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: January 11, 2026</li>
+        <li>Last updated: January 12, 2026</li>
     </ul>
 </div>
 
@@ -960,7 +963,7 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 3,
+            &quot;id&quot;: 51,
             &quot;name&quot;: &quot;eius et&quot;,
             &quot;address&quot;: &quot;Okuneva Villages 85625, m. 144&quot;,
             &quot;city&quot;: &quot;East Cecil&quot;,
@@ -969,7 +972,7 @@ fetch(url, {
             &quot;has_balcony&quot;: true
         },
         {
-            &quot;id&quot;: 4,
+            &quot;id&quot;: 52,
             &quot;name&quot;: &quot;enim non&quot;,
             &quot;address&quot;: &quot;Leuschke Throughway 427, m. 124&quot;,
             &quot;city&quot;: &quot;Considinehaven&quot;,
@@ -1137,13 +1140,302 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <br>
 <p>Czy nieruchomość posiada balkon (true/false).</p>
         </div>
+                        <h2 id="nieruchomosci-GETapi-properties-property">Szczegóły nieruchomości.</h2>
+
+<p>
+</p>
+
+<p>Zwraca komplet informacji o wskazanej nieruchomości.</p>
+
+<span id="example-requests-GETapi-properties-property">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://inz.test/api/properties/property" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/properties/property"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-properties-property">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 53,
+        &quot;owner_id&quot;: 56,
+        &quot;name&quot;: &quot;neque blanditiis&quot;,
+        &quot;street&quot;: &quot;Beier Meadow&quot;,
+        &quot;street_number&quot;: &quot;85188&quot;,
+        &quot;apartment_number&quot;: &quot;186&quot;,
+        &quot;city&quot;: &quot;North Jacquesmouth&quot;,
+        &quot;rent_cost&quot;: 1079.81,
+        &quot;utilities_cost&quot;: 952.8,
+        &quot;additional_costs&quot;: 69.32,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;area_total&quot;: 0,
+        &quot;bathrooms_count&quot;: 1,
+        &quot;status&quot;: &quot;wolna&quot;,
+        &quot;has_balcony&quot;: false,
+        &quot;rent_by_rooms&quot;: false,
+        &quot;created_at&quot;: &quot;2026-01-12T18:40:50.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-12T18:40:50.000000Z&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-properties-property" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-properties-property"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-properties-property"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-properties-property" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-properties-property">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-properties-property" data-method="GET"
+      data-path="api/properties/property"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-properties-property', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-properties-property"
+                    onclick="tryItOut('GETapi-properties-property');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-properties-property"
+                    onclick="cancelTryOut('GETapi-properties-property');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-properties-property"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/properties/property</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-properties-property"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-properties-property"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property"                data-endpoint="GETapi-properties-property"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID nieruchomości. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>ID nieruchomości.</p>
+        </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>taras</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>owner_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>ID właściciela (users.id).</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>nazwa</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Nazwa nieruchomości.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>ulica</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>numer_budynku</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Numer budynku.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>numer_mieszkania</code></b>&nbsp;&nbsp;
+<small>string|null</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Numer mieszkania.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>miasto</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>opis</code></b>&nbsp;&nbsp;
+<small>string|null</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Opis nieruchomości.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Status: wolna|zajęta|remontowana|nieaktywna.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>czynsz</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Czynsz (np. 123.09).</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>media</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Koszt mediów (np. 123.09).</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>dodatkowe_koszty</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Dodatkowe koszty (np. 0.00).</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>powierzchnia_m2</code></b>&nbsp;&nbsp;
+<small>number|null</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Powierzchnia w m² (np. 35.50).</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>liczba_lazienek</code></b>&nbsp;&nbsp;
+<small>int|null</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Liczba łazienek.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>balkon</code></b>&nbsp;&nbsp;
 <small>boolean</small>&nbsp;
  &nbsp;
  &nbsp;
 <br>
-<p>Czy nieruchomość posiada taras (true/false).</p>
+<p>Czy nieruchomość posiada balkon (true/false).</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>wynajem_na_pokoje</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Czy wynajem dotyczy pokoi (true/false).</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>created_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Data utworzenia (ISO 8601).</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>updated_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Data aktualizacji (ISO 8601).</p>
         </div>
                 
 
