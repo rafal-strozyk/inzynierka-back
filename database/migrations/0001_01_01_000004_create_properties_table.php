@@ -23,7 +23,7 @@ return new class extends Migration {
 
             $table->text('description')->nullable();
 
-            $table->enum('status', ['wolna','zajęta','w_remoncie','nieaktywna'])->default('wolna');
+            $table->enum('status', ['wolna','zajęta','remontowana','nieaktywna'])->default('wolna');
 
             $table->decimal('rent_cost', 10, 2);
             $table->decimal('utilities_cost', 10, 2)->default(0);
