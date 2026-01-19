@@ -34,4 +34,14 @@ class Property extends Model
         'has_balcony' => 'boolean',
         'rent_by_rooms' => 'boolean',
     ];
+
+    public function photos()
+    {
+        return $this->hasMany(PropertyPhoto::class);
+    }
+
+    public function rooms()
+    {
+        return $this->hasMany(Room::class);
+    }
 }
