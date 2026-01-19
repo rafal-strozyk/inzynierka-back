@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Api\PropertyPhotoController;
+use App\Http\Controllers\Api\RoomController;
+use App\Http\Controllers\Api\RoomPhotoController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login']);
@@ -12,4 +15,9 @@ Route::middleware('auth.token')->group(function (): void {
         ->middleware('role:owner,admin');
     Route::get('/properties', [\App\Http\Controllers\Api\PropertyController::class, 'index']);
     Route::get('/properties/{property}', [\App\Http\Controllers\Api\PropertyController::class, 'show']);
+    Route::get('/properties/{property}/photos', [PropertyPhotoController::class, 'index']);
+    Route::post('/properties/{property}/photos', [PropertyPhotoController::class, 'store']);
+    Route::get('/rooms/{room}', [RoomController::class, 'show']);
+    Route::get('/rooms/{room}/photos', [RoomController::class, 'photos']);
+    Route::post('/rooms/{room}/photos', [RoomPhotoController::class, 'store']);
 });

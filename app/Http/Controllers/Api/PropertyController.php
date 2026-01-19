@@ -74,6 +74,6 @@ class PropertyController extends Controller
     */
 
     public function show(Property $property){
-        return new PropertyDetailsResource($property);
+        return new PropertyDetailsResource($property->load('photos'));
     }
 }

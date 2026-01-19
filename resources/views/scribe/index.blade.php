@@ -93,8 +93,8 @@
                                                     <li class="tocify-item level-2" data-unique="nieruchomosci-GETapi-properties">
                                 <a href="#nieruchomosci-GETapi-properties">Lista nieruchomości.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="nieruchomosci-GETapi-properties-property">
-                                <a href="#nieruchomosci-GETapi-properties-property">Szczegóły nieruchomości.</a>
+                                                                                <li class="tocify-item level-2" data-unique="nieruchomosci-GETapi-properties--property_id-">
+                                <a href="#nieruchomosci-GETapi-properties--property_id-">Szczegóły nieruchomości.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -963,7 +963,7 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 51,
+            &quot;id&quot;: 54,
             &quot;name&quot;: &quot;eius et&quot;,
             &quot;address&quot;: &quot;Okuneva Villages 85625, m. 144&quot;,
             &quot;city&quot;: &quot;East Cecil&quot;,
@@ -972,7 +972,7 @@ fetch(url, {
             &quot;has_balcony&quot;: true
         },
         {
-            &quot;id&quot;: 52,
+            &quot;id&quot;: 55,
             &quot;name&quot;: &quot;enim non&quot;,
             &quot;address&quot;: &quot;Leuschke Throughway 427, m. 124&quot;,
             &quot;city&quot;: &quot;Considinehaven&quot;,
@@ -1140,27 +1140,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <br>
 <p>Czy nieruchomość posiada balkon (true/false).</p>
         </div>
-                        <h2 id="nieruchomosci-GETapi-properties-property">Szczegóły nieruchomości.</h2>
+                        <h2 id="nieruchomosci-GETapi-properties--property_id-">Szczegóły nieruchomości.</h2>
 
 <p>
 </p>
 
 <p>Zwraca komplet informacji o wskazanej nieruchomości.</p>
 
-<span id="example-requests-GETapi-properties-property">
+<span id="example-requests-GETapi-properties--property_id-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://inz.test/api/properties/property" \
+    --get "http://inz.test/api/properties/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://inz.test/api/properties/property"
+    "http://inz.test/api/properties/1"
 );
 
 const headers = {
@@ -1175,7 +1175,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-properties-property">
+<span id="example-responses-GETapi-properties--property_id-">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -1183,8 +1183,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 53,
-        &quot;owner_id&quot;: 56,
+        &quot;id&quot;: 56,
+        &quot;owner_id&quot;: 59,
         &quot;name&quot;: &quot;neque blanditiis&quot;,
         &quot;street&quot;: &quot;Beier Meadow&quot;,
         &quot;street_number&quot;: &quot;85188&quot;,
@@ -1199,49 +1199,49 @@ fetch(url, {
         &quot;status&quot;: &quot;wolna&quot;,
         &quot;has_balcony&quot;: false,
         &quot;rent_by_rooms&quot;: false,
-        &quot;created_at&quot;: &quot;2026-01-12T18:40:50.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2026-01-12T18:40:50.000000Z&quot;
+        &quot;created_at&quot;: &quot;2026-01-12T20:10:44.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-12T20:10:44.000000Z&quot;
     }
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-properties-property" hidden>
+<span id="execution-results-GETapi-properties--property_id-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-properties-property"></span>:
+                id="execution-response-status-GETapi-properties--property_id-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-properties-property"
+    <pre class="json"><code id="execution-response-content-GETapi-properties--property_id-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-properties-property" hidden>
+<span id="execution-error-GETapi-properties--property_id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-properties-property">
+    <pre><code id="execution-error-message-GETapi-properties--property_id-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-properties-property" data-method="GET"
-      data-path="api/properties/property"
+<form id="form-GETapi-properties--property_id-" data-method="GET"
+      data-path="api/properties/{property_id}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-properties-property', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-properties--property_id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-properties-property"
-                    onclick="tryItOut('GETapi-properties-property');">Try it out ⚡
+                    id="btn-tryout-GETapi-properties--property_id-"
+                    onclick="tryItOut('GETapi-properties--property_id-');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-properties-property"
-                    onclick="cancelTryOut('GETapi-properties-property');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-properties--property_id-"
+                    onclick="cancelTryOut('GETapi-properties--property_id-');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-properties-property"
+                    id="btn-executetryout-GETapi-properties--property_id-"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -1249,7 +1249,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/properties/property</code></b>
+            <b><code>api/properties/{property_id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1258,7 +1258,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-properties-property"
+                              name="Content-Type"                data-endpoint="GETapi-properties--property_id-"
                value="application/json"
                data-component="header">
     <br>
@@ -1270,7 +1270,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-properties-property"
+                              name="Accept"                data-endpoint="GETapi-properties--property_id-"
                value="application/json"
                data-component="header">
     <br>
@@ -1278,12 +1278,24 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property_id"                data-endpoint="GETapi-properties--property_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the property. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>property</code></b>&nbsp;&nbsp;
 <small>integer</small>&nbsp;
  &nbsp;
  &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="property"                data-endpoint="GETapi-properties-property"
+               step="any"               name="property"                data-endpoint="GETapi-properties--property_id-"
                value="1"
                data-component="url">
     <br>

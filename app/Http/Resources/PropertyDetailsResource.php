@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class PropertyDetailsResource extends JsonResource
 {
@@ -33,6 +34,16 @@ class PropertyDetailsResource extends JsonResource
             'status' => $this -> status,
             'has_balcony' => (bool) $this -> has_balcony,
             'rent_by_rooms' => (bool) $this ->rent_by_rooms,
+            'photos' => $this->whenLoaded('photos', function () {
+                return $this->photos->map(function ($photo) {
+                    return [
+                        'id' => $photo->id,
+                        'file_name' => $photo->file_name,
+                        'url' => Storage::url($photo->file_path),
+                        'uploaded_at' => $photo->uploaded_at?->toISOString(),
+                    ];
+                });
+            }),
 
             'created_at' => $this->created_at?->toISOString(),
             'updated_at' => $this->updated_at?->toISOString(),
