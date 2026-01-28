@@ -54,7 +54,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"data":[{"id":54,"name":"eius et","address":"Okuneva Villages 85625, m. 144","city":"East Cecil","rent_cost":2586.7,"utilities_cost":726.33,"has_balcony":true},{"id":55,"name":"enim non","address":"Leuschke Throughway 427, m. 124","city":"Considinehaven","rent_cost":4713.03,"utilities_cost":163.44,"has_balcony":true}]}'
+        content: '{"data":[{"id":63,"name":"fugiat sunt","address":"Gaylord Knolls 1582, m. 197","city":"Port Gilbertstad","rent_cost":2341.09,"utilities_cost":794.44,"has_balcony":false},{"id":64,"name":"aut dolores","address":"Keely Wells 1490, m. 10","city":"Haagborough","rent_cost":3461.42,"utilities_cost":1118.01,"has_balcony":false}]}'
         headers: []
         description: ''
     responseFields:
@@ -192,7 +192,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"data":{"id":56,"owner_id":59,"name":"neque blanditiis","street":"Beier Meadow","street_number":"85188","apartment_number":"186","city":"North Jacquesmouth","rent_cost":1079.81,"utilities_cost":952.8,"additional_costs":69.32,"description":"","area_total":0,"bathrooms_count":1,"status":"wolna","has_balcony":false,"rent_by_rooms":false,"created_at":"2026-01-12T20:10:44.000000Z","updated_at":"2026-01-12T20:10:44.000000Z"}}'
+        content: '{"data":{"id":65,"owner_id":68,"name":"dignissimos neque","street":"O''Connell Mission","street_number":"7329","apartment_number":"25","city":"Port Nelson","rent_cost":1594.85,"utilities_cost":1140.72,"additional_costs":53.3,"description":"","area_total":0,"bathrooms_count":2,"status":"wolna","has_balcony":true,"rent_by_rooms":true,"created_at":"2026-01-28T18:30:07.000000Z","updated_at":"2026-01-28T18:30:07.000000Z"}}'
         headers: []
         description: ''
     responseFields:

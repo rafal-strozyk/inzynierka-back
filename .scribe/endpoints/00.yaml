@@ -87,6 +87,155 @@ endpoints:
     custom: []
     httpMethods:
       - POST
+    uri: api/forgot-password
+    metadata:
+      custom: []
+      groupName: Autoryzacja
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Reset hasla (zapomniane haslo)'
+      description: 'Wysyla link z tokenem resetu na email uzytkownika.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        custom: []
+        name: email
+        description: 'Email uzytkownika.'
+        required: true
+        example: user@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      email: user@example.com
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+           "message": "If the email exists, a reset link was sent."
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/reset-password
+    metadata:
+      custom: []
+      groupName: Autoryzacja
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ustaw nowe haslo'
+      description: 'Zmienia haslo uzytkownika na podstawie tokenu.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        custom: []
+        name: email
+        description: 'Email uzytkownika.'
+        required: true
+        example: user@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      token:
+        custom: []
+        name: token
+        description: 'Token resetu.'
+        required: true
+        example: abc123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: 'Haslo (min. 8 znakow).'
+        required: true
+        example: secret123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password_confirmation:
+        custom: []
+        name: password_confirmation
+        description: 'Potwierdzenie hasla.'
+        required: true
+        example: secret123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      email: user@example.com
+      token: abc123
+      password: secret123
+      password_confirmation: secret123
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+           "message": "Password reset."
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 422
+        content: |-
+          {
+           "message": "Invalid token or email."
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
     uri: api/logout
     metadata:
       custom: []
@@ -407,6 +556,115 @@ endpoints:
            "errors": {
              "email": ["The email has already been taken."]
            }
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: 'api/admin/users/{user_id}/reset-password'
+    metadata:
+      custom: []
+      groupName: Autoryzacja
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Reset hasla przez admina'
+      description: 'Admin moze ustawic haslo bez maila albo wyslac link do resetu.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        custom: []
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      user:
+        custom: []
+        name: user
+        description: 'ID uzytkownika.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      user_id: 1
+      user: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      send_email:
+        custom: []
+        name: send_email
+        description: 'Czy wyslac link resetu.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: 'Haslo (min. 8 znakow).'
+        required: false
+        example: secret123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password_confirmation:
+        custom: []
+        name: password_confirmation
+        description: 'Potwierdzenie hasla.'
+        required: false
+        example: secret123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      send_email: true
+      password: secret123
+      password_confirmation: secret123
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+           "message": "Password updated."
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+           "message": "Reset link sent."
           }
         headers: []
         description: ''

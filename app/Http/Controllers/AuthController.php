@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\LoginSession;
 use App\Models\User;
+use App\Notifications\PasswordResetLinkNotification;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -14,6 +16,7 @@ use Illuminate\Validation\Rule;
 class AuthController extends Controller
 {
     private const TOKEN_BYTES = 48;
+    private const RESET_TOKEN_BYTES = 64;
     private const SESSION_DAYS = 7;
 
     /**
@@ -211,6 +214,154 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * Reset hasla (zapomniane haslo)
+     *
+     * Wysyla link z tokenem resetu na email uzytkownika.
+     *
+     * @group Autoryzacja
+     * @unauthenticated
+     *
+     * @bodyParam email string required Email uzytkownika. Example: user@example.com
+     *
+     * @response 200 {
+     *  "message": "If the email exists, a reset link was sent."
+     * }
+     */
+    public function forgotPassword(Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            'email' => ['required', 'email'],
+        ]);
+
+        $user = User::query()->where('email', $validated['email'])->first();
+
+        if ($user) {
+            $token = Str::random(self::RESET_TOKEN_BYTES);
+            $this->storePasswordResetToken($user->email, $token);
+
+            $resetUrl = $this->buildPasswordResetUrl($user->email, $token);
+            $user->notify(new PasswordResetLinkNotification($resetUrl));
+        }
+
+        return response()->json([
+            'message' => 'If the email exists, a reset link was sent.',
+        ]);
+    }
+
+    /**
+     * Ustaw nowe haslo
+     *
+     * Zmienia haslo uzytkownika na podstawie tokenu.
+     *
+     * @group Autoryzacja
+     * @unauthenticated
+     *
+     * @bodyParam email string required Email uzytkownika. Example: user@example.com
+     * @bodyParam token string required Token resetu. Example: abc123
+     * @bodyParam password string required Haslo (min. 8 znakow). Example: secret123
+     * @bodyParam password_confirmation string required Potwierdzenie hasla. Example: secret123
+     *
+     * @response 200 {
+     *  "message": "Password reset."
+     * }
+     * @response 422 {
+     *  "message": "Invalid token or email."
+     * }
+     */
+    public function resetPassword(Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            'email' => ['required', 'email'],
+            'token' => ['required', 'string'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $record = DB::table($this->passwordResetTable())
+            ->where('email', $validated['email'])
+            ->first();
+
+        if (!$record) {
+            return response()->json(['message' => 'Invalid token or email.'], 422);
+        }
+
+        if ($this->isResetTokenExpired($record->created_at)) {
+            $this->deletePasswordResetToken($validated['email']);
+            return response()->json(['message' => 'Invalid token or email.'], 422);
+        }
+
+        if (!Hash::check($validated['token'], $record->token)) {
+            return response()->json(['message' => 'Invalid token or email.'], 422);
+        }
+
+        $user = User::query()->where('email', $validated['email'])->first();
+
+        if (!$user) {
+            return response()->json(['message' => 'Invalid token or email.'], 422);
+        }
+
+        $passwordHash = Hash::make($validated['password']);
+        $user->forceFill([
+            'password' => $passwordHash,
+            'password_hash' => $passwordHash,
+        ])->save();
+
+        $this->deletePasswordResetToken($validated['email']);
+        LoginSession::query()->where('user_id', $user->id)->delete();
+
+        return response()->json(['message' => 'Password reset.']);
+    }
+
+    /**
+     * Reset hasla przez admina
+     *
+     * Admin moze ustawic haslo bez maila albo wyslac link do resetu.
+     *
+     * @group Autoryzacja
+     *
+     * @urlParam user int required ID uzytkownika. Example: 1
+     * @bodyParam send_email boolean Czy wyslac link resetu. Example: true
+     * @bodyParam password string Haslo (min. 8 znakow). Example: secret123
+     * @bodyParam password_confirmation string Potwierdzenie hasla. Example: secret123
+     *
+     * @response 200 {
+     *  "message": "Password updated."
+     * }
+     * @response 200 {
+     *  "message": "Reset link sent."
+     * }
+     */
+    public function adminResetPassword(Request $request, User $user): JsonResponse
+    {
+        $validated = $request->validate([
+            'send_email' => ['sometimes', 'boolean'],
+            'password' => ['required_unless:send_email,true', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $sendEmail = (bool) ($validated['send_email'] ?? false);
+
+        if ($sendEmail) {
+            $token = Str::random(self::RESET_TOKEN_BYTES);
+            $this->storePasswordResetToken($user->email, $token);
+
+            $resetUrl = $this->buildPasswordResetUrl($user->email, $token);
+            $user->notify(new PasswordResetLinkNotification($resetUrl, true));
+
+            return response()->json(['message' => 'Reset link sent.']);
+        }
+
+        $passwordHash = Hash::make($validated['password']);
+        $user->forceFill([
+            'password' => $passwordHash,
+            'password_hash' => $passwordHash,
+        ])->save();
+
+        $this->deletePasswordResetToken($user->email);
+        LoginSession::query()->where('user_id', $user->id)->delete();
+
+        return response()->json(['message' => 'Password updated.']);
+    }
+
     private function generateUniqueToken(): string
     {
         do {
@@ -218,5 +369,43 @@ class AuthController extends Controller
         } while (LoginSession::query()->where('token', $token)->exists());
 
         return $token;
+    }
+
+    private function passwordResetTable(): string
+    {
+        return (string) config('auth.passwords.users.table', 'password_reset_tokens');
+    }
+
+    private function storePasswordResetToken(string $email, string $token): void
+    {
+        DB::table($this->passwordResetTable())->updateOrInsert(
+            ['email' => $email],
+            [
+                'token' => Hash::make($token),
+                'created_at' => Carbon::now(),
+            ]
+        );
+    }
+
+    private function deletePasswordResetToken(string $email): void
+    {
+        DB::table($this->passwordResetTable())->where('email', $email)->delete();
+    }
+
+    private function isResetTokenExpired(?string $createdAt): bool
+    {
+        if (!$createdAt) {
+            return true;
+        }
+
+        $expiresInMinutes = (int) config('auth.passwords.users.expire', 60);
+        return Carbon::parse($createdAt)->addMinutes($expiresInMinutes)->isPast();
+    }
+
+    private function buildPasswordResetUrl(string $email, string $token): string
+    {
+        $baseUrl = rtrim((string) config('app.url'), '/');
+
+        return $baseUrl . '/reset-password?email=' . urlencode($email) . '&token=' . urlencode($token);
     }
 }
