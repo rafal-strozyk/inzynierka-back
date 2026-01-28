@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Api\AdminUserController;
 use App\Http\Controllers\Api\PropertyPhotoController;
 use App\Http\Controllers\Api\RoomController;
 use App\Http\Controllers\Api\RoomPhotoController;
@@ -15,6 +16,12 @@ Route::middleware('auth.token')->group(function (): void {
     Route::get('/me', [AuthController::class, 'me']);
     Route::post('/register', [AuthController::class, 'register'])
         ->middleware('role:owner,admin');
+    Route::get('/admin/users', [AdminUserController::class, 'index'])
+        ->middleware('role:admin');
+    Route::post('/admin/users', [AdminUserController::class, 'store'])
+        ->middleware('role:admin');
+    Route::put('/admin/users/{user}', [AdminUserController::class, 'update'])
+        ->middleware('role:admin');
     Route::post('/admin/users/{user}/reset-password', [AuthController::class, 'adminResetPassword'])
         ->middleware('role:admin');
     Route::get('/properties', [\App\Http\Controllers\Api\PropertyController::class, 'index']);
