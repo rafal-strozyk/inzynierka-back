@@ -7,12 +7,16 @@ use App\Http\Controllers\Api\RoomPhotoController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);
+Route::post('/reset-password', [AuthController::class, 'resetPassword']);
 
 Route::middleware('auth.token')->group(function (): void {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
     Route::post('/register', [AuthController::class, 'register'])
         ->middleware('role:owner,admin');
+    Route::post('/admin/users/{user}/reset-password', [AuthController::class, 'adminResetPassword'])
+        ->middleware('role:admin');
     Route::get('/properties', [\App\Http\Controllers\Api\PropertyController::class, 'index']);
     Route::get('/properties/{property}', [\App\Http\Controllers\Api\PropertyController::class, 'show']);
     Route::get('/properties/{property}/photos', [PropertyPhotoController::class, 'index']);
