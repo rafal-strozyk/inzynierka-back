@@ -45,6 +45,14 @@ class TenantAssignmentResource extends JsonResource
                     'rent_cost' => $this->room->rent_cost !== null ? (float) $this->room->rent_cost : null,
                 ];
             }),
+            'tenant' => $this->whenLoaded('tenant', function () {
+                return [
+                    'id' => $this->tenant?->id,
+                    'name' => $this->tenant?->name,
+                    'email' => $this->tenant?->email,
+                    'phone' => $this->tenant?->phone,
+                ];
+            }),
         ];
     }
 }
