@@ -9,6 +9,26 @@ use Illuminate\Support\Facades\Storage;
 
 class RoomPhotoController extends Controller
 {
+    /**
+     * Dodanie zdjec pokoju.
+     *
+     * @group Pokoje
+     * @authenticated
+     *
+     * @urlParam room int required ID pokoju. Example: 1
+     * @bodyParam photos[] file required Zdjecia do dodania. Example: storage/app/scribe/example.jpg
+     *
+     * @response 201 {
+     *  "data": [
+     *    {
+     *      "id": 1,
+     *      "file_name": "pokoj-1.jpg",
+     *      "url": "https://example.com/storage/images/rooms/1/pokoj-1.jpg",
+     *      "uploaded_at": "2026-01-11T10:00:00+00:00"
+     *    }
+     *  ]
+     * }
+     */
     public function store(Request $request, Room $room)
     {
         $validated = $request->validate([

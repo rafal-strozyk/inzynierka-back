@@ -9,6 +9,25 @@ use Illuminate\Support\Facades\Storage;
 
 class PropertyPhotoController extends Controller
 {
+    /**
+     * Lista zdjec nieruchomosci.
+     *
+     * @group Nieruchomości
+     * @authenticated
+     *
+     * @urlParam property int required ID nieruchomosci. Example: 1
+     *
+     * @response 200 {
+     *  "data": [
+     *    {
+     *      "id": 1,
+     *      "file_name": "mieszkanie-1.jpg",
+     *      "url": "https://example.com/storage/images/properties/1/mieszkanie-1.jpg",
+     *      "uploaded_at": "2026-01-11T10:00:00+00:00"
+     *    }
+     *  ]
+     * }
+     */
     public function index(Property $property)
     {
         $photos = $property->photos()->get()->map(function ($photo) {
@@ -23,6 +42,26 @@ class PropertyPhotoController extends Controller
         return response()->json(['data' => $photos]);
     }
 
+    /**
+     * Dodanie zdjec nieruchomosci.
+     *
+     * @group Nieruchomości
+     * @authenticated
+     *
+     * @urlParam property int required ID nieruchomosci. Example: 1
+     * @bodyParam photos[] file required Zdjecia do dodania. Example: storage/app/scribe/example.jpg
+     *
+     * @response 201 {
+     *  "data": [
+     *    {
+     *      "id": 1,
+     *      "file_name": "mieszkanie-1.jpg",
+     *      "url": "https://example.com/storage/images/properties/1/mieszkanie-1.jpg",
+     *      "uploaded_at": "2026-01-11T10:00:00+00:00"
+     *    }
+     *  ]
+     * }
+     */
     public function store(Request $request, Property $property)
     {
         $validated = $request->validate([

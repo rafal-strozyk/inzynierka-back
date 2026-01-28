@@ -16,9 +16,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Moje dane.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -32,14 +33,17 @@ endpoints:
       -
         custom: []
         status: 401
-        content: '{"message":"Missing token."}'
+        content: '{"message":"Invalid token."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
         description: null
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -56,9 +60,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Moje przypisania do nieruchomosci/pokoi.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -71,15 +76,15 @@ endpoints:
     responses:
       -
         custom: []
-        status: 401
-        content: '{"message":"Missing token."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+        status: 200
+        content: '{"data":[{"id":null,"tenant_id":null,"property_id":null,"room_id":null,"start_date":null,"end_date":null,"is_active":null},{"id":null,"tenant_id":null,"property_id":null,"room_id":null,"start_date":null,"end_date":null,"is_active":null}]}'
+        headers: []
+        description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null

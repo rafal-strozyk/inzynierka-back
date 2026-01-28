@@ -245,9 +245,10 @@ endpoints:
       subgroupDescription: ''
       title: Wylogowanie
       description: 'Inwaliduje bieżący token sesji.'
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -277,7 +278,10 @@ endpoints:
         headers: []
         description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -294,9 +298,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Bieżący użytkownik'
       description: 'Zwraca dane zalogowanego użytkownika na podstawie tokenu.'
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -332,7 +337,10 @@ endpoints:
         headers: []
         description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -349,9 +357,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Zmiana hasla zalogowanego uzytkownika'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -417,7 +426,10 @@ endpoints:
         headers: []
         description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -439,6 +451,7 @@ endpoints:
       authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -645,7 +658,10 @@ endpoints:
         headers: []
         description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -662,9 +678,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Reset hasla przez admina'
       description: 'Admin moze ustawic haslo bez maila albo wyslac link do resetu.'
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -754,7 +771,10 @@ endpoints:
         headers: []
         description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null

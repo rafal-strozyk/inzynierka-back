@@ -19,16 +19,17 @@ class PropertyController extends Controller
      * Zwraca listę nieruchomości wraz z podstawowymi informacjami.
      *
      * @group Nieruchomości
+     * @authenticated
      * @apiResourceCollection App\Http\Resources\PropertyResource
      * @apiResourceModel App\Models\Property
      *
      * @responseField id int ID nieruchomości.
-     * @responseField nazwa string Nazwa nieruchomości.
-     * @responseField adres string Adres w formacie: [ulica] [nr], m. [nr mieszkania]
-     * @responseField miasto string Miasto.
-     * @responseField czynsz number Czynsz (np. 123.09).
-     * @responseField media number Koszt mediów (np. 123.09).
-     * @responseField balkon boolean Czy nieruchomość posiada balkon (true/false).
+     * @responseField name string Nazwa nieruchomości.
+     * @responseField address string Adres w formacie: [ulica] [nr], m. [nr mieszkania]
+     * @responseField city string Miasto.
+     * @responseField rent_cost number Czynsz (np. 123.09).
+     * @responseField utilities_cost number Koszt mediów (np. 123.09).
+     * @responseField has_balcony boolean Czy nieruchomość posiada balkon (true/false).
      * 
      * @queryParam page int Numer strony. Example: 2
      * @queryParam per_page int Liczba rekordów na stronę. Example: 10
@@ -43,9 +44,6 @@ class PropertyController extends Controller
      * @queryParam has_balcony boolean Filtrowanie po balkonie. Example: true
      * @queryParam sort_by string Pole sortowania: name|address|city|rent_cost|utilities_cost|has_balcony. Example: rent_cost
      * @queryParam sort_dir string Kierunek sortowania: asc|desc. Example: desc
-     *
-     * @apiResourceCollection App\Http\Resources\PropertyResource
-     * @apiResourceModel App\Models\Property
      */
 
     public function index(Request $request){
@@ -139,6 +137,7 @@ class PropertyController extends Controller
     * Zwraca komplet informacji o wskazanej nieruchomości.
     *
     * @group Nieruchomości
+    * @authenticated
     *
     * @urlParam property int required ID nieruchomości. Example: 1
     *
@@ -147,20 +146,20 @@ class PropertyController extends Controller
     *
     * @responseField id int ID nieruchomości.
     * @responseField owner_id int ID właściciela (users.id).
-    * @responseField nazwa string Nazwa nieruchomości.
-    * @responseField ulica string Ulica.
-    * @responseField numer_budynku string Numer budynku.
-    * @responseField numer_mieszkania string|null Numer mieszkania.
-    * @responseField miasto string Miasto.
-    * @responseField opis string|null Opis nieruchomości.
+    * @responseField name string Nazwa nieruchomości.
+    * @responseField street string Ulica.
+    * @responseField street_number string Numer budynku.
+    * @responseField apartment_number string|null Numer mieszkania.
+    * @responseField city string Miasto.
+    * @responseField description string|null Opis nieruchomości.
     * @responseField status string Status: wolna|zajęta|remontowana|nieaktywna.
-    * @responseField czynsz number Czynsz (np. 123.09).
-    * @responseField media number Koszt mediów (np. 123.09).
-    * @responseField dodatkowe_koszty number Dodatkowe koszty (np. 0.00).
-    * @responseField powierzchnia_m2 number|null Powierzchnia w m² (np. 35.50).
-    * @responseField liczba_lazienek int|null Liczba łazienek.
-    * @responseField balkon boolean Czy nieruchomość posiada balkon (true/false).
-    * @responseField wynajem_na_pokoje boolean Czy wynajem dotyczy pokoi (true/false).
+    * @responseField rent_cost number Czynsz (np. 123.09).
+    * @responseField utilities_cost number Koszt mediów (np. 123.09).
+    * @responseField additional_costs number Dodatkowe koszty (np. 0.00).
+    * @responseField area_total number|null Powierzchnia w m² (np. 35.50).
+    * @responseField bathrooms_count int|null Liczba łazienek.
+    * @responseField has_balcony boolean Czy nieruchomość posiada balkon (true/false).
+    * @responseField rent_by_rooms boolean Czy wynajem dotyczy pokoi (true/false).
     * @responseField created_at string Data utworzenia (ISO 8601).
     * @responseField updated_at string Data aktualizacji (ISO 8601).
     */
@@ -173,6 +172,23 @@ class PropertyController extends Controller
      * Tworzenie nieruchomości.
      *
      * @group Nieruchomości
+     * @authenticated
+     *
+     * @bodyParam owner_id int ID właściciela (wymagane dla admina). Example: 2
+     * @bodyParam name string required Nazwa nieruchomości. Example: Apartament Centrum
+     * @bodyParam street string required Ulica. Example: Glowna
+     * @bodyParam street_number string required Numer budynku. Example: 10
+     * @bodyParam apartment_number string Numer mieszkania. Example: 12
+     * @bodyParam city string required Miasto. Example: Warszawa
+     * @bodyParam description string Opis nieruchomości. Example: Blisko centrum.
+     * @bodyParam status string Status: wolna|zajęta|remontowana|nieaktywna. Example: wolna
+     * @bodyParam rent_cost number required Czynsz (np. 123.09). Example: 2500
+     * @bodyParam utilities_cost number Koszt mediów (np. 123.09). Example: 350
+     * @bodyParam additional_costs number Dodatkowe koszty (np. 0.00). Example: 0
+     * @bodyParam area_total number Powierzchnia w m² (np. 35.50). Example: 45.5
+     * @bodyParam bathrooms_count int Liczba łazienek. Example: 1
+     * @bodyParam has_balcony boolean Czy nieruchomość posiada balkon (true/false). Example: true
+     * @bodyParam rent_by_rooms boolean Czy wynajem dotyczy pokoi (true/false). Example: false
      */
     public function store(Request $request): JsonResponse
     {
@@ -201,8 +217,24 @@ class PropertyController extends Controller
      * Edycja nieruchomości.
      *
      * @group Nieruchomości
+     * @authenticated
      *
      * @urlParam property int required ID nieruchomości. Example: 1
+     * @bodyParam owner_id int ID właściciela (tylko admin). Example: 2
+     * @bodyParam name string Nazwa nieruchomości. Example: Apartament Centrum
+     * @bodyParam street string Ulica. Example: Glowna
+     * @bodyParam street_number string Numer budynku. Example: 10
+     * @bodyParam apartment_number string Numer mieszkania. Example: 12
+     * @bodyParam city string Miasto. Example: Warszawa
+     * @bodyParam description string Opis nieruchomości. Example: Blisko centrum.
+     * @bodyParam status string Status: wolna|zajęta|remontowana|nieaktywna. Example: wolna
+     * @bodyParam rent_cost number Czynsz (np. 123.09). Example: 2500
+     * @bodyParam utilities_cost number Koszt mediów (np. 123.09). Example: 350
+     * @bodyParam additional_costs number Dodatkowe koszty (np. 0.00). Example: 0
+     * @bodyParam area_total number Powierzchnia w m² (np. 35.50). Example: 45.5
+     * @bodyParam bathrooms_count int Liczba łazienek. Example: 1
+     * @bodyParam has_balcony boolean Czy nieruchomość posiada balkon (true/false). Example: true
+     * @bodyParam rent_by_rooms boolean Czy wynajem dotyczy pokoi (true/false). Example: false
      */
     public function update(Request $request, Property $property): JsonResponse
     {
@@ -231,6 +263,7 @@ class PropertyController extends Controller
      * Usuwanie nieruchomości.
      *
      * @group Nieruchomości
+     * @authenticated
      *
      * @urlParam property int required ID nieruchomości. Example: 1
      */

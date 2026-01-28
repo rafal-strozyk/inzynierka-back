@@ -17,6 +17,32 @@ class TenantAssignmentController extends Controller
      * Przypisanie najemcy do nieruchomosci/pokoju.
      *
      * @group Owner
+     * @authenticated
+     *
+     * @bodyParam tenant_id int required ID najemcy (users.id). Example: 10
+     * @bodyParam property_id int required ID nieruchomosci. Example: 1
+     * @bodyParam room_id int ID pokoju (musi nalezec do nieruchomosci). Example: 3
+     * @bodyParam start_date date required Data rozpoczecia (YYYY-MM-DD). Example: 2026-01-01
+     * @bodyParam end_date date Data zakonczenia (YYYY-MM-DD). Example: 2026-12-31
+     * @bodyParam is_active boolean Czy przypisanie ma byc aktywne. Example: true
+     *
+     * @response 201 {
+     *  "assignment": {
+     *    "id": 1,
+     *    "tenant_id": 10,
+     *    "property_id": 1,
+     *    "room_id": 3,
+     *    "start_date": "2026-01-01",
+     *    "end_date": "2026-12-31",
+     *    "is_active": true
+     *  }
+     * }
+     * @response 403 {
+     *  "message": "Forbidden."
+     * }
+     * @response 422 {
+     *  "message": "Room already has an active assignment."
+     * }
      */
     public function store(Request $request): JsonResponse
     {
@@ -80,8 +106,31 @@ class TenantAssignmentController extends Controller
      * Odpiecie najemcy od nieruchomosci/pokoju.
      *
      * @group Owner
+     * @authenticated
      *
      * @urlParam assignment int required ID przypisania. Example: 1
+     * @bodyParam end_date date Data zakonczenia (YYYY-MM-DD). Example: 2026-12-31
+     *
+     * @response 200 {
+     *  "assignment": {
+     *    "id": 1,
+     *    "tenant_id": 10,
+     *    "property_id": 1,
+     *    "room_id": 3,
+     *    "start_date": "2026-01-01",
+     *    "end_date": "2026-12-31",
+     *    "is_active": false
+     *  }
+     * }
+     * @response 403 {
+     *  "message": "Forbidden."
+     * }
+     * @response 409 {
+     *  "message": "Assignment already inactive."
+     * }
+     * @response 422 {
+     *  "message": "The end date must be a date after or equal to start date."
+     * }
      */
     public function destroy(Request $request, TenantProperty $assignment): JsonResponse
     {

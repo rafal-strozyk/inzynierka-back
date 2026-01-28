@@ -14,6 +14,7 @@ class TenantSelfController extends Controller
      * Moje dane.
      *
      * @group Tenant
+     * @authenticated
      */
     public function me(Request $request): JsonResponse
     {
@@ -26,6 +27,10 @@ class TenantSelfController extends Controller
      * Moje przypisania do nieruchomosci/pokoi.
      *
      * @group Tenant
+     * @authenticated
+     *
+     * @apiResourceCollection App\Http\Resources\TenantAssignmentResource
+     * @apiResourceModel App\Models\TenantProperty
      */
     public function assignments(Request $request): JsonResponse
     {
