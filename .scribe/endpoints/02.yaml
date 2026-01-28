@@ -369,7 +369,7 @@ endpoints:
         name: birth_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-01-28T22:29:00'
+        example: '2026-01-28T23:10:27'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -405,7 +405,7 @@ endpoints:
       phone: vdljnikhwaykcmyu
       address_registered: w
       city: p
-      birth_date: '2026-01-28T22:29:00'
+      birth_date: '2026-01-28T23:10:27'
       pesel: wlvqwr
       notes: architecto
     fileParameters: []
@@ -462,6 +462,263 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/owner/rooms
+    metadata:
+      custom: []
+      groupName: Owner
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lista pokoi z przypisaniami.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page:
+        custom: []
+        name: page
+        description: 'Numer strony.'
+        required: false
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Liczba rekordow na strone.'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      property_id:
+        custom: []
+        name: property_id
+        description: 'Filtrowanie po nieruchomosci.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      page: 2
+      per_page: 10
+      property_id: 1
+    bodyParameters:
+      property_id:
+        custom: []
+        name: property_id
+        description: 'The <code>id</code> of an existing record in the properties table.'
+        required: false
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      property_id: 16
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Missing token."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/owner/assignments
+    metadata:
+      custom: []
+      groupName: Owner
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Przypisanie najemcy do nieruchomosci/pokoju.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      tenant_id:
+        custom: []
+        name: tenant_id
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      property_id:
+        custom: []
+        name: property_id
+        description: 'The <code>id</code> of an existing record in the properties table.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      room_id:
+        custom: []
+        name: room_id
+        description: 'The <code>id</code> of an existing record in the rooms table.'
+        required: false
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      start_date:
+        custom: []
+        name: start_date
+        description: 'Must be a valid date.'
+        required: true
+        example: '2026-01-28T23:10:28'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      end_date:
+        custom: []
+        name: end_date
+        description: 'Must be a valid date. Must be a date after or equal to <code>start_date</code>.'
+        required: false
+        example: '2052-02-21'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      is_active:
+        custom: []
+        name: is_active
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      tenant_id: 16
+      property_id: 16
+      room_id: 16
+      start_date: '2026-01-28T23:10:28'
+      end_date: '2052-02-21'
+      is_active: false
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/owner/assignments/{assignment_id}'
+    metadata:
+      custom: []
+      groupName: Owner
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Odpiecie najemcy od nieruchomosci/pokoju.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      assignment_id:
+        custom: []
+        name: assignment_id
+        description: 'The ID of the assignment.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      assignment:
+        custom: []
+        name: assignment
+        description: 'ID przypisania.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      assignment_id: 16
+      assignment: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      end_date:
+        custom: []
+        name: end_date
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
     cleanBodyParameters: []
     fileParameters: []
     responses: []

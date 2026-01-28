@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Room extends Model
 {
@@ -31,5 +33,17 @@ class Room extends Model
     public function photos()
     {
         return $this->hasMany(RoomPhoto::class);
+    }
+
+    public function assignments(): HasMany
+    {
+        return $this->hasMany(TenantProperty::class);
+    }
+
+    public function activeAssignment(): HasOne
+    {
+        return $this->hasOne(TenantProperty::class)
+            ->where('is_active', true)
+            ->orderByDesc('start_date');
     }
 }

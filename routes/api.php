@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Api\AdminUserController;
+use App\Http\Controllers\Api\OwnerRoomController;
 use App\Http\Controllers\Api\OwnerTenantController;
+use App\Http\Controllers\Api\TenantAssignmentController;
 use App\Http\Controllers\Api\TenantSelfController;
 use App\Http\Controllers\Api\PropertyPhotoController;
 use App\Http\Controllers\Api\RoomController;
@@ -50,7 +52,21 @@ Route::middleware('auth.token')->group(function (): void {
         ->middleware('role:owner,admin');
     Route::get('/properties/{property}/photos', [PropertyPhotoController::class, 'index']);
     Route::post('/properties/{property}/photos', [PropertyPhotoController::class, 'store']);
+    Route::get('/properties/{property}/rooms', [RoomController::class, 'indexByProperty']);
+    Route::post('/properties/{property}/rooms', [RoomController::class, 'store'])
+        ->middleware('role:owner,admin');
+    Route::get('/rooms', [RoomController::class, 'index']);
     Route::get('/rooms/{room}', [RoomController::class, 'show']);
+    Route::put('/rooms/{room}', [RoomController::class, 'update'])
+        ->middleware('role:owner,admin');
+    Route::delete('/rooms/{room}', [RoomController::class, 'destroy'])
+        ->middleware('role:owner,admin');
     Route::get('/rooms/{room}/photos', [RoomController::class, 'photos']);
     Route::post('/rooms/{room}/photos', [RoomPhotoController::class, 'store']);
+    Route::get('/owner/rooms', [OwnerRoomController::class, 'index'])
+        ->middleware('role:owner,admin');
+    Route::post('/owner/assignments', [TenantAssignmentController::class, 'store'])
+        ->middleware('role:owner,admin');
+    Route::delete('/owner/assignments/{assignment}', [TenantAssignmentController::class, 'destroy'])
+        ->middleware('role:owner,admin');
 });
