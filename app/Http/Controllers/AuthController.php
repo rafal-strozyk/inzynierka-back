@@ -215,6 +215,53 @@ class AuthController extends Controller
     }
 
     /**
+     * Zmiana hasla zalogowanego uzytkownika
+     *
+     * @group Autoryzacja
+     *
+     * @bodyParam current_password string required Obecne haslo. Example: secret123
+     * @bodyParam password string required Nowe haslo (min. 8 znakow). Example: secret123
+     * @bodyParam password_confirmation string required Potwierdzenie hasla. Example: secret123
+     *
+     * @response 200 {
+     *  "message": "Password updated."
+     * }
+     * @response 422 {
+     *  "message": "Invalid current password."
+     * }
+     */
+    public function changePassword(Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            'current_password' => ['required', 'string'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $user = $request->user();
+
+        if (!$user || !Hash::check($validated['current_password'], $user->password)) {
+            return response()->json(['message' => 'Invalid current password.'], 422);
+        }
+
+        $passwordHash = Hash::make($validated['password']);
+        $user->forceFill([
+            'password' => $passwordHash,
+            'password_hash' => $passwordHash,
+        ])->save();
+
+        $session = $request->attributes->get('login_session');
+        $sessions = LoginSession::query()->where('user_id', $user->id);
+
+        if ($session instanceof LoginSession) {
+            $sessions->where('id', '!=', $session->id);
+        }
+
+        $sessions->delete();
+
+        return response()->json(['message' => 'Password updated.']);
+    }
+
+    /**
      * Reset hasla (zapomniane haslo)
      *
      * Wysyla link z tokenem resetu na email uzytkownika.

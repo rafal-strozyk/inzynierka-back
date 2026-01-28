@@ -102,6 +102,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="autoryzacja-GETapi-me">
                                 <a href="#autoryzacja-GETapi-me">Bieżący użytkownik</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="autoryzacja-POSTapi-me-change-password">
+                                <a href="#autoryzacja-POSTapi-me-change-password">Zmiana hasla zalogowanego uzytkownika</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="autoryzacja-POSTapi-register">
                                 <a href="#autoryzacja-POSTapi-register">Rejestracja</a>
                             </li>
@@ -142,6 +145,16 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="nieruchomosci-GETapi-properties--property_id-">
                                 <a href="#nieruchomosci-GETapi-properties--property_id-">Szczegóły nieruchomości.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-owner" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="owner">
+                    <a href="#owner">Owner</a>
+                </li>
+                                    <ul id="tocify-subheader-owner" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="owner-PUTapi-owner-tenants--user_id-">
+                                <a href="#owner-PUTapi-owner-tenants--user_id-">Edycja danych tenanta przez ownera.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -660,7 +673,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"phone\": \"kcmyuwpwlvqwrsit\",
     \"address_registered\": \"c\",
     \"city\": \"p\",
-    \"birth_date\": \"2026-01-28T19:26:24\",
+    \"birth_date\": \"2026-01-28T19:41:20\",
     \"pesel\": \"scqldz\",
     \"notes\": \"architecto\"
 }"
@@ -686,7 +699,7 @@ let body = {
     "phone": "kcmyuwpwlvqwrsit",
     "address_registered": "c",
     "city": "p",
-    "birth_date": "2026-01-28T19:26:24",
+    "birth_date": "2026-01-28T19:41:20",
     "pesel": "scqldz",
     "notes": "architecto"
 };
@@ -913,10 +926,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="birth_date"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="2026-01-28T19:26:24"
+               value="2026-01-28T19:41:20"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-28T19:26:24</code></p>
+<p>Must be a valid date. Example: <code>2026-01-28T19:41:20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>pesel</code></b>&nbsp;&nbsp;
@@ -1716,6 +1729,184 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
+                    <h2 id="autoryzacja-POSTapi-me-change-password">Zmiana hasla zalogowanego uzytkownika</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-me-change-password">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://inz.test/api/me/change-password" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"current_password\": \"secret123\",
+    \"password\": \"secret123\",
+    \"password_confirmation\": \"secret123\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/me/change-password"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "current_password": "secret123",
+    "password": "secret123",
+    "password_confirmation": "secret123"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-me-change-password">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Password updated.&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Invalid current password.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-me-change-password" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-me-change-password"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-me-change-password"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-me-change-password" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-me-change-password">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-me-change-password" data-method="POST"
+      data-path="api/me/change-password"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-me-change-password', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-me-change-password"
+                    onclick="tryItOut('POSTapi-me-change-password');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-me-change-password"
+                    onclick="cancelTryOut('POSTapi-me-change-password');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-me-change-password"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/me/change-password</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-me-change-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-me-change-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>current_password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="current_password"                data-endpoint="POSTapi-me-change-password"
+               value="secret123"
+               data-component="body">
+    <br>
+<p>Obecne haslo. Example: <code>secret123</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-me-change-password"
+               value="secret123"
+               data-component="body">
+    <br>
+<p>Nowe haslo (min. 8 znakow). Example: <code>secret123</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password_confirmation"                data-endpoint="POSTapi-me-change-password"
+               value="secret123"
+               data-component="body">
+    <br>
+<p>Potwierdzenie hasla. Example: <code>secret123</code></p>
+        </div>
+        </form>
+
                     <h2 id="autoryzacja-POSTapi-register">Rejestracja</h2>
 
 <p>
@@ -2431,7 +2622,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://inz.test/api/properties/1/photos" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phpp50p2dvuk2vqc4uA28e" </code></pre></div>
+    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phpvcmqd7bg0ef1c1HvQPi" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2852,7 +3043,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://inz.test/api/rooms/16/photos" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phpfsdiqjag0vln0MWxw9l" </code></pre></div>
+    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phpf4m8um0s8gup0DNYTMr" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -3034,22 +3225,22 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 75,
-            &quot;name&quot;: &quot;fugiat sunt&quot;,
-            &quot;address&quot;: &quot;Gaylord Knolls 1582, m. 197&quot;,
-            &quot;city&quot;: &quot;Port Gilbertstad&quot;,
-            &quot;rent_cost&quot;: 2341.09,
-            &quot;utilities_cost&quot;: 794.44,
-            &quot;has_balcony&quot;: false
+            &quot;id&quot;: 78,
+            &quot;name&quot;: &quot;eius et&quot;,
+            &quot;address&quot;: &quot;Okuneva Villages 85625, m. 144&quot;,
+            &quot;city&quot;: &quot;East Cecil&quot;,
+            &quot;rent_cost&quot;: 2586.7,
+            &quot;utilities_cost&quot;: 726.33,
+            &quot;has_balcony&quot;: true
         },
         {
-            &quot;id&quot;: 76,
-            &quot;name&quot;: &quot;aut dolores&quot;,
-            &quot;address&quot;: &quot;Keely Wells 1490, m. 10&quot;,
-            &quot;city&quot;: &quot;Haagborough&quot;,
-            &quot;rent_cost&quot;: 3461.42,
-            &quot;utilities_cost&quot;: 1118.01,
-            &quot;has_balcony&quot;: false
+            &quot;id&quot;: 79,
+            &quot;name&quot;: &quot;enim non&quot;,
+            &quot;address&quot;: &quot;Leuschke Throughway 427, m. 124&quot;,
+            &quot;city&quot;: &quot;Considinehaven&quot;,
+            &quot;rent_cost&quot;: 4713.03,
+            &quot;utilities_cost&quot;: 163.44,
+            &quot;has_balcony&quot;: true
         }
     ]
 }</code>
@@ -3254,24 +3445,24 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 77,
-        &quot;owner_id&quot;: 80,
-        &quot;name&quot;: &quot;dignissimos neque&quot;,
-        &quot;street&quot;: &quot;O&#039;Connell Mission&quot;,
-        &quot;street_number&quot;: &quot;7329&quot;,
-        &quot;apartment_number&quot;: &quot;25&quot;,
-        &quot;city&quot;: &quot;Port Nelson&quot;,
-        &quot;rent_cost&quot;: 1594.85,
-        &quot;utilities_cost&quot;: 1140.72,
-        &quot;additional_costs&quot;: 53.3,
+        &quot;id&quot;: 80,
+        &quot;owner_id&quot;: 83,
+        &quot;name&quot;: &quot;neque blanditiis&quot;,
+        &quot;street&quot;: &quot;Beier Meadow&quot;,
+        &quot;street_number&quot;: &quot;85188&quot;,
+        &quot;apartment_number&quot;: &quot;186&quot;,
+        &quot;city&quot;: &quot;North Jacquesmouth&quot;,
+        &quot;rent_cost&quot;: 1079.81,
+        &quot;utilities_cost&quot;: 952.8,
+        &quot;additional_costs&quot;: 69.32,
         &quot;description&quot;: &quot;&quot;,
         &quot;area_total&quot;: 0,
-        &quot;bathrooms_count&quot;: 2,
+        &quot;bathrooms_count&quot;: 1,
         &quot;status&quot;: &quot;wolna&quot;,
-        &quot;has_balcony&quot;: true,
-        &quot;rent_by_rooms&quot;: true,
-        &quot;created_at&quot;: &quot;2026-01-28T19:26:25.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2026-01-28T19:26:25.000000Z&quot;
+        &quot;has_balcony&quot;: false,
+        &quot;rent_by_rooms&quot;: false,
+        &quot;created_at&quot;: &quot;2026-01-28T19:41:20.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-28T19:41:20.000000Z&quot;
     }
 }</code>
  </pre>
@@ -3520,7 +3711,294 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <br>
 <p>Data aktualizacji (ISO 8601).</p>
         </div>
-                
+                    <h1 id="owner">Owner</h1>
+
+    
+
+                                <h2 id="owner-PUTapi-owner-tenants--user_id-">Edycja danych tenanta przez ownera.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-owner-tenants--user_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://inz.test/api/owner/tenants/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"b\",
+    \"email\": \"zbailey@example.net\",
+    \"first_name\": \"i\",
+    \"last_name\": \"y\",
+    \"phone\": \"vdljnikhwaykcmyu\",
+    \"address_registered\": \"w\",
+    \"city\": \"p\",
+    \"birth_date\": \"2026-01-28T19:41:20\",
+    \"pesel\": \"wlvqwr\",
+    \"notes\": \"architecto\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/owner/tenants/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "b",
+    "email": "zbailey@example.net",
+    "first_name": "i",
+    "last_name": "y",
+    "phone": "vdljnikhwaykcmyu",
+    "address_registered": "w",
+    "city": "p",
+    "birth_date": "2026-01-28T19:41:20",
+    "pesel": "wlvqwr",
+    "notes": "architecto"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-owner-tenants--user_id-">
+</span>
+<span id="execution-results-PUTapi-owner-tenants--user_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-owner-tenants--user_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-owner-tenants--user_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-owner-tenants--user_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-owner-tenants--user_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-owner-tenants--user_id-" data-method="PUT"
+      data-path="api/owner/tenants/{user_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-owner-tenants--user_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-owner-tenants--user_id-"
+                    onclick="tryItOut('PUTapi-owner-tenants--user_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-owner-tenants--user_id-"
+                    onclick="cancelTryOut('PUTapi-owner-tenants--user_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-owner-tenants--user_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/owner/tenants/{user_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="user_id"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the user. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="user"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID tenanta. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="b"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>b</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="zbailey@example.net"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>zbailey@example.net</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="first_name"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="i"
+               data-component="body">
+    <br>
+<p>Must not be greater than 100 characters. Example: <code>i</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="last_name"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="y"
+               data-component="body">
+    <br>
+<p>Must not be greater than 100 characters. Example: <code>y</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="phone"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="vdljnikhwaykcmyu"
+               data-component="body">
+    <br>
+<p>Must not be greater than 20 characters. Example: <code>vdljnikhwaykcmyu</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>address_registered</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="address_registered"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="w"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>w</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="city"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="p"
+               data-component="body">
+    <br>
+<p>Must not be greater than 100 characters. Example: <code>p</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="birth_date"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="2026-01-28T19:41:20"
+               data-component="body">
+    <br>
+<p>Must be a valid date. Example: <code>2026-01-28T19:41:20</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pesel</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pesel"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="wlvqwr"
+               data-component="body">
+    <br>
+<p>Must not be greater than 11 characters. Example: <code>wlvqwr</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="architecto"
+               data-component="body">
+    <br>
+<p>Example: <code>architecto</code></p>
+        </div>
+        </form>
+
+            
 
         
     </div>
