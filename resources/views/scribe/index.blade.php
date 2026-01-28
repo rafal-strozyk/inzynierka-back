@@ -162,8 +162,30 @@
                     <a href="#owner">Owner</a>
                 </li>
                                     <ul id="tocify-subheader-owner" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="owner-PUTapi-owner-tenants--user_id-">
+                                                    <li class="tocify-item level-2" data-unique="owner-GETapi-owner-tenants">
+                                <a href="#owner-GETapi-owner-tenants">Lista tenantow.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="owner-POSTapi-owner-tenants">
+                                <a href="#owner-POSTapi-owner-tenants">Tworzenie tenanta.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="owner-PUTapi-owner-tenants--user_id-">
                                 <a href="#owner-PUTapi-owner-tenants--user_id-">Edycja danych tenanta przez ownera.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="owner-DELETEapi-owner-tenants--user_id-">
+                                <a href="#owner-DELETEapi-owner-tenants--user_id-">Usuwanie tenanta.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-tenant" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="tenant">
+                    <a href="#tenant">Tenant</a>
+                </li>
+                                    <ul id="tocify-subheader-tenant" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="tenant-GETapi-tenant-me">
+                                <a href="#tenant-GETapi-tenant-me">Moje dane.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="tenant-GETapi-tenant-assignments">
+                                <a href="#tenant-GETapi-tenant-assignments">Moje przypisania do nieruchomosci/pokoi.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -682,7 +704,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"phone\": \"kcmyuwpwlvqwrsit\",
     \"address_registered\": \"c\",
     \"city\": \"p\",
-    \"birth_date\": \"2026-01-28T20:30:31\",
+    \"birth_date\": \"2026-01-28T22:29:00\",
     \"pesel\": \"scqldz\",
     \"notes\": \"architecto\"
 }"
@@ -708,7 +730,7 @@ let body = {
     "phone": "kcmyuwpwlvqwrsit",
     "address_registered": "c",
     "city": "p",
-    "birth_date": "2026-01-28T20:30:31",
+    "birth_date": "2026-01-28T22:29:00",
     "pesel": "scqldz",
     "notes": "architecto"
 };
@@ -935,10 +957,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="birth_date"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="2026-01-28T20:30:31"
+               value="2026-01-28T22:29:00"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-28T20:30:31</code></p>
+<p>Must be a valid date. Example: <code>2026-01-28T22:29:00</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>pesel</code></b>&nbsp;&nbsp;
@@ -2631,7 +2653,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://inz.test/api/properties/1/photos" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phpd42hmj0cf6oudxQmDxX" </code></pre></div>
+    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phpedq3fv4qsfi90t2MrKR" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -3052,7 +3074,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://inz.test/api/rooms/16/photos" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phplc0h35ls4skf6tfvXSd" </code></pre></div>
+    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/php5e19tmui33sk8UHFLtZ" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -3208,7 +3230,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"rent_max\": 8,
     \"utilities_min\": 76,
     \"utilities_max\": 60,
-    \"has_balcony\": true
+    \"has_balcony\": false
 }"
 </code></pre></div>
 
@@ -3250,7 +3272,7 @@ let body = {
     "rent_max": 8,
     "utilities_min": 76,
     "utilities_max": 60,
-    "has_balcony": true
+    "has_balcony": false
 };
 
 fetch(url, {
@@ -3270,7 +3292,7 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 84,
+            &quot;id&quot;: 90,
             &quot;name&quot;: &quot;sunt nihil&quot;,
             &quot;address&quot;: &quot;Dickens Inlet 7763, m. -&quot;,
             &quot;city&quot;: &quot;Port Gilbertstad&quot;,
@@ -3279,7 +3301,7 @@ fetch(url, {
             &quot;has_balcony&quot;: false
         },
         {
-            &quot;id&quot;: 85,
+            &quot;id&quot;: 91,
             &quot;name&quot;: &quot;aut dolores&quot;,
             &quot;address&quot;: &quot;Keely Wells 1490, m. 10&quot;,
             &quot;city&quot;: &quot;Haagborough&quot;,
@@ -3646,7 +3668,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>sort_by</code></b>&nbsp;&nbsp;
@@ -3885,8 +3907,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 86,
-        &quot;owner_id&quot;: 89,
+        &quot;id&quot;: 92,
+        &quot;owner_id&quot;: 95,
         &quot;name&quot;: &quot;dignissimos neque&quot;,
         &quot;street&quot;: &quot;O&#039;Connell Mission&quot;,
         &quot;street_number&quot;: &quot;7329&quot;,
@@ -3901,8 +3923,8 @@ fetch(url, {
         &quot;status&quot;: &quot;wolna&quot;,
         &quot;has_balcony&quot;: true,
         &quot;rent_by_rooms&quot;: true,
-        &quot;created_at&quot;: &quot;2026-01-28T20:30:31.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2026-01-28T20:30:31.000000Z&quot;
+        &quot;created_at&quot;: &quot;2026-01-28T22:29:00.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-28T22:29:00.000000Z&quot;
     }
 }</code>
  </pre>
@@ -4425,7 +4447,451 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
     
 
-                                <h2 id="owner-PUTapi-owner-tenants--user_id-">Edycja danych tenanta przez ownera.</h2>
+                                <h2 id="owner-GETapi-owner-tenants">Lista tenantow.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-owner-tenants">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://inz.test/api/owner/tenants?page=2&amp;per_page=10" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/owner/tenants"
+);
+
+const params = {
+    "page": "2",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-owner-tenants">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Missing token.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-owner-tenants" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-owner-tenants"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-owner-tenants"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-owner-tenants" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-owner-tenants">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-owner-tenants" data-method="GET"
+      data-path="api/owner/tenants"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-owner-tenants', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-owner-tenants"
+                    onclick="tryItOut('GETapi-owner-tenants');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-owner-tenants"
+                    onclick="cancelTryOut('GETapi-owner-tenants');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-owner-tenants"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/owner/tenants</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-owner-tenants"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-owner-tenants"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="page"                data-endpoint="GETapi-owner-tenants"
+               value="2"
+               data-component="query">
+    <br>
+<p>Numer strony. Example: <code>2</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-owner-tenants"
+               value="10"
+               data-component="query">
+    <br>
+<p>Liczba rekordow na strone. Example: <code>10</code></p>
+            </div>
+                </form>
+
+                    <h2 id="owner-POSTapi-owner-tenants">Tworzenie tenanta.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-owner-tenants">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://inz.test/api/owner/tenants" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"Jan Kowalski\",
+    \"email\": \"user@example.com\",
+    \"password\": \"secret123\",
+    \"first_name\": \"Jan\",
+    \"last_name\": \"Kowalski\",
+    \"phone\": \"+48 500 000 001\",
+    \"address_registered\": \"ul. Glowna 1\",
+    \"city\": \"Warszawa\",
+    \"birth_date\": \"1990-01-01\",
+    \"pesel\": \"90010112345\",
+    \"notes\": \"Nowy najemca.\",
+    \"password_confirmation\": \"secret123\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/owner/tenants"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "Jan Kowalski",
+    "email": "user@example.com",
+    "password": "secret123",
+    "first_name": "Jan",
+    "last_name": "Kowalski",
+    "phone": "+48 500 000 001",
+    "address_registered": "ul. Glowna 1",
+    "city": "Warszawa",
+    "birth_date": "1990-01-01",
+    "pesel": "90010112345",
+    "notes": "Nowy najemca.",
+    "password_confirmation": "secret123"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-owner-tenants">
+</span>
+<span id="execution-results-POSTapi-owner-tenants" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-owner-tenants"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-owner-tenants"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-owner-tenants" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-owner-tenants">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-owner-tenants" data-method="POST"
+      data-path="api/owner/tenants"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-owner-tenants', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-owner-tenants"
+                    onclick="tryItOut('POSTapi-owner-tenants');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-owner-tenants"
+                    onclick="cancelTryOut('POSTapi-owner-tenants');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-owner-tenants"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/owner/tenants</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-owner-tenants"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-owner-tenants"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-owner-tenants"
+               value="Jan Kowalski"
+               data-component="body">
+    <br>
+<p>Imie i nazwisko. Example: <code>Jan Kowalski</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-owner-tenants"
+               value="user@example.com"
+               data-component="body">
+    <br>
+<p>Email uzytkownika. Example: <code>user@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-owner-tenants"
+               value="secret123"
+               data-component="body">
+    <br>
+<p>Haslo (min. 8 znakow). Example: <code>secret123</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="first_name"                data-endpoint="POSTapi-owner-tenants"
+               value="Jan"
+               data-component="body">
+    <br>
+<p>Imie. Example: <code>Jan</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="last_name"                data-endpoint="POSTapi-owner-tenants"
+               value="Kowalski"
+               data-component="body">
+    <br>
+<p>Nazwisko. Example: <code>Kowalski</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="phone"                data-endpoint="POSTapi-owner-tenants"
+               value="+48 500 000 001"
+               data-component="body">
+    <br>
+<p>Numer telefonu. Example: <code>+48 500 000 001</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>address_registered</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="address_registered"                data-endpoint="POSTapi-owner-tenants"
+               value="ul. Glowna 1"
+               data-component="body">
+    <br>
+<p>Adres zameldowania. Example: <code>ul. Glowna 1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="city"                data-endpoint="POSTapi-owner-tenants"
+               value="Warszawa"
+               data-component="body">
+    <br>
+<p>Miasto. Example: <code>Warszawa</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="birth_date"                data-endpoint="POSTapi-owner-tenants"
+               value="1990-01-01"
+               data-component="body">
+    <br>
+<p>Data urodzenia (YYYY-MM-DD). Example: <code>1990-01-01</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pesel</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pesel"                data-endpoint="POSTapi-owner-tenants"
+               value="90010112345"
+               data-component="body">
+    <br>
+<p>PESEL. Example: <code>90010112345</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="POSTapi-owner-tenants"
+               value="Nowy najemca."
+               data-component="body">
+    <br>
+<p>Uwagi. Example: <code>Nowy najemca.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password_confirmation"                data-endpoint="POSTapi-owner-tenants"
+               value="secret123"
+               data-component="body">
+    <br>
+<p>Potwierdzenie hasla. Example: <code>secret123</code></p>
+        </div>
+        </form>
+
+                    <h2 id="owner-PUTapi-owner-tenants--user_id-">Edycja danych tenanta przez ownera.</h2>
 
 <p>
 </p>
@@ -4449,7 +4915,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"phone\": \"vdljnikhwaykcmyu\",
     \"address_registered\": \"w\",
     \"city\": \"p\",
-    \"birth_date\": \"2026-01-28T20:30:31\",
+    \"birth_date\": \"2026-01-28T22:29:00\",
     \"pesel\": \"wlvqwr\",
     \"notes\": \"architecto\"
 }"
@@ -4474,7 +4940,7 @@ let body = {
     "phone": "vdljnikhwaykcmyu",
     "address_registered": "w",
     "city": "p",
-    "birth_date": "2026-01-28T20:30:31",
+    "birth_date": "2026-01-28T22:29:00",
     "pesel": "wlvqwr",
     "notes": "architecto"
 };
@@ -4677,10 +5143,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="birth_date"                data-endpoint="PUTapi-owner-tenants--user_id-"
-               value="2026-01-28T20:30:31"
+               value="2026-01-28T22:29:00"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-28T20:30:31</code></p>
+<p>Must be a valid date. Example: <code>2026-01-28T22:29:00</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>pesel</code></b>&nbsp;&nbsp;
@@ -4707,6 +5173,397 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>architecto</code></p>
         </div>
         </form>
+
+                    <h2 id="owner-DELETEapi-owner-tenants--user_id-">Usuwanie tenanta.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-owner-tenants--user_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://inz.test/api/owner/tenants/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/owner/tenants/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-owner-tenants--user_id-">
+</span>
+<span id="execution-results-DELETEapi-owner-tenants--user_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-owner-tenants--user_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-owner-tenants--user_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-owner-tenants--user_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-owner-tenants--user_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-owner-tenants--user_id-" data-method="DELETE"
+      data-path="api/owner/tenants/{user_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-owner-tenants--user_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-owner-tenants--user_id-"
+                    onclick="tryItOut('DELETEapi-owner-tenants--user_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-owner-tenants--user_id-"
+                    onclick="cancelTryOut('DELETEapi-owner-tenants--user_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-owner-tenants--user_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/owner/tenants/{user_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-owner-tenants--user_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-owner-tenants--user_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="user_id"                data-endpoint="DELETEapi-owner-tenants--user_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the user. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="user"                data-endpoint="DELETEapi-owner-tenants--user_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID tenanta. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                <h1 id="tenant">Tenant</h1>
+
+    
+
+                                <h2 id="tenant-GETapi-tenant-me">Moje dane.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-tenant-me">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://inz.test/api/tenant/me" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/tenant/me"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-tenant-me">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Missing token.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-tenant-me" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-tenant-me"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-tenant-me"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-tenant-me" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-tenant-me">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-tenant-me" data-method="GET"
+      data-path="api/tenant/me"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-tenant-me', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-tenant-me"
+                    onclick="tryItOut('GETapi-tenant-me');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-tenant-me"
+                    onclick="cancelTryOut('GETapi-tenant-me');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-tenant-me"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/tenant/me</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-tenant-me"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-tenant-me"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="tenant-GETapi-tenant-assignments">Moje przypisania do nieruchomosci/pokoi.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-tenant-assignments">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://inz.test/api/tenant/assignments" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/tenant/assignments"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-tenant-assignments">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Missing token.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-tenant-assignments" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-tenant-assignments"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-tenant-assignments"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-tenant-assignments" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-tenant-assignments">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-tenant-assignments" data-method="GET"
+      data-path="api/tenant/assignments"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-tenant-assignments', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-tenant-assignments"
+                    onclick="tryItOut('GETapi-tenant-assignments');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-tenant-assignments"
+                    onclick="cancelTryOut('GETapi-tenant-assignments');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-tenant-assignments"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/tenant/assignments</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-tenant-assignments"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-tenant-assignments"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
 
             
 

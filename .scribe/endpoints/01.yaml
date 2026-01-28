@@ -403,7 +403,7 @@ endpoints:
         name: birth_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-01-28T20:30:31'
+        example: '2026-01-28T22:29:00'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -440,7 +440,7 @@ endpoints:
       phone: kcmyuwpwlvqwrsit
       address_registered: c
       city: p
-      birth_date: '2026-01-28T20:30:31'
+      birth_date: '2026-01-28T22:29:00'
       pesel: scqldz
       notes: architecto
     fileParameters: []

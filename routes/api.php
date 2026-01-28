@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Api\AdminUserController;
 use App\Http\Controllers\Api\OwnerTenantController;
+use App\Http\Controllers\Api\TenantSelfController;
 use App\Http\Controllers\Api\PropertyPhotoController;
 use App\Http\Controllers\Api\RoomController;
 use App\Http\Controllers\Api\RoomPhotoController;
@@ -27,8 +28,18 @@ Route::middleware('auth.token')->group(function (): void {
         ->middleware('role:admin');
     Route::post('/admin/users/{user}/reset-password', [AuthController::class, 'adminResetPassword'])
         ->middleware('role:admin');
+    Route::get('/owner/tenants', [OwnerTenantController::class, 'index'])
+        ->middleware('role:owner,admin');
+    Route::post('/owner/tenants', [OwnerTenantController::class, 'store'])
+        ->middleware('role:owner,admin');
     Route::put('/owner/tenants/{user}', [OwnerTenantController::class, 'update'])
-        ->middleware('role:owner');
+        ->middleware('role:owner,admin');
+    Route::delete('/owner/tenants/{user}', [OwnerTenantController::class, 'destroy'])
+        ->middleware('role:owner,admin');
+    Route::get('/tenant/me', [TenantSelfController::class, 'me'])
+        ->middleware('role:tenant');
+    Route::get('/tenant/assignments', [TenantSelfController::class, 'assignments'])
+        ->middleware('role:tenant');
     Route::get('/properties', [\App\Http\Controllers\Api\PropertyController::class, 'index']);
     Route::post('/properties', [\App\Http\Controllers\Api\PropertyController::class, 'store'])
         ->middleware('role:owner,admin');
