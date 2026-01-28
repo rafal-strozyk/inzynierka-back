@@ -16,9 +16,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Lista uzytkownikow.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -56,14 +57,17 @@ endpoints:
       -
         custom: []
         status: 401
-        content: '{"message":"Missing token."}'
+        content: '{"message":"Invalid token."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
         description: null
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -80,9 +84,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Tworzenie uzytkownika przez admina.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -250,7 +255,10 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -267,9 +275,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Edycja uzytkownika przez admina.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -304,151 +313,167 @@ endpoints:
       name:
         custom: []
         name: name
-        description: 'Must not be greater than 255 characters.'
+        description: 'Imie i nazwisko.'
         required: false
-        example: b
+        example: 'Jan Kowalski'
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       email:
         custom: []
         name: email
-        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        description: 'Email uzytkownika.'
         required: false
-        example: zbailey@example.net
+        example: user@example.com
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       password:
         custom: []
         name: password
-        description: 'Must be at least 8 characters.'
+        description: 'Haslo (min. 8 znakow).'
         required: false
-        example: '-0pBNvYgxw'
+        example: secret123
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       role:
         custom: []
         name: role
-        description: ''
+        description: 'Rola uzytkownika (admin/owner/tenant).'
         required: false
-        example: null
+        example: tenant
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       first_name:
         custom: []
         name: first_name
-        description: 'Must not be greater than 100 characters.'
+        description: Imie.
         required: false
-        example: a
+        example: Jan
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       last_name:
         custom: []
         name: last_name
-        description: 'Must not be greater than 100 characters.'
+        description: Nazwisko.
         required: false
-        example: 'y'
+        example: Kowalski
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       phone:
         custom: []
         name: phone
-        description: 'Must not be greater than 20 characters.'
+        description: 'Numer telefonu.'
         required: false
-        example: kcmyuwpwlvqwrsit
+        example: '+48 500 000 001'
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       address_registered:
         custom: []
         name: address_registered
-        description: 'Must not be greater than 255 characters.'
+        description: 'Adres zameldowania.'
         required: false
-        example: c
+        example: 'ul. Glowna 1'
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       city:
         custom: []
         name: city
-        description: 'Must not be greater than 100 characters.'
+        description: Miasto.
         required: false
-        example: p
+        example: Warszawa
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       birth_date:
         custom: []
         name: birth_date
-        description: 'Must be a valid date.'
+        description: 'Data urodzenia (YYYY-MM-DD).'
         required: false
-        example: '2026-01-28T23:10:27'
-        type: string
+        example: '1990-01-01'
+        type: date
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       pesel:
         custom: []
         name: pesel
-        description: 'Must not be greater than 11 characters.'
+        description: PESEL.
         required: false
-        example: scqldz
+        example: '90010112345'
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       notes:
         custom: []
         name: notes
-        description: ''
+        description: Uwagi.
         required: false
-        example: architecto
+        example: 'Aktualizacja danych.'
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
+      password_confirmation:
+        custom: []
+        name: password_confirmation
+        description: 'Potwierdzenie hasla.'
+        required: false
+        example: secret123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
     cleanBodyParameters:
-      name: b
-      email: zbailey@example.net
-      password: '-0pBNvYgxw'
-      first_name: a
-      last_name: 'y'
-      phone: kcmyuwpwlvqwrsit
-      address_registered: c
-      city: p
-      birth_date: '2026-01-28T23:10:27'
-      pesel: scqldz
-      notes: architecto
+      name: 'Jan Kowalski'
+      email: user@example.com
+      password: secret123
+      role: tenant
+      first_name: Jan
+      last_name: Kowalski
+      phone: '+48 500 000 001'
+      address_registered: 'ul. Glowna 1'
+      city: Warszawa
+      birth_date: '1990-01-01'
+      pesel: '90010112345'
+      notes: 'Aktualizacja danych.'
+      password_confirmation: secret123
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null

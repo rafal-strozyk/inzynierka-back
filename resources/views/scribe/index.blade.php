@@ -113,43 +113,6 @@
                             </li>
                                                                         </ul>
                             </ul>
-                    <ul id="tocify-header-endpoints" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="endpoints">
-                    <a href="#endpoints">Endpoints</a>
-                </li>
-                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-properties--property_id--photos">
-                                <a href="#endpoints-GETapi-properties--property_id--photos">GET api/properties/{property_id}/photos</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-properties--property_id--photos">
-                                <a href="#endpoints-POSTapi-properties--property_id--photos">POST api/properties/{property_id}/photos</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-properties--property_id--rooms">
-                                <a href="#endpoints-GETapi-properties--property_id--rooms">GET api/properties/{property_id}/rooms</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-properties--property_id--rooms">
-                                <a href="#endpoints-POSTapi-properties--property_id--rooms">POST api/properties/{property_id}/rooms</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-rooms">
-                                <a href="#endpoints-GETapi-rooms">GET api/rooms</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-rooms--room_id-">
-                                <a href="#endpoints-GETapi-rooms--room_id-">GET api/rooms/{room_id}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-rooms--room_id-">
-                                <a href="#endpoints-PUTapi-rooms--room_id-">PUT api/rooms/{room_id}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-rooms--room_id-">
-                                <a href="#endpoints-DELETEapi-rooms--room_id-">DELETE api/rooms/{room_id}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-rooms--room_id--photos">
-                                <a href="#endpoints-GETapi-rooms--room_id--photos">GET api/rooms/{room_id}/photos</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-rooms--room_id--photos">
-                                <a href="#endpoints-POSTapi-rooms--room_id--photos">POST api/rooms/{room_id}/photos</a>
-                            </li>
-                                                                        </ul>
-                            </ul>
                     <ul id="tocify-header-nieruchomosci" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="nieruchomosci">
                     <a href="#nieruchomosci">Nieruchomości</a>
@@ -169,6 +132,12 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="nieruchomosci-DELETEapi-properties--property_id-">
                                 <a href="#nieruchomosci-DELETEapi-properties--property_id-">Usuwanie nieruchomości.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="nieruchomosci-GETapi-properties--property_id--photos">
+                                <a href="#nieruchomosci-GETapi-properties--property_id--photos">Lista zdjec nieruchomosci.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="nieruchomosci-POSTapi-properties--property_id--photos">
+                                <a href="#nieruchomosci-POSTapi-properties--property_id--photos">Dodanie zdjec nieruchomosci.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -197,6 +166,37 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="owner-DELETEapi-owner-assignments--assignment_id-">
                                 <a href="#owner-DELETEapi-owner-assignments--assignment_id-">Odpiecie najemcy od nieruchomosci/pokoju.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-pokoje" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="pokoje">
+                    <a href="#pokoje">Pokoje</a>
+                </li>
+                                    <ul id="tocify-subheader-pokoje" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="pokoje-GETapi-properties--property_id--rooms">
+                                <a href="#pokoje-GETapi-properties--property_id--rooms">Lista pokoi w nieruchomosci.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pokoje-POSTapi-properties--property_id--rooms">
+                                <a href="#pokoje-POSTapi-properties--property_id--rooms">Dodanie pokoju do nieruchomosci.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pokoje-GETapi-rooms">
+                                <a href="#pokoje-GETapi-rooms">Lista pokoi.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pokoje-GETapi-rooms--room_id-">
+                                <a href="#pokoje-GETapi-rooms--room_id-">Szczegoly pokoju.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pokoje-PUTapi-rooms--room_id-">
+                                <a href="#pokoje-PUTapi-rooms--room_id-">Edycja pokoju.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pokoje-DELETEapi-rooms--room_id-">
+                                <a href="#pokoje-DELETEapi-rooms--room_id-">Usuniecie pokoju.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pokoje-GETapi-rooms--room_id--photos">
+                                <a href="#pokoje-GETapi-rooms--room_id--photos">Lista zdjec pokoju.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pokoje-POSTapi-rooms--room_id--photos">
+                                <a href="#pokoje-POSTapi-rooms--room_id--photos">Dodanie zdjec pokoju.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -239,7 +239,9 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).&lt;/aside&gt;</code></pre>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>This API is not authenticated.</p>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer Bearer {YOUR_TOKEN}"</code></strong>.</p>
+<p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
+<p>Use the token returned from <code>POST /login</code> in the <code>Authorization</code> header.</p>
 
         <h1 id="admin">Admin</h1>
 
@@ -248,6 +250,7 @@ You can switch the language used with the tabs at the top right (or from the nav
                                 <h2 id="admin-GETapi-admin-users">Lista uzytkownikow.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -259,6 +262,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://inz.test/api/admin/users?page=2&amp;per_page=10" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -276,6 +280,7 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -301,7 +306,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Missing token.&quot;
+    &quot;message&quot;: &quot;Invalid token.&quot;
 }</code>
  </pre>
     </span>
@@ -322,7 +327,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-admin-users" data-method="GET"
       data-path="api/admin/users"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -352,6 +357,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/admin/users</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-admin-users"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -406,6 +423,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="admin-POSTapi-admin-users">Tworzenie uzytkownika przez admina.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -417,6 +435,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://inz.test/api/admin/users" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -443,6 +462,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -490,7 +510,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-admin-users" data-method="POST"
       data-path="api/admin/users"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -520,6 +540,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/admin/users</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-admin-users"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -706,6 +738,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="admin-PUTapi-admin-users--user_id-">Edycja uzytkownika przez admina.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -717,20 +750,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://inz.test/api/admin/users/1" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"b\",
-    \"email\": \"zbailey@example.net\",
-    \"password\": \"-0pBNvYgxw\",
-    \"first_name\": \"a\",
-    \"last_name\": \"y\",
-    \"phone\": \"kcmyuwpwlvqwrsit\",
-    \"address_registered\": \"c\",
-    \"city\": \"p\",
-    \"birth_date\": \"2026-01-28T23:10:27\",
-    \"pesel\": \"scqldz\",
-    \"notes\": \"architecto\"
+    \"name\": \"Jan Kowalski\",
+    \"email\": \"user@example.com\",
+    \"password\": \"secret123\",
+    \"role\": \"tenant\",
+    \"first_name\": \"Jan\",
+    \"last_name\": \"Kowalski\",
+    \"phone\": \"+48 500 000 001\",
+    \"address_registered\": \"ul. Glowna 1\",
+    \"city\": \"Warszawa\",
+    \"birth_date\": \"1990-01-01\",
+    \"pesel\": \"90010112345\",
+    \"notes\": \"Aktualizacja danych.\",
+    \"password_confirmation\": \"secret123\"
 }"
 </code></pre></div>
 
@@ -741,22 +777,25 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "name": "b",
-    "email": "zbailey@example.net",
-    "password": "-0pBNvYgxw",
-    "first_name": "a",
-    "last_name": "y",
-    "phone": "kcmyuwpwlvqwrsit",
-    "address_registered": "c",
-    "city": "p",
-    "birth_date": "2026-01-28T23:10:27",
-    "pesel": "scqldz",
-    "notes": "architecto"
+    "name": "Jan Kowalski",
+    "email": "user@example.com",
+    "password": "secret123",
+    "role": "tenant",
+    "first_name": "Jan",
+    "last_name": "Kowalski",
+    "phone": "+48 500 000 001",
+    "address_registered": "ul. Glowna 1",
+    "city": "Warszawa",
+    "birth_date": "1990-01-01",
+    "pesel": "90010112345",
+    "notes": "Aktualizacja danych.",
+    "password_confirmation": "secret123"
 };
 
 fetch(url, {
@@ -786,7 +825,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-PUTapi-admin-users--user_id-" data-method="PUT"
       data-path="api/admin/users/{user_id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -816,6 +855,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/admin/users/{user_id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-admin-users--user_id-"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -873,10 +924,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="b"
+               value="Jan Kowalski"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>b</code></p>
+<p>Imie i nazwisko. Example: <code>Jan Kowalski</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -885,10 +936,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="zbailey@example.net"
+               value="user@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>zbailey@example.net</code></p>
+<p>Email uzytkownika. Example: <code>user@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -897,10 +948,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="-0pBNvYgxw"
+               value="secret123"
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Example: <code>-0pBNvYgxw</code></p>
+<p>Haslo (min. 8 znakow). Example: <code>secret123</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -909,10 +960,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="role"                data-endpoint="PUTapi-admin-users--user_id-"
-               value=""
+               value="tenant"
                data-component="body">
     <br>
-
+<p>Rola uzytkownika (admin/owner/tenant). Example: <code>tenant</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
@@ -921,10 +972,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="first_name"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="a"
+               value="Jan"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>a</code></p>
+<p>Imie. Example: <code>Jan</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -933,10 +984,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="last_name"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="y"
+               value="Kowalski"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>y</code></p>
+<p>Nazwisko. Example: <code>Kowalski</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -945,10 +996,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="phone"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="kcmyuwpwlvqwrsit"
+               value="+48 500 000 001"
                data-component="body">
     <br>
-<p>Must not be greater than 20 characters. Example: <code>kcmyuwpwlvqwrsit</code></p>
+<p>Numer telefonu. Example: <code>+48 500 000 001</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address_registered</code></b>&nbsp;&nbsp;
@@ -957,10 +1008,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="address_registered"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="c"
+               value="ul. Glowna 1"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>c</code></p>
+<p>Adres zameldowania. Example: <code>ul. Glowna 1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
@@ -969,22 +1020,22 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="city"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="p"
+               value="Warszawa"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>p</code></p>
+<p>Miasto. Example: <code>Warszawa</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>date</small>&nbsp;
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
                               name="birth_date"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="2026-01-28T23:10:27"
+               value="1990-01-01"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-28T23:10:27</code></p>
+<p>Data urodzenia (YYYY-MM-DD). Example: <code>1990-01-01</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>pesel</code></b>&nbsp;&nbsp;
@@ -993,10 +1044,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="pesel"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="scqldz"
+               value="90010112345"
                data-component="body">
     <br>
-<p>Must not be greater than 11 characters. Example: <code>scqldz</code></p>
+<p>PESEL. Example: <code>90010112345</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -1005,10 +1056,22 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="architecto"
+               value="Aktualizacja danych."
                data-component="body">
     <br>
-<p>Example: <code>architecto</code></p>
+<p>Uwagi. Example: <code>Aktualizacja danych.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password_confirmation"                data-endpoint="PUTapi-admin-users--user_id-"
+               value="secret123"
+               data-component="body">
+    <br>
+<p>Potwierdzenie hasla. Example: <code>secret123</code></p>
         </div>
         </form>
 
@@ -1525,6 +1588,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="autoryzacja-POSTapi-logout">Wylogowanie</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>Inwaliduje bieżący token sesji.</p>
@@ -1536,6 +1600,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://inz.test/api/logout" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -1546,6 +1611,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1594,7 +1660,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-logout" data-method="POST"
       data-path="api/logout"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1625,6 +1691,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-logout"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -1653,6 +1731,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="autoryzacja-GETapi-me">Bieżący użytkownik</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>Zwraca dane zalogowanego użytkownika na podstawie tokenu.</p>
@@ -1664,6 +1743,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://inz.test/api/me" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -1674,6 +1754,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1728,7 +1809,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-me" data-method="GET"
       data-path="api/me"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1759,6 +1840,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-me"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -1787,6 +1880,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="autoryzacja-POSTapi-me-change-password">Zmiana hasla zalogowanego uzytkownika</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1798,6 +1892,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://inz.test/api/me/change-password" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -1814,6 +1909,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1869,7 +1965,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-me-change-password" data-method="POST"
       data-path="api/me/change-password"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1899,6 +1995,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/me/change-password</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-me-change-password"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -1978,6 +2086,7 @@ Wymaga roli owner lub admin.</p>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://inz.test/api/register" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -2004,6 +2113,7 @@ Wymaga roli owner lub admin.</p>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2122,6 +2232,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/register</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-register"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -2308,6 +2430,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="autoryzacja-POSTapi-admin-users--user_id--reset-password">Reset hasla przez admina</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>Admin moze ustawic haslo bez maila albo wyslac link do resetu.</p>
@@ -2319,6 +2442,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://inz.test/api/admin/users/1/reset-password" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -2335,6 +2459,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2390,7 +2515,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-admin-users--user_id--reset-password" data-method="POST"
       data-path="api/admin/users/{user_id}/reset-password"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -2420,6 +2545,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/admin/users/{user_id}/reset-password</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-admin-users--user_id--reset-password"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -2518,1511 +2655,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-                <h1 id="endpoints">Endpoints</h1>
-
-    
-
-                                <h2 id="endpoints-GETapi-properties--property_id--photos">GET api/properties/{property_id}/photos</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-properties--property_id--photos">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://inz.test/api/properties/1/photos" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://inz.test/api/properties/1/photos"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-properties--property_id--photos">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Missing token.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-properties--property_id--photos" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-properties--property_id--photos"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-properties--property_id--photos"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-properties--property_id--photos" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-properties--property_id--photos">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-properties--property_id--photos" data-method="GET"
-      data-path="api/properties/{property_id}/photos"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-properties--property_id--photos', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-properties--property_id--photos"
-                    onclick="tryItOut('GETapi-properties--property_id--photos');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-properties--property_id--photos"
-                    onclick="cancelTryOut('GETapi-properties--property_id--photos');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-properties--property_id--photos"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/properties/{property_id}/photos</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-properties--property_id--photos"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-properties--property_id--photos"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="property_id"                data-endpoint="GETapi-properties--property_id--photos"
-               value="1"
-               data-component="url">
-    <br>
-<p>The ID of the property. Example: <code>1</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-POSTapi-properties--property_id--photos">POST api/properties/{property_id}/photos</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-properties--property_id--photos">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://inz.test/api/properties/1/photos" \
-    --header "Content-Type: multipart/form-data" \
-    --header "Accept: application/json" \
-    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/php9fa1j4mbghdl3TvKul8" </code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://inz.test/api/properties/1/photos"
-);
-
-const headers = {
-    "Content-Type": "multipart/form-data",
-    "Accept": "application/json",
-};
-
-const body = new FormData();
-body.append('photos[]', document.querySelector('input[name="photos[]"]').files[0]);
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-properties--property_id--photos">
-</span>
-<span id="execution-results-POSTapi-properties--property_id--photos" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-properties--property_id--photos"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-properties--property_id--photos"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-properties--property_id--photos" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-properties--property_id--photos">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-POSTapi-properties--property_id--photos" data-method="POST"
-      data-path="api/properties/{property_id}/photos"
-      data-authed="0"
-      data-hasfiles="1"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-properties--property_id--photos', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-properties--property_id--photos"
-                    onclick="tryItOut('POSTapi-properties--property_id--photos');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-properties--property_id--photos"
-                    onclick="cancelTryOut('POSTapi-properties--property_id--photos');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-properties--property_id--photos"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/properties/{property_id}/photos</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-properties--property_id--photos"
-               value="multipart/form-data"
-               data-component="header">
-    <br>
-<p>Example: <code>multipart/form-data</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-properties--property_id--photos"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="property_id"                data-endpoint="POSTapi-properties--property_id--photos"
-               value="1"
-               data-component="url">
-    <br>
-<p>The ID of the property. Example: <code>1</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>photos</code></b>&nbsp;&nbsp;
-<small>file[]</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="file" style="display: none"
-                              name="photos[0]"                data-endpoint="POSTapi-properties--property_id--photos"
-               data-component="body">
-        <input type="file" style="display: none"
-               name="photos[1]"                data-endpoint="POSTapi-properties--property_id--photos"
-               data-component="body">
-    <br>
-<p>Must be a file. Must be an image. Must not be greater than 5120 kilobytes.</p>
-        </div>
-        </form>
-
-                    <h2 id="endpoints-GETapi-properties--property_id--rooms">GET api/properties/{property_id}/rooms</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-properties--property_id--rooms">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://inz.test/api/properties/1/rooms" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://inz.test/api/properties/1/rooms"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-properties--property_id--rooms">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Missing token.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-properties--property_id--rooms" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-properties--property_id--rooms"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-properties--property_id--rooms"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-properties--property_id--rooms" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-properties--property_id--rooms">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-properties--property_id--rooms" data-method="GET"
-      data-path="api/properties/{property_id}/rooms"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-properties--property_id--rooms', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-properties--property_id--rooms"
-                    onclick="tryItOut('GETapi-properties--property_id--rooms');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-properties--property_id--rooms"
-                    onclick="cancelTryOut('GETapi-properties--property_id--rooms');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-properties--property_id--rooms"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/properties/{property_id}/rooms</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-properties--property_id--rooms"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-properties--property_id--rooms"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="property_id"                data-endpoint="GETapi-properties--property_id--rooms"
-               value="1"
-               data-component="url">
-    <br>
-<p>The ID of the property. Example: <code>1</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-POSTapi-properties--property_id--rooms">POST api/properties/{property_id}/rooms</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-properties--property_id--rooms">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://inz.test/api/properties/1/rooms" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"name\": \"b\",
-    \"room_number\": \"ngzmiyvdljnikhwa\",
-    \"area\": 50,
-    \"rent_cost\": 62
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://inz.test/api/properties/1/rooms"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "name": "b",
-    "room_number": "ngzmiyvdljnikhwa",
-    "area": 50,
-    "rent_cost": 62
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-properties--property_id--rooms">
-</span>
-<span id="execution-results-POSTapi-properties--property_id--rooms" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-properties--property_id--rooms"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-properties--property_id--rooms"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-properties--property_id--rooms" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-properties--property_id--rooms">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-POSTapi-properties--property_id--rooms" data-method="POST"
-      data-path="api/properties/{property_id}/rooms"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-properties--property_id--rooms', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-properties--property_id--rooms"
-                    onclick="tryItOut('POSTapi-properties--property_id--rooms');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-properties--property_id--rooms"
-                    onclick="cancelTryOut('POSTapi-properties--property_id--rooms');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-properties--property_id--rooms"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/properties/{property_id}/rooms</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-properties--property_id--rooms"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-properties--property_id--rooms"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="property_id"                data-endpoint="POSTapi-properties--property_id--rooms"
-               value="1"
-               data-component="url">
-    <br>
-<p>The ID of the property. Example: <code>1</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="name"                data-endpoint="POSTapi-properties--property_id--rooms"
-               value="b"
-               data-component="body">
-    <br>
-<p>Must not be greater than 100 characters. Example: <code>b</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>room_number</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="room_number"                data-endpoint="POSTapi-properties--property_id--rooms"
-               value="ngzmiyvdljnikhwa"
-               data-component="body">
-    <br>
-<p>Must not be greater than 20 characters. Example: <code>ngzmiyvdljnikhwa</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>area</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="area"                data-endpoint="POSTapi-properties--property_id--rooms"
-               value="50"
-               data-component="body">
-    <br>
-<p>Must be at least 0. Example: <code>50</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>rent_cost</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="rent_cost"                data-endpoint="POSTapi-properties--property_id--rooms"
-               value="62"
-               data-component="body">
-    <br>
-<p>Must be at least 0. Example: <code>62</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="status"                data-endpoint="POSTapi-properties--property_id--rooms"
-               value=""
-               data-component="body">
-    <br>
-
-        </div>
-        </form>
-
-                    <h2 id="endpoints-GETapi-rooms">GET api/rooms</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-rooms">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://inz.test/api/rooms" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://inz.test/api/rooms"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-rooms">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Missing token.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-rooms" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-rooms"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-rooms"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-rooms" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-rooms">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-rooms" data-method="GET"
-      data-path="api/rooms"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-rooms', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-rooms"
-                    onclick="tryItOut('GETapi-rooms');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-rooms"
-                    onclick="cancelTryOut('GETapi-rooms');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-rooms"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/rooms</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-rooms"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-rooms"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-GETapi-rooms--room_id-">GET api/rooms/{room_id}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-rooms--room_id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://inz.test/api/rooms/16" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://inz.test/api/rooms/16"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-rooms--room_id-">
-            <blockquote>
-            <p>Example response (404):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;No query results for model [App\\Models\\Room] 16&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-rooms--room_id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-rooms--room_id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-rooms--room_id-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-rooms--room_id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-rooms--room_id-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-rooms--room_id-" data-method="GET"
-      data-path="api/rooms/{room_id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-rooms--room_id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-rooms--room_id-"
-                    onclick="tryItOut('GETapi-rooms--room_id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-rooms--room_id-"
-                    onclick="cancelTryOut('GETapi-rooms--room_id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-rooms--room_id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/rooms/{room_id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-rooms--room_id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-rooms--room_id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>room_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="room_id"                data-endpoint="GETapi-rooms--room_id-"
-               value="16"
-               data-component="url">
-    <br>
-<p>The ID of the room. Example: <code>16</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-PUTapi-rooms--room_id-">PUT api/rooms/{room_id}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-PUTapi-rooms--room_id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PUT \
-    "http://inz.test/api/rooms/16" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"name\": \"b\",
-    \"room_number\": \"ngzmiyvdljnikhwa\",
-    \"area\": 50,
-    \"rent_cost\": 62
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://inz.test/api/rooms/16"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "name": "b",
-    "room_number": "ngzmiyvdljnikhwa",
-    "area": 50,
-    "rent_cost": 62
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PUTapi-rooms--room_id-">
-</span>
-<span id="execution-results-PUTapi-rooms--room_id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-rooms--room_id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-rooms--room_id-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-PUTapi-rooms--room_id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-rooms--room_id-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-PUTapi-rooms--room_id-" data-method="PUT"
-      data-path="api/rooms/{room_id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-rooms--room_id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-rooms--room_id-"
-                    onclick="tryItOut('PUTapi-rooms--room_id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-rooms--room_id-"
-                    onclick="cancelTryOut('PUTapi-rooms--room_id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-rooms--room_id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/rooms/{room_id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="PUTapi-rooms--room_id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="PUTapi-rooms--room_id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>room_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="room_id"                data-endpoint="PUTapi-rooms--room_id-"
-               value="16"
-               data-component="url">
-    <br>
-<p>The ID of the room. Example: <code>16</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="name"                data-endpoint="PUTapi-rooms--room_id-"
-               value="b"
-               data-component="body">
-    <br>
-<p>Must not be greater than 100 characters. Example: <code>b</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>room_number</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="room_number"                data-endpoint="PUTapi-rooms--room_id-"
-               value="ngzmiyvdljnikhwa"
-               data-component="body">
-    <br>
-<p>Must not be greater than 20 characters. Example: <code>ngzmiyvdljnikhwa</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>area</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="area"                data-endpoint="PUTapi-rooms--room_id-"
-               value="50"
-               data-component="body">
-    <br>
-<p>Must be at least 0. Example: <code>50</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>rent_cost</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="rent_cost"                data-endpoint="PUTapi-rooms--room_id-"
-               value="62"
-               data-component="body">
-    <br>
-<p>Must be at least 0. Example: <code>62</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="status"                data-endpoint="PUTapi-rooms--room_id-"
-               value=""
-               data-component="body">
-    <br>
-
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="property_id"                data-endpoint="PUTapi-rooms--room_id-"
-               value=""
-               data-component="body">
-    <br>
-
-        </div>
-        </form>
-
-                    <h2 id="endpoints-DELETEapi-rooms--room_id-">DELETE api/rooms/{room_id}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-DELETEapi-rooms--room_id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request DELETE \
-    "http://inz.test/api/rooms/16" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://inz.test/api/rooms/16"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-DELETEapi-rooms--room_id-">
-</span>
-<span id="execution-results-DELETEapi-rooms--room_id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-rooms--room_id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-rooms--room_id-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-rooms--room_id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-rooms--room_id-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-DELETEapi-rooms--room_id-" data-method="DELETE"
-      data-path="api/rooms/{room_id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-rooms--room_id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-rooms--room_id-"
-                    onclick="tryItOut('DELETEapi-rooms--room_id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-rooms--room_id-"
-                    onclick="cancelTryOut('DELETEapi-rooms--room_id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-rooms--room_id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/rooms/{room_id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="DELETEapi-rooms--room_id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="DELETEapi-rooms--room_id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>room_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="room_id"                data-endpoint="DELETEapi-rooms--room_id-"
-               value="16"
-               data-component="url">
-    <br>
-<p>The ID of the room. Example: <code>16</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-GETapi-rooms--room_id--photos">GET api/rooms/{room_id}/photos</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-rooms--room_id--photos">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://inz.test/api/rooms/16/photos" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://inz.test/api/rooms/16/photos"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-rooms--room_id--photos">
-            <blockquote>
-            <p>Example response (404):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;No query results for model [App\\Models\\Room] 16&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-rooms--room_id--photos" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-rooms--room_id--photos"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-rooms--room_id--photos"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-rooms--room_id--photos" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-rooms--room_id--photos">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-rooms--room_id--photos" data-method="GET"
-      data-path="api/rooms/{room_id}/photos"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-rooms--room_id--photos', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-rooms--room_id--photos"
-                    onclick="tryItOut('GETapi-rooms--room_id--photos');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-rooms--room_id--photos"
-                    onclick="cancelTryOut('GETapi-rooms--room_id--photos');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-rooms--room_id--photos"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/rooms/{room_id}/photos</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-rooms--room_id--photos"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-rooms--room_id--photos"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>room_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="room_id"                data-endpoint="GETapi-rooms--room_id--photos"
-               value="16"
-               data-component="url">
-    <br>
-<p>The ID of the room. Example: <code>16</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-POSTapi-rooms--room_id--photos">POST api/rooms/{room_id}/photos</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-rooms--room_id--photos">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://inz.test/api/rooms/16/photos" \
-    --header "Content-Type: multipart/form-data" \
-    --header "Accept: application/json" \
-    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phpp1mkihqi3d2ud17tHm4" </code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://inz.test/api/rooms/16/photos"
-);
-
-const headers = {
-    "Content-Type": "multipart/form-data",
-    "Accept": "application/json",
-};
-
-const body = new FormData();
-body.append('photos[]', document.querySelector('input[name="photos[]"]').files[0]);
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-rooms--room_id--photos">
-</span>
-<span id="execution-results-POSTapi-rooms--room_id--photos" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-rooms--room_id--photos"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-rooms--room_id--photos"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-rooms--room_id--photos" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-rooms--room_id--photos">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-POSTapi-rooms--room_id--photos" data-method="POST"
-      data-path="api/rooms/{room_id}/photos"
-      data-authed="0"
-      data-hasfiles="1"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-rooms--room_id--photos', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-rooms--room_id--photos"
-                    onclick="tryItOut('POSTapi-rooms--room_id--photos');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-rooms--room_id--photos"
-                    onclick="cancelTryOut('POSTapi-rooms--room_id--photos');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-rooms--room_id--photos"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/rooms/{room_id}/photos</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-rooms--room_id--photos"
-               value="multipart/form-data"
-               data-component="header">
-    <br>
-<p>Example: <code>multipart/form-data</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-rooms--room_id--photos"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>room_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="room_id"                data-endpoint="POSTapi-rooms--room_id--photos"
-               value="16"
-               data-component="url">
-    <br>
-<p>The ID of the room. Example: <code>16</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>photos</code></b>&nbsp;&nbsp;
-<small>file[]</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="file" style="display: none"
-                              name="photos[0]"                data-endpoint="POSTapi-rooms--room_id--photos"
-               data-component="body">
-        <input type="file" style="display: none"
-               name="photos[1]"                data-endpoint="POSTapi-rooms--room_id--photos"
-               data-component="body">
-    <br>
-<p>Must be a file. Must be an image. Must not be greater than 5120 kilobytes.</p>
-        </div>
-        </form>
-
                 <h1 id="nieruchomosci">Nieruchomości</h1>
 
     
@@ -4030,6 +2662,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                                 <h2 id="nieruchomosci-GETapi-properties">Lista nieruchomości.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>Zwraca listę nieruchomości wraz z podstawowymi informacjami.</p>
@@ -4041,6 +2674,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://inz.test/api/properties?page=2&amp;per_page=10&amp;search=Centrum&amp;name=Apartament&amp;address=Glowna+10&amp;city=Warszawa&amp;rent_min=1500&amp;rent_max=3500&amp;utilities_min=200&amp;utilities_max=600&amp;has_balcony=1&amp;sort_by=rent_cost&amp;sort_dir=desc" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -4052,7 +2686,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"rent_max\": 8,
     \"utilities_min\": 76,
     \"utilities_max\": 60,
-    \"has_balcony\": true
+    \"has_balcony\": false
 }"
 </code></pre></div>
 
@@ -4081,6 +2715,7 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -4094,7 +2729,7 @@ let body = {
     "rent_max": 8,
     "utilities_min": 76,
     "utilities_max": 60,
-    "has_balcony": true
+    "has_balcony": false
 };
 
 fetch(url, {
@@ -4114,7 +2749,7 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 93,
+            &quot;id&quot;: 109,
             &quot;name&quot;: &quot;sunt nihil&quot;,
             &quot;address&quot;: &quot;Dickens Inlet 7763, m. -&quot;,
             &quot;city&quot;: &quot;Port Gilbertstad&quot;,
@@ -4123,7 +2758,7 @@ fetch(url, {
             &quot;has_balcony&quot;: false
         },
         {
-            &quot;id&quot;: 94,
+            &quot;id&quot;: 110,
             &quot;name&quot;: &quot;aut dolores&quot;,
             &quot;address&quot;: &quot;Keely Wells 1490, m. 10&quot;,
             &quot;city&quot;: &quot;Haagborough&quot;,
@@ -4152,7 +2787,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-properties" data-method="GET"
       data-path="api/properties"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -4182,6 +2817,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/properties</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-properties"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -4490,7 +3137,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>sort_by</code></b>&nbsp;&nbsp;
@@ -4529,7 +3176,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>ID nieruchomości.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>nazwa</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4537,7 +3184,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Nazwa nieruchomości.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>adres</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4545,7 +3192,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Adres w formacie: [ulica] [nr], m. [nr mieszkania]</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>miasto</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4553,7 +3200,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>czynsz</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>rent_cost</code></b>&nbsp;&nbsp;
 <small>number</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4561,7 +3208,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Czynsz (np. 123.09).</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>media</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>utilities_cost</code></b>&nbsp;&nbsp;
 <small>number</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4569,7 +3216,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Koszt mediów (np. 123.09).</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>balkon</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>has_balcony</code></b>&nbsp;&nbsp;
 <small>boolean</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4579,6 +3226,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h2 id="nieruchomosci-POSTapi-properties">Tworzenie nieruchomości.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -4590,8 +3238,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://inz.test/api/properties" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --data "{
+    \"owner_id\": 2,
+    \"name\": \"Apartament Centrum\",
+    \"street\": \"Glowna\",
+    \"street_number\": \"10\",
+    \"apartment_number\": \"12\",
+    \"city\": \"Warszawa\",
+    \"description\": \"Blisko centrum.\",
+    \"status\": \"wolna\",
+    \"rent_cost\": 2500,
+    \"utilities_cost\": 350,
+    \"additional_costs\": 0,
+    \"area_total\": 45.5,
+    \"bathrooms_count\": 1,
+    \"has_balcony\": true,
+    \"rent_by_rooms\": false
+}"
+</code></pre></div>
 
 
 <div class="javascript-example">
@@ -4600,13 +3267,33 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
+};
+
+let body = {
+    "owner_id": 2,
+    "name": "Apartament Centrum",
+    "street": "Glowna",
+    "street_number": "10",
+    "apartment_number": "12",
+    "city": "Warszawa",
+    "description": "Blisko centrum.",
+    "status": "wolna",
+    "rent_cost": 2500,
+    "utilities_cost": 350,
+    "additional_costs": 0,
+    "area_total": 45.5,
+    "bathrooms_count": 1,
+    "has_balcony": true,
+    "rent_by_rooms": false
 };
 
 fetch(url, {
     method: "POST",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
@@ -4630,7 +3317,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-properties" data-method="POST"
       data-path="api/properties"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -4661,6 +3348,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-properties"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -4684,11 +3383,213 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>owner_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="owner_id"                data-endpoint="POSTapi-properties"
+               value="2"
+               data-component="body">
+    <br>
+<p>ID właściciela (wymagane dla admina). Example: <code>2</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-properties"
+               value="Apartament Centrum"
+               data-component="body">
+    <br>
+<p>Nazwa nieruchomości. Example: <code>Apartament Centrum</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>street</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="street"                data-endpoint="POSTapi-properties"
+               value="Glowna"
+               data-component="body">
+    <br>
+<p>Ulica. Example: <code>Glowna</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>street_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="street_number"                data-endpoint="POSTapi-properties"
+               value="10"
+               data-component="body">
+    <br>
+<p>Numer budynku. Example: <code>10</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>apartment_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="apartment_number"                data-endpoint="POSTapi-properties"
+               value="12"
+               data-component="body">
+    <br>
+<p>Numer mieszkania. Example: <code>12</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="city"                data-endpoint="POSTapi-properties"
+               value="Warszawa"
+               data-component="body">
+    <br>
+<p>Miasto. Example: <code>Warszawa</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="description"                data-endpoint="POSTapi-properties"
+               value="Blisko centrum."
+               data-component="body">
+    <br>
+<p>Opis nieruchomości. Example: <code>Blisko centrum.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="POSTapi-properties"
+               value="wolna"
+               data-component="body">
+    <br>
+<p>Status: wolna|zajęta|remontowana|nieaktywna. Example: <code>wolna</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rent_cost</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rent_cost"                data-endpoint="POSTapi-properties"
+               value="2500"
+               data-component="body">
+    <br>
+<p>Czynsz (np. 123.09). Example: <code>2500</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>utilities_cost</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="utilities_cost"                data-endpoint="POSTapi-properties"
+               value="350"
+               data-component="body">
+    <br>
+<p>Koszt mediów (np. 123.09). Example: <code>350</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>additional_costs</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="additional_costs"                data-endpoint="POSTapi-properties"
+               value="0"
+               data-component="body">
+    <br>
+<p>Dodatkowe koszty (np. 0.00). Example: <code>0</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>area_total</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="area_total"                data-endpoint="POSTapi-properties"
+               value="45.5"
+               data-component="body">
+    <br>
+<p>Powierzchnia w m² (np. 35.50). Example: <code>45.5</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bathrooms_count</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="bathrooms_count"                data-endpoint="POSTapi-properties"
+               value="1"
+               data-component="body">
+    <br>
+<p>Liczba łazienek. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>has_balcony</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="POSTapi-properties" style="display: none">
+            <input type="radio" name="has_balcony"
+                   value="true"
+                   data-endpoint="POSTapi-properties"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-properties" style="display: none">
+            <input type="radio" name="has_balcony"
+                   value="false"
+                   data-endpoint="POSTapi-properties"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Czy nieruchomość posiada balkon (true/false). Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rent_by_rooms</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="POSTapi-properties" style="display: none">
+            <input type="radio" name="rent_by_rooms"
+                   value="true"
+                   data-endpoint="POSTapi-properties"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-properties" style="display: none">
+            <input type="radio" name="rent_by_rooms"
+                   value="false"
+                   data-endpoint="POSTapi-properties"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Czy wynajem dotyczy pokoi (true/false). Example: <code>false</code></p>
+        </div>
+        </form>
 
                     <h2 id="nieruchomosci-GETapi-properties--property_id-">Szczegóły nieruchomości.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>Zwraca komplet informacji o wskazanej nieruchomości.</p>
@@ -4700,6 +3601,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://inz.test/api/properties/1" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -4710,6 +3612,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -4729,24 +3632,24 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 95,
-        &quot;owner_id&quot;: 98,
-        &quot;name&quot;: &quot;dignissimos neque&quot;,
-        &quot;street&quot;: &quot;O&#039;Connell Mission&quot;,
-        &quot;street_number&quot;: &quot;7329&quot;,
-        &quot;apartment_number&quot;: &quot;25&quot;,
-        &quot;city&quot;: &quot;Port Nelson&quot;,
-        &quot;rent_cost&quot;: 1594.85,
-        &quot;utilities_cost&quot;: 1140.72,
-        &quot;additional_costs&quot;: 53.3,
+        &quot;id&quot;: 111,
+        &quot;owner_id&quot;: 114,
+        &quot;name&quot;: &quot;aut adipisci&quot;,
+        &quot;street&quot;: &quot;Cronin Crossing&quot;,
+        &quot;street_number&quot;: &quot;44902&quot;,
+        &quot;apartment_number&quot;: null,
+        &quot;city&quot;: &quot;Ferneville&quot;,
+        &quot;rent_cost&quot;: 3242.12,
+        &quot;utilities_cost&quot;: 918.34,
+        &quot;additional_costs&quot;: 394.23,
         &quot;description&quot;: &quot;&quot;,
         &quot;area_total&quot;: 0,
         &quot;bathrooms_count&quot;: 2,
-        &quot;status&quot;: &quot;wolna&quot;,
-        &quot;has_balcony&quot;: true,
+        &quot;status&quot;: &quot;remontowana&quot;,
+        &quot;has_balcony&quot;: false,
         &quot;rent_by_rooms&quot;: true,
-        &quot;created_at&quot;: &quot;2026-01-28T23:10:28.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2026-01-28T23:10:28.000000Z&quot;
+        &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
     }
 }</code>
  </pre>
@@ -4768,7 +3671,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-properties--property_id-" data-method="GET"
       data-path="api/properties/{property_id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -4798,6 +3701,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/properties/{property_id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-properties--property_id-"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -4868,7 +3783,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>ID właściciela (users.id).</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>nazwa</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4876,7 +3791,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Nazwa nieruchomości.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>ulica</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>street</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4884,7 +3799,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>numer_budynku</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>street_number</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4892,7 +3807,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Numer budynku.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>numer_mieszkania</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>apartment_number</code></b>&nbsp;&nbsp;
 <small>string|null</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4900,7 +3815,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Numer mieszkania.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>miasto</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4908,7 +3823,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>opis</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
 <small>string|null</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4924,7 +3839,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Status: wolna|zajęta|remontowana|nieaktywna.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>czynsz</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>rent_cost</code></b>&nbsp;&nbsp;
 <small>number</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4932,7 +3847,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Czynsz (np. 123.09).</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>media</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>utilities_cost</code></b>&nbsp;&nbsp;
 <small>number</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4940,7 +3855,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Koszt mediów (np. 123.09).</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>dodatkowe_koszty</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>additional_costs</code></b>&nbsp;&nbsp;
 <small>number</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4948,7 +3863,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Dodatkowe koszty (np. 0.00).</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>powierzchnia_m2</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>area_total</code></b>&nbsp;&nbsp;
 <small>number|null</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4956,7 +3871,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Powierzchnia w m² (np. 35.50).</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>liczba_lazienek</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>bathrooms_count</code></b>&nbsp;&nbsp;
 <small>int|null</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4964,7 +3879,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Liczba łazienek.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>balkon</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>has_balcony</code></b>&nbsp;&nbsp;
 <small>boolean</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4972,7 +3887,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Czy nieruchomość posiada balkon (true/false).</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>wynajem_na_pokoje</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>rent_by_rooms</code></b>&nbsp;&nbsp;
 <small>boolean</small>&nbsp;
  &nbsp;
  &nbsp;
@@ -4998,6 +3913,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h2 id="nieruchomosci-PUTapi-properties--property_id-">Edycja nieruchomości.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -5009,8 +3925,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://inz.test/api/properties/1" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --data "{
+    \"owner_id\": 2,
+    \"name\": \"Apartament Centrum\",
+    \"street\": \"Glowna\",
+    \"street_number\": \"10\",
+    \"apartment_number\": \"12\",
+    \"city\": \"Warszawa\",
+    \"description\": \"Blisko centrum.\",
+    \"status\": \"wolna\",
+    \"rent_cost\": 2500,
+    \"utilities_cost\": 350,
+    \"additional_costs\": 0,
+    \"area_total\": 45.5,
+    \"bathrooms_count\": 1,
+    \"has_balcony\": true,
+    \"rent_by_rooms\": false
+}"
+</code></pre></div>
 
 
 <div class="javascript-example">
@@ -5019,13 +3954,33 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
+};
+
+let body = {
+    "owner_id": 2,
+    "name": "Apartament Centrum",
+    "street": "Glowna",
+    "street_number": "10",
+    "apartment_number": "12",
+    "city": "Warszawa",
+    "description": "Blisko centrum.",
+    "status": "wolna",
+    "rent_cost": 2500,
+    "utilities_cost": 350,
+    "additional_costs": 0,
+    "area_total": 45.5,
+    "bathrooms_count": 1,
+    "has_balcony": true,
+    "rent_by_rooms": false
 };
 
 fetch(url, {
     method: "PUT",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
@@ -5049,7 +4004,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-PUTapi-properties--property_id-" data-method="PUT"
       data-path="api/properties/{property_id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -5079,6 +4034,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/properties/{property_id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-properties--property_id-"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -5128,11 +4095,213 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>ID nieruchomości. Example: <code>1</code></p>
             </div>
-                    </form>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>owner_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="owner_id"                data-endpoint="PUTapi-properties--property_id-"
+               value="2"
+               data-component="body">
+    <br>
+<p>ID właściciela (tylko admin). Example: <code>2</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="PUTapi-properties--property_id-"
+               value="Apartament Centrum"
+               data-component="body">
+    <br>
+<p>Nazwa nieruchomości. Example: <code>Apartament Centrum</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>street</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="street"                data-endpoint="PUTapi-properties--property_id-"
+               value="Glowna"
+               data-component="body">
+    <br>
+<p>Ulica. Example: <code>Glowna</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>street_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="street_number"                data-endpoint="PUTapi-properties--property_id-"
+               value="10"
+               data-component="body">
+    <br>
+<p>Numer budynku. Example: <code>10</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>apartment_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="apartment_number"                data-endpoint="PUTapi-properties--property_id-"
+               value="12"
+               data-component="body">
+    <br>
+<p>Numer mieszkania. Example: <code>12</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="city"                data-endpoint="PUTapi-properties--property_id-"
+               value="Warszawa"
+               data-component="body">
+    <br>
+<p>Miasto. Example: <code>Warszawa</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="description"                data-endpoint="PUTapi-properties--property_id-"
+               value="Blisko centrum."
+               data-component="body">
+    <br>
+<p>Opis nieruchomości. Example: <code>Blisko centrum.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="PUTapi-properties--property_id-"
+               value="wolna"
+               data-component="body">
+    <br>
+<p>Status: wolna|zajęta|remontowana|nieaktywna. Example: <code>wolna</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rent_cost</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rent_cost"                data-endpoint="PUTapi-properties--property_id-"
+               value="2500"
+               data-component="body">
+    <br>
+<p>Czynsz (np. 123.09). Example: <code>2500</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>utilities_cost</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="utilities_cost"                data-endpoint="PUTapi-properties--property_id-"
+               value="350"
+               data-component="body">
+    <br>
+<p>Koszt mediów (np. 123.09). Example: <code>350</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>additional_costs</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="additional_costs"                data-endpoint="PUTapi-properties--property_id-"
+               value="0"
+               data-component="body">
+    <br>
+<p>Dodatkowe koszty (np. 0.00). Example: <code>0</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>area_total</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="area_total"                data-endpoint="PUTapi-properties--property_id-"
+               value="45.5"
+               data-component="body">
+    <br>
+<p>Powierzchnia w m² (np. 35.50). Example: <code>45.5</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bathrooms_count</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="bathrooms_count"                data-endpoint="PUTapi-properties--property_id-"
+               value="1"
+               data-component="body">
+    <br>
+<p>Liczba łazienek. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>has_balcony</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="PUTapi-properties--property_id-" style="display: none">
+            <input type="radio" name="has_balcony"
+                   value="true"
+                   data-endpoint="PUTapi-properties--property_id-"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-properties--property_id-" style="display: none">
+            <input type="radio" name="has_balcony"
+                   value="false"
+                   data-endpoint="PUTapi-properties--property_id-"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Czy nieruchomość posiada balkon (true/false). Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rent_by_rooms</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="PUTapi-properties--property_id-" style="display: none">
+            <input type="radio" name="rent_by_rooms"
+                   value="true"
+                   data-endpoint="PUTapi-properties--property_id-"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-properties--property_id-" style="display: none">
+            <input type="radio" name="rent_by_rooms"
+                   value="false"
+                   data-endpoint="PUTapi-properties--property_id-"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Czy wynajem dotyczy pokoi (true/false). Example: <code>false</code></p>
+        </div>
+        </form>
 
                     <h2 id="nieruchomosci-DELETEapi-properties--property_id-">Usuwanie nieruchomości.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -5144,6 +4313,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://inz.test/api/properties/1" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -5154,6 +4324,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -5184,7 +4355,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-DELETEapi-properties--property_id-" data-method="DELETE"
       data-path="api/properties/{property_id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -5214,6 +4385,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/properties/{property_id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-properties--property_id-"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -5265,6 +4448,372 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
+                    <h2 id="nieruchomosci-GETapi-properties--property_id--photos">Lista zdjec nieruchomosci.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-properties--property_id--photos">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://inz.test/api/properties/1/photos" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/properties/1/photos"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-properties--property_id--photos">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;file_name&quot;: &quot;mieszkanie-1.jpg&quot;,
+            &quot;url&quot;: &quot;https://example.com/storage/images/properties/1/mieszkanie-1.jpg&quot;,
+            &quot;uploaded_at&quot;: &quot;2026-01-11T10:00:00+00:00&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-properties--property_id--photos" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-properties--property_id--photos"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-properties--property_id--photos"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-properties--property_id--photos" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-properties--property_id--photos">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-properties--property_id--photos" data-method="GET"
+      data-path="api/properties/{property_id}/photos"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-properties--property_id--photos', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-properties--property_id--photos"
+                    onclick="tryItOut('GETapi-properties--property_id--photos');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-properties--property_id--photos"
+                    onclick="cancelTryOut('GETapi-properties--property_id--photos');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-properties--property_id--photos"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/properties/{property_id}/photos</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-properties--property_id--photos"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-properties--property_id--photos"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-properties--property_id--photos"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property_id"                data-endpoint="GETapi-properties--property_id--photos"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the property. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property"                data-endpoint="GETapi-properties--property_id--photos"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID nieruchomosci. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="nieruchomosci-POSTapi-properties--property_id--photos">Dodanie zdjec nieruchomosci.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-properties--property_id--photos">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://inz.test/api/properties/1/photos" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
+    --header "Content-Type: multipart/form-data" \
+    --header "Accept: application/json" \
+    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/php2dv0kgtnpg9aeHPcOj3" \
+    --form "photos[]=@/Users/oskarszmyt/Dokumenty_Lokalne/Politechnika/inz/storage/app/scribe/example.jpg" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/properties/1/photos"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('photos[]', document.querySelector('input[name="photos[]"]').files[0]);
+body.append('photos[]', document.querySelector('input[name="photos[]"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-properties--property_id--photos">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;file_name&quot;: &quot;mieszkanie-1.jpg&quot;,
+            &quot;url&quot;: &quot;https://example.com/storage/images/properties/1/mieszkanie-1.jpg&quot;,
+            &quot;uploaded_at&quot;: &quot;2026-01-11T10:00:00+00:00&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-properties--property_id--photos" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-properties--property_id--photos"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-properties--property_id--photos"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-properties--property_id--photos" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-properties--property_id--photos">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-properties--property_id--photos" data-method="POST"
+      data-path="api/properties/{property_id}/photos"
+      data-authed="1"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-properties--property_id--photos', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-properties--property_id--photos"
+                    onclick="tryItOut('POSTapi-properties--property_id--photos');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-properties--property_id--photos"
+                    onclick="cancelTryOut('POSTapi-properties--property_id--photos');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-properties--property_id--photos"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/properties/{property_id}/photos</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-properties--property_id--photos"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-properties--property_id--photos"
+               value="multipart/form-data"
+               data-component="header">
+    <br>
+<p>Example: <code>multipart/form-data</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-properties--property_id--photos"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property_id"                data-endpoint="POSTapi-properties--property_id--photos"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the property. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property"                data-endpoint="POSTapi-properties--property_id--photos"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID nieruchomosci. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>photos</code></b>&nbsp;&nbsp;
+<small>file[]</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="file" style="display: none"
+                              name="photos[0]"                data-endpoint="POSTapi-properties--property_id--photos"
+               data-component="body">
+        <input type="file" style="display: none"
+               name="photos[1]"                data-endpoint="POSTapi-properties--property_id--photos"
+               data-component="body">
+    <br>
+<p>Must be a file. Must be an image. Must not be greater than 5120 kilobytes.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>photos[]</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="file" style="display: none"
+                              name="photos.0"                data-endpoint="POSTapi-properties--property_id--photos"
+               value=""
+               data-component="body">
+    <br>
+<p>Zdjecia do dodania. Example: <code>storage/app/scribe/example.jpg</code></p>
+        </div>
+        </form>
+
                 <h1 id="owner">Owner</h1>
 
     
@@ -5272,6 +4821,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                                 <h2 id="owner-GETapi-owner-tenants">Lista tenantow.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -5283,6 +4833,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://inz.test/api/owner/tenants?page=2&amp;per_page=10" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -5300,6 +4851,7 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -5325,7 +4877,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Missing token.&quot;
+    &quot;message&quot;: &quot;Invalid token.&quot;
 }</code>
  </pre>
     </span>
@@ -5346,7 +4898,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-owner-tenants" data-method="GET"
       data-path="api/owner/tenants"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -5376,6 +4928,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/owner/tenants</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-owner-tenants"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -5430,6 +4994,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="owner-POSTapi-owner-tenants">Tworzenie tenanta.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -5441,6 +5006,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://inz.test/api/owner/tenants" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -5466,6 +5032,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -5512,7 +5079,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-owner-tenants" data-method="POST"
       data-path="api/owner/tenants"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -5542,6 +5109,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/owner/tenants</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-owner-tenants"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -5716,6 +5295,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="owner-PUTapi-owner-tenants--user_id-">Edycja danych tenanta przez ownera.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -5727,19 +5307,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://inz.test/api/owner/tenants/1" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"b\",
-    \"email\": \"zbailey@example.net\",
-    \"first_name\": \"i\",
-    \"last_name\": \"y\",
-    \"phone\": \"vdljnikhwaykcmyu\",
-    \"address_registered\": \"w\",
-    \"city\": \"p\",
-    \"birth_date\": \"2026-01-28T23:10:27\",
-    \"pesel\": \"wlvqwr\",
-    \"notes\": \"architecto\"
+    \"name\": \"Jan Kowalski\",
+    \"email\": \"user@example.com\",
+    \"first_name\": \"Jan\",
+    \"last_name\": \"Kowalski\",
+    \"phone\": \"+48 500 000 001\",
+    \"address_registered\": \"ul. Glowna 1\",
+    \"city\": \"Warszawa\",
+    \"birth_date\": \"1990-01-01\",
+    \"pesel\": \"90010112345\",
+    \"notes\": \"Aktualizacja danych.\"
 }"
 </code></pre></div>
 
@@ -5750,21 +5331,22 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "name": "b",
-    "email": "zbailey@example.net",
-    "first_name": "i",
-    "last_name": "y",
-    "phone": "vdljnikhwaykcmyu",
-    "address_registered": "w",
-    "city": "p",
-    "birth_date": "2026-01-28T23:10:27",
-    "pesel": "wlvqwr",
-    "notes": "architecto"
+    "name": "Jan Kowalski",
+    "email": "user@example.com",
+    "first_name": "Jan",
+    "last_name": "Kowalski",
+    "phone": "+48 500 000 001",
+    "address_registered": "ul. Glowna 1",
+    "city": "Warszawa",
+    "birth_date": "1990-01-01",
+    "pesel": "90010112345",
+    "notes": "Aktualizacja danych."
 };
 
 fetch(url, {
@@ -5794,7 +5376,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-PUTapi-owner-tenants--user_id-" data-method="PUT"
       data-path="api/owner/tenants/{user_id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -5824,6 +5406,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/owner/tenants/{user_id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-owner-tenants--user_id-"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -5881,10 +5475,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-owner-tenants--user_id-"
-               value="b"
+               value="Jan Kowalski"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>b</code></p>
+<p>Imie i nazwisko. Example: <code>Jan Kowalski</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -5893,10 +5487,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="PUTapi-owner-tenants--user_id-"
-               value="zbailey@example.net"
+               value="user@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>zbailey@example.net</code></p>
+<p>Email uzytkownika. Example: <code>user@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
@@ -5905,10 +5499,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="first_name"                data-endpoint="PUTapi-owner-tenants--user_id-"
-               value="i"
+               value="Jan"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>i</code></p>
+<p>Imie. Example: <code>Jan</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -5917,10 +5511,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="last_name"                data-endpoint="PUTapi-owner-tenants--user_id-"
-               value="y"
+               value="Kowalski"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>y</code></p>
+<p>Nazwisko. Example: <code>Kowalski</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -5929,10 +5523,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="phone"                data-endpoint="PUTapi-owner-tenants--user_id-"
-               value="vdljnikhwaykcmyu"
+               value="+48 500 000 001"
                data-component="body">
     <br>
-<p>Must not be greater than 20 characters. Example: <code>vdljnikhwaykcmyu</code></p>
+<p>Numer telefonu. Example: <code>+48 500 000 001</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address_registered</code></b>&nbsp;&nbsp;
@@ -5941,10 +5535,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="address_registered"                data-endpoint="PUTapi-owner-tenants--user_id-"
-               value="w"
+               value="ul. Glowna 1"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>w</code></p>
+<p>Adres zameldowania. Example: <code>ul. Glowna 1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
@@ -5953,22 +5547,22 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="city"                data-endpoint="PUTapi-owner-tenants--user_id-"
-               value="p"
+               value="Warszawa"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>p</code></p>
+<p>Miasto. Example: <code>Warszawa</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>date</small>&nbsp;
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
                               name="birth_date"                data-endpoint="PUTapi-owner-tenants--user_id-"
-               value="2026-01-28T23:10:27"
+               value="1990-01-01"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-28T23:10:27</code></p>
+<p>Data urodzenia (YYYY-MM-DD). Example: <code>1990-01-01</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>pesel</code></b>&nbsp;&nbsp;
@@ -5977,10 +5571,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="pesel"                data-endpoint="PUTapi-owner-tenants--user_id-"
-               value="wlvqwr"
+               value="90010112345"
                data-component="body">
     <br>
-<p>Must not be greater than 11 characters. Example: <code>wlvqwr</code></p>
+<p>PESEL. Example: <code>90010112345</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -5989,16 +5583,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="PUTapi-owner-tenants--user_id-"
-               value="architecto"
+               value="Aktualizacja danych."
                data-component="body">
     <br>
-<p>Example: <code>architecto</code></p>
+<p>Uwagi. Example: <code>Aktualizacja danych.</code></p>
         </div>
         </form>
 
                     <h2 id="owner-DELETEapi-owner-tenants--user_id-">Usuwanie tenanta.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -6010,6 +5605,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://inz.test/api/owner/tenants/1" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -6020,6 +5616,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -6050,7 +5647,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-DELETEapi-owner-tenants--user_id-" data-method="DELETE"
       data-path="api/owner/tenants/{user_id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -6080,6 +5677,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/owner/tenants/{user_id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-owner-tenants--user_id-"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -6134,6 +5743,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="owner-GETapi-owner-rooms">Lista pokoi z przypisaniami.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -6145,6 +5755,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://inz.test/api/owner/rooms?page=2&amp;per_page=10&amp;property_id=1" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -6167,6 +5778,7 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -6185,19 +5797,37 @@ fetch(url, {
 
 <span id="example-responses-GETapi-owner-rooms">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Missing token.&quot;
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 13,
+            &quot;property_id&quot;: 117,
+            &quot;name&quot;: &quot;eius et&quot;,
+            &quot;room_number&quot;: null,
+            &quot;area&quot;: 12.5,
+            &quot;rent_cost&quot;: 1270.22,
+            &quot;status&quot;: &quot;wolny&quot;,
+            &quot;assignment&quot;: null,
+            &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 14,
+            &quot;property_id&quot;: 118,
+            &quot;name&quot;: &quot;facere tempora&quot;,
+            &quot;room_number&quot;: &quot;90j&quot;,
+            &quot;area&quot;: 14.78,
+            &quot;rent_cost&quot;: 1839.28,
+            &quot;status&quot;: &quot;wolny&quot;,
+            &quot;assignment&quot;: null,
+            &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+        }
+    ]
 }</code>
  </pre>
     </span>
@@ -6218,7 +5848,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-owner-rooms" data-method="GET"
       data-path="api/owner/rooms"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -6248,6 +5878,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/owner/rooms</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-owner-rooms"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -6327,6 +5969,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="owner-POSTapi-owner-assignments">Przypisanie najemcy do nieruchomosci/pokoju.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -6338,15 +5981,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://inz.test/api/owner/assignments" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"tenant_id\": 16,
-    \"property_id\": 16,
-    \"room_id\": 16,
-    \"start_date\": \"2026-01-28T23:10:28\",
-    \"end_date\": \"2052-02-21\",
-    \"is_active\": false
+    \"tenant_id\": 10,
+    \"property_id\": 1,
+    \"room_id\": 3,
+    \"start_date\": \"2026-01-01\",
+    \"end_date\": \"2026-12-31\",
+    \"is_active\": true
 }"
 </code></pre></div>
 
@@ -6357,17 +6001,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "tenant_id": 16,
-    "property_id": 16,
-    "room_id": 16,
-    "start_date": "2026-01-28T23:10:28",
-    "end_date": "2052-02-21",
-    "is_active": false
+    "tenant_id": 10,
+    "property_id": 1,
+    "room_id": 3,
+    "start_date": "2026-01-01",
+    "end_date": "2026-12-31",
+    "is_active": true
 };
 
 fetch(url, {
@@ -6379,7 +6024,42 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-owner-assignments">
-</span>
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;assignment&quot;: {
+        &quot;id&quot;: 1,
+        &quot;tenant_id&quot;: 10,
+        &quot;property_id&quot;: 1,
+        &quot;room_id&quot;: 3,
+        &quot;start_date&quot;: &quot;2026-01-01&quot;,
+        &quot;end_date&quot;: &quot;2026-12-31&quot;,
+        &quot;is_active&quot;: true
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (403):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Forbidden.&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Room already has an active assignment.&quot;
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-owner-assignments" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-owner-assignments"></span>:
@@ -6397,7 +6077,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-owner-assignments" data-method="POST"
       data-path="api/owner/assignments"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -6427,6 +6107,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/owner/assignments</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-owner-assignments"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -6459,10 +6151,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tenant_id"                data-endpoint="POSTapi-owner-assignments"
-               value="16"
+               value="10"
                data-component="body">
     <br>
-<p>Example: <code>16</code></p>
+<p>ID najemcy (users.id). Example: <code>10</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
@@ -6471,10 +6163,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="property_id"                data-endpoint="POSTapi-owner-assignments"
-               value="16"
+               value="1"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the properties table. Example: <code>16</code></p>
+<p>ID nieruchomosci. Example: <code>1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>room_id</code></b>&nbsp;&nbsp;
@@ -6483,34 +6175,34 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="room_id"                data-endpoint="POSTapi-owner-assignments"
-               value="16"
+               value="3"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the rooms table. Example: <code>16</code></p>
+<p>ID pokoju (musi nalezec do nieruchomosci). Example: <code>3</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>date</small>&nbsp;
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
                               name="start_date"                data-endpoint="POSTapi-owner-assignments"
-               value="2026-01-28T23:10:28"
+               value="2026-01-01"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-28T23:10:28</code></p>
+<p>Data rozpoczecia (YYYY-MM-DD). Example: <code>2026-01-01</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>date</small>&nbsp;
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
                               name="end_date"                data-endpoint="POSTapi-owner-assignments"
-               value="2052-02-21"
+               value="2026-12-31"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start_date</code>. Example: <code>2052-02-21</code></p>
+<p>Data zakonczenia (YYYY-MM-DD). Example: <code>2026-12-31</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>is_active</code></b>&nbsp;&nbsp;
@@ -6532,13 +6224,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Czy przypisanie ma byc aktywne. Example: <code>true</code></p>
         </div>
         </form>
 
                     <h2 id="owner-DELETEapi-owner-assignments--assignment_id-">Odpiecie najemcy od nieruchomosci/pokoju.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -6550,8 +6243,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://inz.test/api/owner/assignments/16" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --data "{
+    \"end_date\": \"2026-12-31\"
+}"
 </code></pre></div>
 
 
@@ -6561,19 +6258,69 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
+};
+
+let body = {
+    "end_date": "2026-12-31"
 };
 
 fetch(url, {
     method: "DELETE",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
 <span id="example-responses-DELETEapi-owner-assignments--assignment_id-">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;assignment&quot;: {
+        &quot;id&quot;: 1,
+        &quot;tenant_id&quot;: 10,
+        &quot;property_id&quot;: 1,
+        &quot;room_id&quot;: 3,
+        &quot;start_date&quot;: &quot;2026-01-01&quot;,
+        &quot;end_date&quot;: &quot;2026-12-31&quot;,
+        &quot;is_active&quot;: false
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (403):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Forbidden.&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (409):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Assignment already inactive.&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;The end date must be a date after or equal to start date.&quot;
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-DELETEapi-owner-assignments--assignment_id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-DELETEapi-owner-assignments--assignment_id-"></span>:
@@ -6591,7 +6338,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-DELETEapi-owner-assignments--assignment_id-" data-method="DELETE"
       data-path="api/owner/assignments/{assignment_id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -6621,6 +6368,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/owner/assignments/{assignment_id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-owner-assignments--assignment_id-"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -6673,15 +6432,1660 @@ You can check the Dev Tools console for debugging information.</code></pre>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>date</small>&nbsp;
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
                               name="end_date"                data-endpoint="DELETEapi-owner-assignments--assignment_id-"
+               value="2026-12-31"
+               data-component="body">
+    <br>
+<p>Data zakonczenia (YYYY-MM-DD). Example: <code>2026-12-31</code></p>
+        </div>
+        </form>
+
+                <h1 id="pokoje">Pokoje</h1>
+
+    
+
+                                <h2 id="pokoje-GETapi-properties--property_id--rooms">Lista pokoi w nieruchomosci.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-properties--property_id--rooms">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://inz.test/api/properties/1/rooms?page=2&amp;per_page=10" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/properties/1/rooms"
+);
+
+const params = {
+    "page": "2",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-properties--property_id--rooms">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 8,
+            &quot;property_id&quot;: 112,
+            &quot;name&quot;: &quot;autem placeat&quot;,
+            &quot;room_number&quot;: &quot;64z&quot;,
+            &quot;area&quot;: 15.94,
+            &quot;rent_cost&quot;: 1474.87,
+            &quot;status&quot;: &quot;wolny&quot;,
+            &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;property_id&quot;: 113,
+            &quot;name&quot;: &quot;et modi&quot;,
+            &quot;room_number&quot;: &quot;27f&quot;,
+            &quot;area&quot;: null,
+            &quot;rent_cost&quot;: 1583.62,
+            &quot;status&quot;: &quot;wolny&quot;,
+            &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-properties--property_id--rooms" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-properties--property_id--rooms"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-properties--property_id--rooms"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-properties--property_id--rooms" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-properties--property_id--rooms">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-properties--property_id--rooms" data-method="GET"
+      data-path="api/properties/{property_id}/rooms"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-properties--property_id--rooms', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-properties--property_id--rooms"
+                    onclick="tryItOut('GETapi-properties--property_id--rooms');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-properties--property_id--rooms"
+                    onclick="cancelTryOut('GETapi-properties--property_id--rooms');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-properties--property_id--rooms"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/properties/{property_id}/rooms</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-properties--property_id--rooms"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-properties--property_id--rooms"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-properties--property_id--rooms"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property_id"                data-endpoint="GETapi-properties--property_id--rooms"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the property. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property"                data-endpoint="GETapi-properties--property_id--rooms"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID nieruchomosci. Example: <code>1</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="page"                data-endpoint="GETapi-properties--property_id--rooms"
+               value="2"
+               data-component="query">
+    <br>
+<p>Numer strony. Example: <code>2</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-properties--property_id--rooms"
+               value="10"
+               data-component="query">
+    <br>
+<p>Liczba rekordow na strone. Example: <code>10</code></p>
+            </div>
+                </form>
+
+                    <h2 id="pokoje-POSTapi-properties--property_id--rooms">Dodanie pokoju do nieruchomosci.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-properties--property_id--rooms">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://inz.test/api/properties/1/rooms" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"Pokoj dzienny\",
+    \"room_number\": \"2A\",
+    \"area\": 12.5,
+    \"rent_cost\": 1200,
+    \"status\": \"wolny\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/properties/1/rooms"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "Pokoj dzienny",
+    "room_number": "2A",
+    "area": 12.5,
+    "rent_cost": 1200,
+    "status": "wolny"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-properties--property_id--rooms">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;room&quot;: {
+        &quot;id&quot;: 1,
+        &quot;property_id&quot;: 1,
+        &quot;name&quot;: &quot;Pokoj dzienny&quot;,
+        &quot;room_number&quot;: &quot;2A&quot;,
+        &quot;area&quot;: 12.5,
+        &quot;rent_cost&quot;: 1200,
+        &quot;status&quot;: &quot;wolny&quot;,
+        &quot;photos&quot;: [],
+        &quot;created_at&quot;: &quot;2026-01-11T10:00:00+00:00&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-11T10:00:00+00:00&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (403):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Forbidden.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-properties--property_id--rooms" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-properties--property_id--rooms"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-properties--property_id--rooms"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-properties--property_id--rooms" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-properties--property_id--rooms">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-properties--property_id--rooms" data-method="POST"
+      data-path="api/properties/{property_id}/rooms"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-properties--property_id--rooms', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-properties--property_id--rooms"
+                    onclick="tryItOut('POSTapi-properties--property_id--rooms');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-properties--property_id--rooms"
+                    onclick="cancelTryOut('POSTapi-properties--property_id--rooms');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-properties--property_id--rooms"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/properties/{property_id}/rooms</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-properties--property_id--rooms"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-properties--property_id--rooms"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-properties--property_id--rooms"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property_id"                data-endpoint="POSTapi-properties--property_id--rooms"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the property. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property"                data-endpoint="POSTapi-properties--property_id--rooms"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID nieruchomosci. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-properties--property_id--rooms"
+               value="Pokoj dzienny"
+               data-component="body">
+    <br>
+<p>Nazwa pokoju. Example: <code>Pokoj dzienny</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>room_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="room_number"                data-endpoint="POSTapi-properties--property_id--rooms"
+               value="2A"
+               data-component="body">
+    <br>
+<p>Numer pokoju. Example: <code>2A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>area</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="area"                data-endpoint="POSTapi-properties--property_id--rooms"
+               value="12.5"
+               data-component="body">
+    <br>
+<p>Powierzchnia w m2. Example: <code>12.5</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rent_cost</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rent_cost"                data-endpoint="POSTapi-properties--property_id--rooms"
+               value="1200"
+               data-component="body">
+    <br>
+<p>Czynsz za pokoj. Example: <code>1200</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="POSTapi-properties--property_id--rooms"
+               value="wolny"
+               data-component="body">
+    <br>
+<p>Status: wolny|zajęty|rezerwacja. Example: <code>wolny</code></p>
+        </div>
+        </form>
+
+                    <h2 id="pokoje-GETapi-rooms">Lista pokoi.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Zwraca pokoje z podstawowymi danymi nieruchomosci.</p>
+
+<span id="example-requests-GETapi-rooms">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://inz.test/api/rooms?page=2&amp;per_page=10" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/rooms"
+);
+
+const params = {
+    "page": "2",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-rooms">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 10,
+            &quot;property_id&quot;: 114,
+            &quot;name&quot;: &quot;aut adipisci&quot;,
+            &quot;room_number&quot;: &quot;32l&quot;,
+            &quot;area&quot;: 27.47,
+            &quot;rent_cost&quot;: 634.06,
+            &quot;status&quot;: &quot;wolny&quot;,
+            &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 11,
+            &quot;property_id&quot;: 115,
+            &quot;name&quot;: &quot;veniam corporis&quot;,
+            &quot;room_number&quot;: &quot;51n&quot;,
+            &quot;area&quot;: 17.85,
+            &quot;rent_cost&quot;: 1872.76,
+            &quot;status&quot;: &quot;wolny&quot;,
+            &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-rooms" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-rooms"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-rooms"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-rooms" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-rooms">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-rooms" data-method="GET"
+      data-path="api/rooms"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-rooms', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-rooms"
+                    onclick="tryItOut('GETapi-rooms');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-rooms"
+                    onclick="cancelTryOut('GETapi-rooms');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-rooms"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/rooms</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-rooms"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-rooms"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-rooms"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="page"                data-endpoint="GETapi-rooms"
+               value="2"
+               data-component="query">
+    <br>
+<p>Numer strony. Example: <code>2</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-rooms"
+               value="10"
+               data-component="query">
+    <br>
+<p>Liczba rekordow na strone. Example: <code>10</code></p>
+            </div>
+                </form>
+
+                    <h2 id="pokoje-GETapi-rooms--room_id-">Szczegoly pokoju.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-rooms--room_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://inz.test/api/rooms/16" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/rooms/16"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-rooms--room_id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 12,
+        &quot;property_id&quot;: 116,
+        &quot;name&quot;: &quot;aut adipisci&quot;,
+        &quot;room_number&quot;: &quot;32l&quot;,
+        &quot;area&quot;: 27.47,
+        &quot;rent_cost&quot;: 634.06,
+        &quot;status&quot;: &quot;wolny&quot;,
+        &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-rooms--room_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-rooms--room_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-rooms--room_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-rooms--room_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-rooms--room_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-rooms--room_id-" data-method="GET"
+      data-path="api/rooms/{room_id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-rooms--room_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-rooms--room_id-"
+                    onclick="tryItOut('GETapi-rooms--room_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-rooms--room_id-"
+                    onclick="cancelTryOut('GETapi-rooms--room_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-rooms--room_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/rooms/{room_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-rooms--room_id-"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-rooms--room_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-rooms--room_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>room_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="room_id"                data-endpoint="GETapi-rooms--room_id-"
+               value="16"
+               data-component="url">
+    <br>
+<p>The ID of the room. Example: <code>16</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>room</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="room"                data-endpoint="GETapi-rooms--room_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID pokoju. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="pokoje-PUTapi-rooms--room_id-">Edycja pokoju.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-rooms--room_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://inz.test/api/rooms/16" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"Pokoj dzienny\",
+    \"room_number\": \"2A\",
+    \"area\": 12.5,
+    \"rent_cost\": 1200,
+    \"status\": \"wolny\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/rooms/16"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "Pokoj dzienny",
+    "room_number": "2A",
+    "area": 12.5,
+    "rent_cost": 1200,
+    "status": "wolny"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-rooms--room_id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;room&quot;: {
+        &quot;id&quot;: 1,
+        &quot;property_id&quot;: 1,
+        &quot;name&quot;: &quot;Pokoj dzienny&quot;,
+        &quot;room_number&quot;: &quot;2A&quot;,
+        &quot;area&quot;: 12.5,
+        &quot;rent_cost&quot;: 1200,
+        &quot;status&quot;: &quot;wolny&quot;,
+        &quot;photos&quot;: [],
+        &quot;created_at&quot;: &quot;2026-01-11T10:00:00+00:00&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-11T10:00:00+00:00&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (403):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Forbidden.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-rooms--room_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-rooms--room_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-rooms--room_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-rooms--room_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-rooms--room_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-rooms--room_id-" data-method="PUT"
+      data-path="api/rooms/{room_id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-rooms--room_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-rooms--room_id-"
+                    onclick="tryItOut('PUTapi-rooms--room_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-rooms--room_id-"
+                    onclick="cancelTryOut('PUTapi-rooms--room_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-rooms--room_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/rooms/{room_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-rooms--room_id-"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-rooms--room_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-rooms--room_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>room_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="room_id"                data-endpoint="PUTapi-rooms--room_id-"
+               value="16"
+               data-component="url">
+    <br>
+<p>The ID of the room. Example: <code>16</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>room</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="room"                data-endpoint="PUTapi-rooms--room_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID pokoju. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="PUTapi-rooms--room_id-"
+               value="Pokoj dzienny"
+               data-component="body">
+    <br>
+<p>Nazwa pokoju. Example: <code>Pokoj dzienny</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>room_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="room_number"                data-endpoint="PUTapi-rooms--room_id-"
+               value="2A"
+               data-component="body">
+    <br>
+<p>Numer pokoju. Example: <code>2A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>area</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="area"                data-endpoint="PUTapi-rooms--room_id-"
+               value="12.5"
+               data-component="body">
+    <br>
+<p>Powierzchnia w m2. Example: <code>12.5</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rent_cost</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rent_cost"                data-endpoint="PUTapi-rooms--room_id-"
+               value="1200"
+               data-component="body">
+    <br>
+<p>Czynsz za pokoj. Example: <code>1200</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="PUTapi-rooms--room_id-"
+               value="wolny"
+               data-component="body">
+    <br>
+<p>Status: wolny|zajęty|rezerwacja. Example: <code>wolny</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="property_id"                data-endpoint="PUTapi-rooms--room_id-"
                value=""
                data-component="body">
     <br>
 
+        </div>
+        </form>
+
+                    <h2 id="pokoje-DELETEapi-rooms--room_id-">Usuniecie pokoju.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-rooms--room_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://inz.test/api/rooms/16" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/rooms/16"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-rooms--room_id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Room deleted.&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (403):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Forbidden.&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (409):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Room has active assignments.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-rooms--room_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-rooms--room_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-rooms--room_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-rooms--room_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-rooms--room_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-rooms--room_id-" data-method="DELETE"
+      data-path="api/rooms/{room_id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-rooms--room_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-rooms--room_id-"
+                    onclick="tryItOut('DELETEapi-rooms--room_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-rooms--room_id-"
+                    onclick="cancelTryOut('DELETEapi-rooms--room_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-rooms--room_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/rooms/{room_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-rooms--room_id-"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-rooms--room_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-rooms--room_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>room_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="room_id"                data-endpoint="DELETEapi-rooms--room_id-"
+               value="16"
+               data-component="url">
+    <br>
+<p>The ID of the room. Example: <code>16</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>room</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="room"                data-endpoint="DELETEapi-rooms--room_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID pokoju. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="pokoje-GETapi-rooms--room_id--photos">Lista zdjec pokoju.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-rooms--room_id--photos">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://inz.test/api/rooms/16/photos" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/rooms/16/photos"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-rooms--room_id--photos">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;file_name&quot;: &quot;pokoj-1.jpg&quot;,
+            &quot;url&quot;: &quot;https://example.com/storage/images/rooms/1/pokoj-1.jpg&quot;,
+            &quot;uploaded_at&quot;: &quot;2026-01-11T10:00:00+00:00&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-rooms--room_id--photos" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-rooms--room_id--photos"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-rooms--room_id--photos"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-rooms--room_id--photos" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-rooms--room_id--photos">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-rooms--room_id--photos" data-method="GET"
+      data-path="api/rooms/{room_id}/photos"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-rooms--room_id--photos', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-rooms--room_id--photos"
+                    onclick="tryItOut('GETapi-rooms--room_id--photos');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-rooms--room_id--photos"
+                    onclick="cancelTryOut('GETapi-rooms--room_id--photos');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-rooms--room_id--photos"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/rooms/{room_id}/photos</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-rooms--room_id--photos"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-rooms--room_id--photos"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-rooms--room_id--photos"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>room_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="room_id"                data-endpoint="GETapi-rooms--room_id--photos"
+               value="16"
+               data-component="url">
+    <br>
+<p>The ID of the room. Example: <code>16</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>room</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="room"                data-endpoint="GETapi-rooms--room_id--photos"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID pokoju. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="pokoje-POSTapi-rooms--room_id--photos">Dodanie zdjec pokoju.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-rooms--room_id--photos">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://inz.test/api/rooms/16/photos" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
+    --header "Content-Type: multipart/form-data" \
+    --header "Accept: application/json" \
+    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phpkgh5o5fn7qv49jfDskb" \
+    --form "photos[]=@/Users/oskarszmyt/Dokumenty_Lokalne/Politechnika/inz/storage/app/scribe/example.jpg" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/rooms/16/photos"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('photos[]', document.querySelector('input[name="photos[]"]').files[0]);
+body.append('photos[]', document.querySelector('input[name="photos[]"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-rooms--room_id--photos">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;file_name&quot;: &quot;pokoj-1.jpg&quot;,
+            &quot;url&quot;: &quot;https://example.com/storage/images/rooms/1/pokoj-1.jpg&quot;,
+            &quot;uploaded_at&quot;: &quot;2026-01-11T10:00:00+00:00&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-rooms--room_id--photos" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-rooms--room_id--photos"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-rooms--room_id--photos"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-rooms--room_id--photos" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-rooms--room_id--photos">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-rooms--room_id--photos" data-method="POST"
+      data-path="api/rooms/{room_id}/photos"
+      data-authed="1"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-rooms--room_id--photos', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-rooms--room_id--photos"
+                    onclick="tryItOut('POSTapi-rooms--room_id--photos');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-rooms--room_id--photos"
+                    onclick="cancelTryOut('POSTapi-rooms--room_id--photos');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-rooms--room_id--photos"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/rooms/{room_id}/photos</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-rooms--room_id--photos"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-rooms--room_id--photos"
+               value="multipart/form-data"
+               data-component="header">
+    <br>
+<p>Example: <code>multipart/form-data</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-rooms--room_id--photos"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>room_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="room_id"                data-endpoint="POSTapi-rooms--room_id--photos"
+               value="16"
+               data-component="url">
+    <br>
+<p>The ID of the room. Example: <code>16</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>room</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="room"                data-endpoint="POSTapi-rooms--room_id--photos"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID pokoju. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>photos</code></b>&nbsp;&nbsp;
+<small>file[]</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="file" style="display: none"
+                              name="photos[0]"                data-endpoint="POSTapi-rooms--room_id--photos"
+               data-component="body">
+        <input type="file" style="display: none"
+               name="photos[1]"                data-endpoint="POSTapi-rooms--room_id--photos"
+               data-component="body">
+    <br>
+<p>Must be a file. Must be an image. Must not be greater than 5120 kilobytes.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>photos[]</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="file" style="display: none"
+                              name="photos.0"                data-endpoint="POSTapi-rooms--room_id--photos"
+               value=""
+               data-component="body">
+    <br>
+<p>Zdjecia do dodania. Example: <code>storage/app/scribe/example.jpg</code></p>
         </div>
         </form>
 
@@ -6692,6 +8096,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                                 <h2 id="tenant-GETapi-tenant-me">Moje dane.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -6703,6 +8108,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://inz.test/api/tenant/me" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -6713,6 +8119,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -6738,7 +8145,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Missing token.&quot;
+    &quot;message&quot;: &quot;Invalid token.&quot;
 }</code>
  </pre>
     </span>
@@ -6759,7 +8166,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-tenant-me" data-method="GET"
       data-path="api/tenant/me"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -6790,6 +8197,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-tenant-me"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -6818,6 +8237,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="tenant-GETapi-tenant-assignments">Moje przypisania do nieruchomosci/pokoi.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -6829,6 +8249,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://inz.test/api/tenant/assignments" \
+    --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -6839,6 +8260,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer Bearer {YOUR_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -6852,19 +8274,31 @@ fetch(url, {
 
 <span id="example-responses-GETapi-tenant-assignments">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Missing token.&quot;
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: null,
+            &quot;tenant_id&quot;: null,
+            &quot;property_id&quot;: null,
+            &quot;room_id&quot;: null,
+            &quot;start_date&quot;: null,
+            &quot;end_date&quot;: null,
+            &quot;is_active&quot;: null
+        },
+        {
+            &quot;id&quot;: null,
+            &quot;tenant_id&quot;: null,
+            &quot;property_id&quot;: null,
+            &quot;room_id&quot;: null,
+            &quot;start_date&quot;: null,
+            &quot;end_date&quot;: null,
+            &quot;is_active&quot;: null
+        }
+    ]
 }</code>
  </pre>
     </span>
@@ -6885,7 +8319,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-tenant-assignments" data-method="GET"
       data-path="api/tenant/assignments"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -6915,6 +8349,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/tenant/assignments</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-tenant-assignments"
+               value="Bearer Bearer {YOUR_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer {YOUR_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;

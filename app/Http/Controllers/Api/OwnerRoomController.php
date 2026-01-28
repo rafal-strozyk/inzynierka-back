@@ -13,10 +13,14 @@ class OwnerRoomController extends Controller
      * Lista pokoi z przypisaniami.
      *
      * @group Owner
+     * @authenticated
      *
      * @queryParam page int Numer strony. Example: 2
      * @queryParam per_page int Liczba rekordow na strone. Example: 10
      * @queryParam property_id int Filtrowanie po nieruchomosci. Example: 1
+     *
+     * @apiResourceCollection App\Http\Resources\RoomAssignmentResource
+     * @apiResourceModel App\Models\Room
      */
     public function index(Request $request)
     {

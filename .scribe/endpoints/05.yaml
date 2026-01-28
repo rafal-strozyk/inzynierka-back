@@ -1,22 +1,23 @@
-name: Endpoints
+name: Pokoje
 description: ''
 endpoints:
   -
     custom: []
     httpMethods:
       - GET
-    uri: 'api/properties/{property_id}/photos'
+    uri: 'api/properties/{property_id}/rooms'
     metadata:
       custom: []
-      groupName: Endpoints
+      groupName: Pokoje
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Lista pokoi w nieruchomosci.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -31,134 +32,61 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-    cleanUrlParameters:
-      property_id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
+      property:
         custom: []
-        status: 401
-        content: '{"message":"Missing token."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - POST
-    uri: 'api/properties/{property_id}/photos'
-    metadata:
-      custom: []
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: multipart/form-data
-      Accept: application/json
-    urlParameters:
-      property_id:
-        custom: []
-        name: property_id
-        description: 'The ID of the property.'
+        name: property
+        description: 'ID nieruchomosci.'
         required: true
         example: 1
         type: integer
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
     cleanUrlParameters:
       property_id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      photos:
+      property: 1
+    queryParameters:
+      page:
         custom: []
-        name: photos
-        description: 'Must be a file. Must be an image. Must not be greater than 5120 kilobytes.'
+        name: page
+        description: 'Numer strony.'
         required: false
-        example:
-          - null
-        type: 'file[]'
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanBodyParameters: []
-    fileParameters:
-      photos:
-        - null
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: 'api/properties/{property_id}/rooms'
-    metadata:
-      custom: []
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      property_id:
-        custom: []
-        name: property_id
-        description: 'The ID of the property.'
-        required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
-    cleanUrlParameters:
-      property_id: 1
-    queryParameters: []
-    cleanQueryParameters: []
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Liczba rekordow na strone.'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      page: 2
+      per_page: 10
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         custom: []
-        status: 401
-        content: '{"message":"Missing token."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+        status: 200
+        content: '{"data":[{"id":8,"property_id":112,"name":"autem placeat","room_number":"64z","area":15.94,"rent_cost":1474.87,"status":"wolny","created_at":"2026-01-28T23:24:52.000000Z","updated_at":"2026-01-28T23:24:52.000000Z"},{"id":9,"property_id":113,"name":"et modi","room_number":"27f","area":null,"rent_cost":1583.62,"status":"wolny","created_at":"2026-01-28T23:24:52.000000Z","updated_at":"2026-01-28T23:24:52.000000Z"}]}'
+        headers: []
+        description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -169,15 +97,16 @@ endpoints:
     uri: 'api/properties/{property_id}/rooms'
     metadata:
       custom: []
-      groupName: Endpoints
+      groupName: Pokoje
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Dodanie pokoju do nieruchomosci.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -192,75 +121,120 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      property:
+        custom: []
+        name: property
+        description: 'ID nieruchomosci.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
     cleanUrlParameters:
       property_id: 1
+      property: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
       name:
         custom: []
         name: name
-        description: 'Must not be greater than 100 characters.'
+        description: 'Nazwa pokoju.'
         required: true
-        example: b
+        example: 'Pokoj dzienny'
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       room_number:
         custom: []
         name: room_number
-        description: 'Must not be greater than 20 characters.'
+        description: 'Numer pokoju.'
         required: false
-        example: ngzmiyvdljnikhwa
+        example: 2A
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       area:
         custom: []
         name: area
-        description: 'Must be at least 0.'
+        description: 'Powierzchnia w m2.'
         required: false
-        example: 50
+        example: 12.5
         type: number
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       rent_cost:
         custom: []
         name: rent_cost
-        description: 'Must be at least 0.'
+        description: 'Czynsz za pokoj.'
         required: true
-        example: 62
+        example: 1200.0
         type: number
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       status:
         custom: []
         name: status
-        description: ''
+        description: 'Status: wolny|zajęty|rezerwacja.'
         required: false
-        example: null
+        example: wolny
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
     cleanBodyParameters:
-      name: b
-      room_number: ngzmiyvdljnikhwa
-      area: 50
-      rent_cost: 62
+      name: 'Pokoj dzienny'
+      room_number: 2A
+      area: 12.5
+      rent_cost: 1200.0
+      status: wolny
     fileParameters: []
-    responses: []
+    responses:
+      -
+        custom: []
+        status: 201
+        content: |-
+          {
+           "room": {
+             "id": 1,
+             "property_id": 1,
+             "name": "Pokoj dzienny",
+             "room_number": "2A",
+             "area": 12.5,
+             "rent_cost": 1200,
+             "status": "wolny",
+             "photos": [],
+             "created_at": "2026-01-11T10:00:00+00:00",
+             "updated_at": "2026-01-11T10:00:00+00:00"
+           }
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 403
+        content: |-
+          {
+           "message": "Forbidden."
+          }
+        headers: []
+        description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -271,36 +245,61 @@ endpoints:
     uri: api/rooms
     metadata:
       custom: []
-      groupName: Endpoints
+      groupName: Pokoje
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
+      title: 'Lista pokoi.'
+      description: 'Zwraca pokoje z podstawowymi danymi nieruchomosci.'
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
+    queryParameters:
+      page:
+        custom: []
+        name: page
+        description: 'Numer strony.'
+        required: false
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Liczba rekordow na strone.'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      page: 2
+      per_page: 10
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         custom: []
-        status: 401
-        content: '{"message":"Missing token."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+        status: 200
+        content: '{"data":[{"id":10,"property_id":114,"name":"aut adipisci","room_number":"32l","area":27.47,"rent_cost":634.06,"status":"wolny","created_at":"2026-01-28T23:24:52.000000Z","updated_at":"2026-01-28T23:24:52.000000Z"},{"id":11,"property_id":115,"name":"veniam corporis","room_number":"51n","area":17.85,"rent_cost":1872.76,"status":"wolny","created_at":"2026-01-28T23:24:52.000000Z","updated_at":"2026-01-28T23:24:52.000000Z"}]}'
+        headers: []
+        description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -311,15 +310,16 @@ endpoints:
     uri: 'api/rooms/{room_id}'
     metadata:
       custom: []
-      groupName: Endpoints
+      groupName: Pokoje
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Szczegoly pokoju.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -334,8 +334,20 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      room:
+        custom: []
+        name: room
+        description: 'ID pokoju.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
     cleanUrlParameters:
       room_id: 16
+      room: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -344,18 +356,15 @@ endpoints:
     responses:
       -
         custom: []
-        status: 404
-        content: |-
-          {
-              "message": "No query results for model [App\\Models\\Room] 16"
-          }
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+        status: 200
+        content: '{"data":{"id":12,"property_id":116,"name":"aut adipisci","room_number":"32l","area":27.47,"rent_cost":634.06,"status":"wolny","created_at":"2026-01-28T23:24:52.000000Z","updated_at":"2026-01-28T23:24:52.000000Z"}}'
+        headers: []
+        description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -366,15 +375,16 @@ endpoints:
     uri: 'api/rooms/{room_id}'
     metadata:
       custom: []
-      groupName: Endpoints
+      groupName: Pokoje
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Edycja pokoju.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -389,64 +399,76 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      room:
+        custom: []
+        name: room
+        description: 'ID pokoju.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
     cleanUrlParameters:
       room_id: 16
+      room: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
       name:
         custom: []
         name: name
-        description: 'Must not be greater than 100 characters.'
+        description: 'Nazwa pokoju.'
         required: false
-        example: b
+        example: 'Pokoj dzienny'
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       room_number:
         custom: []
         name: room_number
-        description: 'Must not be greater than 20 characters.'
+        description: 'Numer pokoju.'
         required: false
-        example: ngzmiyvdljnikhwa
+        example: 2A
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       area:
         custom: []
         name: area
-        description: 'Must be at least 0.'
+        description: 'Powierzchnia w m2.'
         required: false
-        example: 50
+        example: 12.5
         type: number
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       rent_cost:
         custom: []
         name: rent_cost
-        description: 'Must be at least 0.'
+        description: 'Czynsz za pokoj.'
         required: false
-        example: 62
+        example: 1200.0
         type: number
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       status:
         custom: []
         name: status
-        description: ''
+        description: 'Status: wolny|zajęty|rezerwacja.'
         required: false
-        example: null
+        example: wolny
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       property_id:
@@ -461,14 +483,47 @@ endpoints:
         nullable: false
         deprecated: false
     cleanBodyParameters:
-      name: b
-      room_number: ngzmiyvdljnikhwa
-      area: 50
-      rent_cost: 62
+      name: 'Pokoj dzienny'
+      room_number: 2A
+      area: 12.5
+      rent_cost: 1200.0
+      status: wolny
     fileParameters: []
-    responses: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+           "room": {
+             "id": 1,
+             "property_id": 1,
+             "name": "Pokoj dzienny",
+             "room_number": "2A",
+             "area": 12.5,
+             "rent_cost": 1200,
+             "status": "wolny",
+             "photos": [],
+             "created_at": "2026-01-11T10:00:00+00:00",
+             "updated_at": "2026-01-11T10:00:00+00:00"
+           }
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 403
+        content: |-
+          {
+           "message": "Forbidden."
+          }
+        headers: []
+        description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -479,15 +534,16 @@ endpoints:
     uri: 'api/rooms/{room_id}'
     metadata:
       custom: []
-      groupName: Endpoints
+      groupName: Pokoje
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Usuniecie pokoju.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -502,16 +558,58 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      room:
+        custom: []
+        name: room
+        description: 'ID pokoju.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
     cleanUrlParameters:
       room_id: 16
+      room: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+           "message": "Room deleted."
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 403
+        content: |-
+          {
+           "message": "Forbidden."
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 409
+        content: |-
+          {
+           "message": "Room has active assignments."
+          }
+        headers: []
+        description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -522,15 +620,16 @@ endpoints:
     uri: 'api/rooms/{room_id}/photos'
     metadata:
       custom: []
-      groupName: Endpoints
+      groupName: Pokoje
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Lista zdjec pokoju.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -545,8 +644,20 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      room:
+        custom: []
+        name: room
+        description: 'ID pokoju.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
     cleanUrlParameters:
       room_id: 16
+      room: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -555,18 +666,25 @@ endpoints:
     responses:
       -
         custom: []
-        status: 404
+        status: 200
         content: |-
           {
-              "message": "No query results for model [App\\Models\\Room] 16"
+           "data": [
+             {
+               "id": 1,
+               "file_name": "pokoj-1.jpg",
+               "url": "https://example.com/storage/images/rooms/1/pokoj-1.jpg",
+               "uploaded_at": "2026-01-11T10:00:00+00:00"
+             }
+           ]
           }
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+        headers: []
+        description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -577,15 +695,16 @@ endpoints:
     uri: 'api/rooms/{room_id}/photos'
     metadata:
       custom: []
-      groupName: Endpoints
+      groupName: Pokoje
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Dodanie zdjec pokoju.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters:
@@ -600,8 +719,20 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      room:
+        custom: []
+        name: room
+        description: 'ID pokoju.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
     cleanUrlParameters:
       room_id: 16
+      room: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -617,13 +748,44 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      'photos[]':
+        custom: []
+        name: 'photos[]'
+        description: 'Zdjecia do dodania.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
     cleanBodyParameters: []
     fileParameters:
       photos:
         - null
-    responses: []
+      'photos[]': null
+    responses:
+      -
+        custom: []
+        status: 201
+        content: |-
+          {
+           "data": [
+             {
+               "id": 1,
+               "file_name": "pokoj-1.jpg",
+               "url": "https://example.com/storage/images/rooms/1/pokoj-1.jpg",
+               "uploaded_at": "2026-01-11T10:00:00+00:00"
+             }
+           ]
+          }
+        headers: []
+        description: ''
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null

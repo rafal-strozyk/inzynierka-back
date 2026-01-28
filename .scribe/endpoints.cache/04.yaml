@@ -16,9 +16,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Lista nieruchomości.'
       description: 'Zwraca listę nieruchomości wraz z podstawowymi informacjami.'
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -275,7 +276,7 @@ endpoints:
         name: has_balcony
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -312,13 +313,13 @@ endpoints:
       rent_max: 8
       utilities_min: 76
       utilities_max: 60
-      has_balcony: true
+      has_balcony: false
     fileParameters: []
     responses:
       -
         custom: []
         status: 200
-        content: '{"data":[{"id":93,"name":"sunt nihil","address":"Dickens Inlet 7763, m. -","city":"Port Gilbertstad","rent_cost":2341.09,"utilities_cost":794.44,"has_balcony":false},{"id":94,"name":"aut dolores","address":"Keely Wells 1490, m. 10","city":"Haagborough","rent_cost":3461.42,"utilities_cost":1118.01,"has_balcony":false}]}'
+        content: '{"data":[{"id":109,"name":"sunt nihil","address":"Dickens Inlet 7763, m. -","city":"Port Gilbertstad","rent_cost":2341.09,"utilities_cost":794.44,"has_balcony":false},{"id":110,"name":"aut dolores","address":"Keely Wells 1490, m. 10","city":"Haagborough","rent_cost":3461.42,"utilities_cost":1118.01,"has_balcony":false}]}'
         headers: []
         description: ''
     responseFields:
@@ -333,9 +334,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      nazwa:
+      name:
         custom: []
-        name: nazwa
+        name: name
         description: 'Nazwa nieruchomości.'
         required: false
         example: null
@@ -344,9 +345,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      adres:
+      address:
         custom: []
-        name: adres
+        name: address
         description: 'Adres w formacie: [ulica] [nr], m. [nr mieszkania]'
         required: false
         example: null
@@ -355,9 +356,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      miasto:
+      city:
         custom: []
-        name: miasto
+        name: city
         description: ''
         required: false
         example: null
@@ -366,9 +367,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      czynsz:
+      rent_cost:
         custom: []
-        name: czynsz
+        name: rent_cost
         description: 'Czynsz (np. 123.09).'
         required: false
         example: null
@@ -377,9 +378,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      media:
+      utilities_cost:
         custom: []
-        name: media
+        name: utilities_cost
         description: 'Koszt mediów (np. 123.09).'
         required: false
         example: null
@@ -388,9 +389,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      balkon:
+      has_balcony:
         custom: []
-        name: balkon
+        name: has_balcony
         description: 'Czy nieruchomość posiada balkon (true/false).'
         required: false
         example: null
@@ -399,7 +400,10 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -416,21 +420,205 @@ endpoints:
       subgroupDescription: ''
       title: 'Tworzenie nieruchomości.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      owner_id:
+        custom: []
+        name: owner_id
+        description: 'ID właściciela (wymagane dla admina).'
+        required: false
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      name:
+        custom: []
+        name: name
+        description: 'Nazwa nieruchomości.'
+        required: true
+        example: 'Apartament Centrum'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      street:
+        custom: []
+        name: street
+        description: Ulica.
+        required: true
+        example: Glowna
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      street_number:
+        custom: []
+        name: street_number
+        description: 'Numer budynku.'
+        required: true
+        example: '10'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      apartment_number:
+        custom: []
+        name: apartment_number
+        description: 'Numer mieszkania.'
+        required: false
+        example: '12'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      city:
+        custom: []
+        name: city
+        description: Miasto.
+        required: true
+        example: Warszawa
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      description:
+        custom: []
+        name: description
+        description: 'Opis nieruchomości.'
+        required: false
+        example: 'Blisko centrum.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      status:
+        custom: []
+        name: status
+        description: 'Status: wolna|zajęta|remontowana|nieaktywna.'
+        required: false
+        example: wolna
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      rent_cost:
+        custom: []
+        name: rent_cost
+        description: 'Czynsz (np. 123.09).'
+        required: true
+        example: 2500.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      utilities_cost:
+        custom: []
+        name: utilities_cost
+        description: 'Koszt mediów (np. 123.09).'
+        required: false
+        example: 350.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      additional_costs:
+        custom: []
+        name: additional_costs
+        description: 'Dodatkowe koszty (np. 0.00).'
+        required: false
+        example: 0.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      area_total:
+        custom: []
+        name: area_total
+        description: 'Powierzchnia w m² (np. 35.50).'
+        required: false
+        example: 45.5
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      bathrooms_count:
+        custom: []
+        name: bathrooms_count
+        description: 'Liczba łazienek.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      has_balcony:
+        custom: []
+        name: has_balcony
+        description: 'Czy nieruchomość posiada balkon (true/false).'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      rent_by_rooms:
+        custom: []
+        name: rent_by_rooms
+        description: 'Czy wynajem dotyczy pokoi (true/false).'
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      owner_id: 2
+      name: 'Apartament Centrum'
+      street: Glowna
+      street_number: '10'
+      apartment_number: '12'
+      city: Warszawa
+      description: 'Blisko centrum.'
+      status: wolna
+      rent_cost: 2500.0
+      utilities_cost: 350.0
+      additional_costs: 0.0
+      area_total: 45.5
+      bathrooms_count: 1
+      has_balcony: true
+      rent_by_rooms: false
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -447,9 +635,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Szczegóły nieruchomości.'
       description: 'Zwraca komplet informacji o wskazanej nieruchomości.'
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -487,7 +676,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"data":{"id":95,"owner_id":98,"name":"dignissimos neque","street":"O''Connell Mission","street_number":"7329","apartment_number":"25","city":"Port Nelson","rent_cost":1594.85,"utilities_cost":1140.72,"additional_costs":53.3,"description":"","area_total":0,"bathrooms_count":2,"status":"wolna","has_balcony":true,"rent_by_rooms":true,"created_at":"2026-01-28T23:10:28.000000Z","updated_at":"2026-01-28T23:10:28.000000Z"}}'
+        content: '{"data":{"id":111,"owner_id":114,"name":"aut adipisci","street":"Cronin Crossing","street_number":"44902","apartment_number":null,"city":"Ferneville","rent_cost":3242.12,"utilities_cost":918.34,"additional_costs":394.23,"description":"","area_total":0,"bathrooms_count":2,"status":"remontowana","has_balcony":false,"rent_by_rooms":true,"created_at":"2026-01-28T23:24:52.000000Z","updated_at":"2026-01-28T23:24:52.000000Z"}}'
         headers: []
         description: ''
     responseFields:
@@ -513,9 +702,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      nazwa:
+      name:
         custom: []
-        name: nazwa
+        name: name
         description: 'Nazwa nieruchomości.'
         required: false
         example: null
@@ -524,9 +713,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      ulica:
+      street:
         custom: []
-        name: ulica
+        name: street
         description: ''
         required: false
         example: null
@@ -535,9 +724,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      numer_budynku:
+      street_number:
         custom: []
-        name: numer_budynku
+        name: street_number
         description: 'Numer budynku.'
         required: false
         example: null
@@ -546,9 +735,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      numer_mieszkania:
+      apartment_number:
         custom: []
-        name: numer_mieszkania
+        name: apartment_number
         description: 'Numer mieszkania.'
         required: false
         example: null
@@ -557,9 +746,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      miasto:
+      city:
         custom: []
-        name: miasto
+        name: city
         description: ''
         required: false
         example: null
@@ -568,9 +757,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      opis:
+      description:
         custom: []
-        name: opis
+        name: description
         description: 'Opis nieruchomości.'
         required: false
         example: null
@@ -590,9 +779,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      czynsz:
+      rent_cost:
         custom: []
-        name: czynsz
+        name: rent_cost
         description: 'Czynsz (np. 123.09).'
         required: false
         example: null
@@ -601,9 +790,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      media:
+      utilities_cost:
         custom: []
-        name: media
+        name: utilities_cost
         description: 'Koszt mediów (np. 123.09).'
         required: false
         example: null
@@ -612,9 +801,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      dodatkowe_koszty:
+      additional_costs:
         custom: []
-        name: dodatkowe_koszty
+        name: additional_costs
         description: 'Dodatkowe koszty (np. 0.00).'
         required: false
         example: null
@@ -623,9 +812,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      powierzchnia_m2:
+      area_total:
         custom: []
-        name: powierzchnia_m2
+        name: area_total
         description: 'Powierzchnia w m² (np. 35.50).'
         required: false
         example: null
@@ -634,9 +823,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      liczba_lazienek:
+      bathrooms_count:
         custom: []
-        name: liczba_lazienek
+        name: bathrooms_count
         description: 'Liczba łazienek.'
         required: false
         example: null
@@ -645,9 +834,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      balkon:
+      has_balcony:
         custom: []
-        name: balkon
+        name: has_balcony
         description: 'Czy nieruchomość posiada balkon (true/false).'
         required: false
         example: null
@@ -656,9 +845,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      wynajem_na_pokoje:
+      rent_by_rooms:
         custom: []
-        name: wynajem_na_pokoje
+        name: rent_by_rooms
         description: 'Czy wynajem dotyczy pokoi (true/false).'
         required: false
         example: null
@@ -689,7 +878,10 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -706,9 +898,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Edycja nieruchomości.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -739,12 +932,195 @@ endpoints:
       property: 1
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      owner_id:
+        custom: []
+        name: owner_id
+        description: 'ID właściciela (tylko admin).'
+        required: false
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      name:
+        custom: []
+        name: name
+        description: 'Nazwa nieruchomości.'
+        required: false
+        example: 'Apartament Centrum'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      street:
+        custom: []
+        name: street
+        description: Ulica.
+        required: false
+        example: Glowna
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      street_number:
+        custom: []
+        name: street_number
+        description: 'Numer budynku.'
+        required: false
+        example: '10'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      apartment_number:
+        custom: []
+        name: apartment_number
+        description: 'Numer mieszkania.'
+        required: false
+        example: '12'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      city:
+        custom: []
+        name: city
+        description: Miasto.
+        required: false
+        example: Warszawa
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      description:
+        custom: []
+        name: description
+        description: 'Opis nieruchomości.'
+        required: false
+        example: 'Blisko centrum.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      status:
+        custom: []
+        name: status
+        description: 'Status: wolna|zajęta|remontowana|nieaktywna.'
+        required: false
+        example: wolna
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      rent_cost:
+        custom: []
+        name: rent_cost
+        description: 'Czynsz (np. 123.09).'
+        required: false
+        example: 2500.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      utilities_cost:
+        custom: []
+        name: utilities_cost
+        description: 'Koszt mediów (np. 123.09).'
+        required: false
+        example: 350.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      additional_costs:
+        custom: []
+        name: additional_costs
+        description: 'Dodatkowe koszty (np. 0.00).'
+        required: false
+        example: 0.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      area_total:
+        custom: []
+        name: area_total
+        description: 'Powierzchnia w m² (np. 35.50).'
+        required: false
+        example: 45.5
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      bathrooms_count:
+        custom: []
+        name: bathrooms_count
+        description: 'Liczba łazienek.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      has_balcony:
+        custom: []
+        name: has_balcony
+        description: 'Czy nieruchomość posiada balkon (true/false).'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      rent_by_rooms:
+        custom: []
+        name: rent_by_rooms
+        description: 'Czy wynajem dotyczy pokoi (true/false).'
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      owner_id: 2
+      name: 'Apartament Centrum'
+      street: Glowna
+      street_number: '10'
+      apartment_number: '12'
+      city: Warszawa
+      description: 'Blisko centrum.'
+      status: wolna
+      rent_cost: 2500.0
+      utilities_cost: 350.0
+      additional_costs: 0.0
+      area_total: 45.5
+      bathrooms_count: 1
+      has_balcony: true
+      rent_by_rooms: false
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -761,9 +1137,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Usuwanie nieruchomości.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -799,7 +1176,186 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/properties/{property_id}/photos'
+    metadata:
+      custom: []
+      groupName: Nieruchomości
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lista zdjec nieruchomosci.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      property_id:
+        custom: []
+        name: property_id
+        description: 'The ID of the property.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      property:
+        custom: []
+        name: property
+        description: 'ID nieruchomosci.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      property_id: 1
+      property: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+           "data": [
+             {
+               "id": 1,
+               "file_name": "mieszkanie-1.jpg",
+               "url": "https://example.com/storage/images/properties/1/mieszkanie-1.jpg",
+               "uploaded_at": "2026-01-11T10:00:00+00:00"
+             }
+           ]
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: 'api/properties/{property_id}/photos'
+    metadata:
+      custom: []
+      groupName: Nieruchomości
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Dodanie zdjec nieruchomosci.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      property_id:
+        custom: []
+        name: property_id
+        description: 'The ID of the property.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      property:
+        custom: []
+        name: property
+        description: 'ID nieruchomosci.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      property_id: 1
+      property: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      photos:
+        custom: []
+        name: photos
+        description: 'Must be a file. Must be an image. Must not be greater than 5120 kilobytes.'
+        required: false
+        example:
+          - null
+        type: 'file[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'photos[]':
+        custom: []
+        name: 'photos[]'
+        description: 'Zdjecia do dodania.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters: []
+    fileParameters:
+      photos:
+        - null
+      'photos[]': null
+    responses:
+      -
+        custom: []
+        status: 201
+        content: |-
+          {
+           "data": [
+             {
+               "id": 1,
+               "file_name": "mieszkanie-1.jpg",
+               "url": "https://example.com/storage/images/properties/1/mieszkanie-1.jpg",
+               "uploaded_at": "2026-01-11T10:00:00+00:00"
+             }
+           ]
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
