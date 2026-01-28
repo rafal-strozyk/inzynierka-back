@@ -143,8 +143,17 @@
                                                     <li class="tocify-item level-2" data-unique="nieruchomosci-GETapi-properties">
                                 <a href="#nieruchomosci-GETapi-properties">Lista nieruchomości.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="nieruchomosci-POSTapi-properties">
+                                <a href="#nieruchomosci-POSTapi-properties">Tworzenie nieruchomości.</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="nieruchomosci-GETapi-properties--property_id-">
                                 <a href="#nieruchomosci-GETapi-properties--property_id-">Szczegóły nieruchomości.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="nieruchomosci-PUTapi-properties--property_id-">
+                                <a href="#nieruchomosci-PUTapi-properties--property_id-">Edycja nieruchomości.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="nieruchomosci-DELETEapi-properties--property_id-">
+                                <a href="#nieruchomosci-DELETEapi-properties--property_id-">Usuwanie nieruchomości.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -673,7 +682,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"phone\": \"kcmyuwpwlvqwrsit\",
     \"address_registered\": \"c\",
     \"city\": \"p\",
-    \"birth_date\": \"2026-01-28T19:41:20\",
+    \"birth_date\": \"2026-01-28T20:30:31\",
     \"pesel\": \"scqldz\",
     \"notes\": \"architecto\"
 }"
@@ -699,7 +708,7 @@ let body = {
     "phone": "kcmyuwpwlvqwrsit",
     "address_registered": "c",
     "city": "p",
-    "birth_date": "2026-01-28T19:41:20",
+    "birth_date": "2026-01-28T20:30:31",
     "pesel": "scqldz",
     "notes": "architecto"
 };
@@ -926,10 +935,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="birth_date"                data-endpoint="PUTapi-admin-users--user_id-"
-               value="2026-01-28T19:41:20"
+               value="2026-01-28T20:30:31"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-28T19:41:20</code></p>
+<p>Must be a valid date. Example: <code>2026-01-28T20:30:31</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>pesel</code></b>&nbsp;&nbsp;
@@ -2622,7 +2631,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://inz.test/api/properties/1/photos" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phpvcmqd7bg0ef1c1HvQPi" </code></pre></div>
+    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phpd42hmj0cf6oudxQmDxX" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -3043,7 +3052,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://inz.test/api/rooms/16/photos" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phpf4m8um0s8gup0DNYTMr" </code></pre></div>
+    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phplc0h35ls4skf6tfvXSd" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -3187,9 +3196,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://inz.test/api/properties?page=2&amp;per_page=10" \
+    --get "http://inz.test/api/properties?page=2&amp;per_page=10&amp;search=Centrum&amp;name=Apartament&amp;address=Glowna+10&amp;city=Warszawa&amp;rent_min=1500&amp;rent_max=3500&amp;utilities_min=200&amp;utilities_max=600&amp;has_balcony=1&amp;sort_by=rent_cost&amp;sort_dir=desc" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --data "{
+    \"search\": \"b\",
+    \"name\": \"n\",
+    \"address\": \"g\",
+    \"city\": \"z\",
+    \"rent_min\": 77,
+    \"rent_max\": 8,
+    \"utilities_min\": 76,
+    \"utilities_max\": 60,
+    \"has_balcony\": true
+}"
+</code></pre></div>
 
 
 <div class="javascript-example">
@@ -3200,6 +3221,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
 const params = {
     "page": "2",
     "per_page": "10",
+    "search": "Centrum",
+    "name": "Apartament",
+    "address": "Glowna 10",
+    "city": "Warszawa",
+    "rent_min": "1500",
+    "rent_max": "3500",
+    "utilities_min": "200",
+    "utilities_max": "600",
+    "has_balcony": "1",
+    "sort_by": "rent_cost",
+    "sort_dir": "desc",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -3209,9 +3241,22 @@ const headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "search": "b",
+    "name": "n",
+    "address": "g",
+    "city": "z",
+    "rent_min": 77,
+    "rent_max": 8,
+    "utilities_min": 76,
+    "utilities_max": 60,
+    "has_balcony": true
+};
+
 fetch(url, {
     method: "GET",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
@@ -3225,22 +3270,22 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 78,
-            &quot;name&quot;: &quot;eius et&quot;,
-            &quot;address&quot;: &quot;Okuneva Villages 85625, m. 144&quot;,
-            &quot;city&quot;: &quot;East Cecil&quot;,
-            &quot;rent_cost&quot;: 2586.7,
-            &quot;utilities_cost&quot;: 726.33,
-            &quot;has_balcony&quot;: true
+            &quot;id&quot;: 84,
+            &quot;name&quot;: &quot;sunt nihil&quot;,
+            &quot;address&quot;: &quot;Dickens Inlet 7763, m. -&quot;,
+            &quot;city&quot;: &quot;Port Gilbertstad&quot;,
+            &quot;rent_cost&quot;: 2341.09,
+            &quot;utilities_cost&quot;: 794.44,
+            &quot;has_balcony&quot;: false
         },
         {
-            &quot;id&quot;: 79,
-            &quot;name&quot;: &quot;enim non&quot;,
-            &quot;address&quot;: &quot;Leuschke Throughway 427, m. 124&quot;,
-            &quot;city&quot;: &quot;Considinehaven&quot;,
-            &quot;rent_cost&quot;: 4713.03,
-            &quot;utilities_cost&quot;: 163.44,
-            &quot;has_balcony&quot;: true
+            &quot;id&quot;: 85,
+            &quot;name&quot;: &quot;aut dolores&quot;,
+            &quot;address&quot;: &quot;Keely Wells 1490, m. 10&quot;,
+            &quot;city&quot;: &quot;Haagborough&quot;,
+            &quot;rent_cost&quot;: 3461.42,
+            &quot;utilities_cost&quot;: 1118.01,
+            &quot;has_balcony&quot;: false
         }
     ]
 }</code>
@@ -3342,7 +3387,292 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Liczba rekordów na stronę. Example: <code>10</code></p>
             </div>
-                </form>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-properties"
+               value="Centrum"
+               data-component="query">
+    <br>
+<p>Wyszukiwanie po nazwie/adresie/mieście. Example: <code>Centrum</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="GETapi-properties"
+               value="Apartament"
+               data-component="query">
+    <br>
+<p>Filtrowanie po nazwie (częściowe dopasowanie). Example: <code>Apartament</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="address"                data-endpoint="GETapi-properties"
+               value="Glowna 10"
+               data-component="query">
+    <br>
+<p>Filtrowanie po adresie (ulica/nr/mieszkanie). Example: <code>Glowna 10</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="city"                data-endpoint="GETapi-properties"
+               value="Warszawa"
+               data-component="query">
+    <br>
+<p>Filtrowanie po mieście (częściowe dopasowanie). Example: <code>Warszawa</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>rent_min</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rent_min"                data-endpoint="GETapi-properties"
+               value="1500"
+               data-component="query">
+    <br>
+<p>Minimalny czynsz. Example: <code>1500</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>rent_max</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rent_max"                data-endpoint="GETapi-properties"
+               value="3500"
+               data-component="query">
+    <br>
+<p>Maksymalny czynsz. Example: <code>3500</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>utilities_min</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="utilities_min"                data-endpoint="GETapi-properties"
+               value="200"
+               data-component="query">
+    <br>
+<p>Minimalne media. Example: <code>200</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>utilities_max</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="utilities_max"                data-endpoint="GETapi-properties"
+               value="600"
+               data-component="query">
+    <br>
+<p>Maksymalne media. Example: <code>600</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>has_balcony</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-properties" style="display: none">
+            <input type="radio" name="has_balcony"
+                   value="1"
+                   data-endpoint="GETapi-properties"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-properties" style="display: none">
+            <input type="radio" name="has_balcony"
+                   value="0"
+                   data-endpoint="GETapi-properties"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Filtrowanie po balkonie. Example: <code>true</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sort_by</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sort_by"                data-endpoint="GETapi-properties"
+               value="rent_cost"
+               data-component="query">
+    <br>
+<p>Pole sortowania: name|address|city|rent_cost|utilities_cost|has_balcony. Example: <code>rent_cost</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sort_dir</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sort_dir"                data-endpoint="GETapi-properties"
+               value="desc"
+               data-component="query">
+    <br>
+<p>Kierunek sortowania: asc|desc. Example: <code>desc</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-properties"
+               value="b"
+               data-component="body">
+    <br>
+<p>Must not be greater than 200 characters. Example: <code>b</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="GETapi-properties"
+               value="n"
+               data-component="body">
+    <br>
+<p>Must not be greater than 150 characters. Example: <code>n</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="address"                data-endpoint="GETapi-properties"
+               value="g"
+               data-component="body">
+    <br>
+<p>Must not be greater than 200 characters. Example: <code>g</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="city"                data-endpoint="GETapi-properties"
+               value="z"
+               data-component="body">
+    <br>
+<p>Must not be greater than 100 characters. Example: <code>z</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rent_min</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rent_min"                data-endpoint="GETapi-properties"
+               value="77"
+               data-component="body">
+    <br>
+<p>Must be at least 0. Example: <code>77</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rent_max</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rent_max"                data-endpoint="GETapi-properties"
+               value="8"
+               data-component="body">
+    <br>
+<p>Must be at least 0. Example: <code>8</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>utilities_min</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="utilities_min"                data-endpoint="GETapi-properties"
+               value="76"
+               data-component="body">
+    <br>
+<p>Must be at least 0. Example: <code>76</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>utilities_max</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="utilities_max"                data-endpoint="GETapi-properties"
+               value="60"
+               data-component="body">
+    <br>
+<p>Must be at least 0. Example: <code>60</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>has_balcony</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-properties" style="display: none">
+            <input type="radio" name="has_balcony"
+                   value="true"
+                   data-endpoint="GETapi-properties"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-properties" style="display: none">
+            <input type="radio" name="has_balcony"
+                   value="false"
+                   data-endpoint="GETapi-properties"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>sort_by</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sort_by"                data-endpoint="GETapi-properties"
+               value=""
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>sort_dir</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sort_dir"                data-endpoint="GETapi-properties"
+               value=""
+               data-component="body">
+    <br>
+
+        </div>
+        </form>
 
     <h3>Response</h3>
     <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
@@ -3402,7 +3732,117 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <br>
 <p>Czy nieruchomość posiada balkon (true/false).</p>
         </div>
-                        <h2 id="nieruchomosci-GETapi-properties--property_id-">Szczegóły nieruchomości.</h2>
+                        <h2 id="nieruchomosci-POSTapi-properties">Tworzenie nieruchomości.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-properties">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://inz.test/api/properties" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/properties"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-properties">
+</span>
+<span id="execution-results-POSTapi-properties" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-properties"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-properties"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-properties" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-properties">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-properties" data-method="POST"
+      data-path="api/properties"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-properties', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-properties"
+                    onclick="tryItOut('POSTapi-properties');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-properties"
+                    onclick="cancelTryOut('POSTapi-properties');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-properties"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/properties</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-properties"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-properties"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="nieruchomosci-GETapi-properties--property_id-">Szczegóły nieruchomości.</h2>
 
 <p>
 </p>
@@ -3445,24 +3885,24 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 80,
-        &quot;owner_id&quot;: 83,
-        &quot;name&quot;: &quot;neque blanditiis&quot;,
-        &quot;street&quot;: &quot;Beier Meadow&quot;,
-        &quot;street_number&quot;: &quot;85188&quot;,
-        &quot;apartment_number&quot;: &quot;186&quot;,
-        &quot;city&quot;: &quot;North Jacquesmouth&quot;,
-        &quot;rent_cost&quot;: 1079.81,
-        &quot;utilities_cost&quot;: 952.8,
-        &quot;additional_costs&quot;: 69.32,
+        &quot;id&quot;: 86,
+        &quot;owner_id&quot;: 89,
+        &quot;name&quot;: &quot;dignissimos neque&quot;,
+        &quot;street&quot;: &quot;O&#039;Connell Mission&quot;,
+        &quot;street_number&quot;: &quot;7329&quot;,
+        &quot;apartment_number&quot;: &quot;25&quot;,
+        &quot;city&quot;: &quot;Port Nelson&quot;,
+        &quot;rent_cost&quot;: 1594.85,
+        &quot;utilities_cost&quot;: 1140.72,
+        &quot;additional_costs&quot;: 53.3,
         &quot;description&quot;: &quot;&quot;,
         &quot;area_total&quot;: 0,
-        &quot;bathrooms_count&quot;: 1,
+        &quot;bathrooms_count&quot;: 2,
         &quot;status&quot;: &quot;wolna&quot;,
-        &quot;has_balcony&quot;: false,
-        &quot;rent_by_rooms&quot;: false,
-        &quot;created_at&quot;: &quot;2026-01-28T19:41:20.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2026-01-28T19:41:20.000000Z&quot;
+        &quot;has_balcony&quot;: true,
+        &quot;rent_by_rooms&quot;: true,
+        &quot;created_at&quot;: &quot;2026-01-28T20:30:31.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-28T20:30:31.000000Z&quot;
     }
 }</code>
  </pre>
@@ -3711,7 +4151,277 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <br>
 <p>Data aktualizacji (ISO 8601).</p>
         </div>
-                    <h1 id="owner">Owner</h1>
+                        <h2 id="nieruchomosci-PUTapi-properties--property_id-">Edycja nieruchomości.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-properties--property_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://inz.test/api/properties/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/properties/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-properties--property_id-">
+</span>
+<span id="execution-results-PUTapi-properties--property_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-properties--property_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-properties--property_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-properties--property_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-properties--property_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-properties--property_id-" data-method="PUT"
+      data-path="api/properties/{property_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-properties--property_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-properties--property_id-"
+                    onclick="tryItOut('PUTapi-properties--property_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-properties--property_id-"
+                    onclick="cancelTryOut('PUTapi-properties--property_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-properties--property_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/properties/{property_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-properties--property_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-properties--property_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property_id"                data-endpoint="PUTapi-properties--property_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the property. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property"                data-endpoint="PUTapi-properties--property_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID nieruchomości. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="nieruchomosci-DELETEapi-properties--property_id-">Usuwanie nieruchomości.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-properties--property_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://inz.test/api/properties/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://inz.test/api/properties/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-properties--property_id-">
+</span>
+<span id="execution-results-DELETEapi-properties--property_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-properties--property_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-properties--property_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-properties--property_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-properties--property_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-properties--property_id-" data-method="DELETE"
+      data-path="api/properties/{property_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-properties--property_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-properties--property_id-"
+                    onclick="tryItOut('DELETEapi-properties--property_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-properties--property_id-"
+                    onclick="cancelTryOut('DELETEapi-properties--property_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-properties--property_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/properties/{property_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-properties--property_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-properties--property_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property_id"                data-endpoint="DELETEapi-properties--property_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the property. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>property</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="property"                data-endpoint="DELETEapi-properties--property_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID nieruchomości. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                <h1 id="owner">Owner</h1>
 
     
 
@@ -3739,7 +4449,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"phone\": \"vdljnikhwaykcmyu\",
     \"address_registered\": \"w\",
     \"city\": \"p\",
-    \"birth_date\": \"2026-01-28T19:41:20\",
+    \"birth_date\": \"2026-01-28T20:30:31\",
     \"pesel\": \"wlvqwr\",
     \"notes\": \"architecto\"
 }"
@@ -3764,7 +4474,7 @@ let body = {
     "phone": "vdljnikhwaykcmyu",
     "address_registered": "w",
     "city": "p",
-    "birth_date": "2026-01-28T19:41:20",
+    "birth_date": "2026-01-28T20:30:31",
     "pesel": "wlvqwr",
     "notes": "architecto"
 };
@@ -3967,10 +4677,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="birth_date"                data-endpoint="PUTapi-owner-tenants--user_id-"
-               value="2026-01-28T19:41:20"
+               value="2026-01-28T20:30:31"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-28T19:41:20</code></p>
+<p>Must be a valid date. Example: <code>2026-01-28T20:30:31</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>pesel</code></b>&nbsp;&nbsp;

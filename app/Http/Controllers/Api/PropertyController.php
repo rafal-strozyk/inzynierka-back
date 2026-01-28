@@ -32,6 +32,17 @@ class PropertyController extends Controller
      * 
      * @queryParam page int Numer strony. Example: 2
      * @queryParam per_page int Liczba rekordów na stronę. Example: 10
+     * @queryParam search string Wyszukiwanie po nazwie/adresie/mieście. Example: Centrum
+     * @queryParam name string Filtrowanie po nazwie (częściowe dopasowanie). Example: Apartament
+     * @queryParam address string Filtrowanie po adresie (ulica/nr/mieszkanie). Example: Glowna 10
+     * @queryParam city string Filtrowanie po mieście (częściowe dopasowanie). Example: Warszawa
+     * @queryParam rent_min number Minimalny czynsz. Example: 1500
+     * @queryParam rent_max number Maksymalny czynsz. Example: 3500
+     * @queryParam utilities_min number Minimalne media. Example: 200
+     * @queryParam utilities_max number Maksymalne media. Example: 600
+     * @queryParam has_balcony boolean Filtrowanie po balkonie. Example: true
+     * @queryParam sort_by string Pole sortowania: name|address|city|rent_cost|utilities_cost|has_balcony. Example: rent_cost
+     * @queryParam sort_dir string Kierunek sortowania: asc|desc. Example: desc
      *
      * @apiResourceCollection App\Http\Resources\PropertyResource
      * @apiResourceModel App\Models\Property
@@ -40,7 +51,86 @@ class PropertyController extends Controller
     public function index(Request $request){
         $perPage= (int) $request -> query('per_page',10);
         $perPage = max(1, min($perPage,100));
-        return PropertyResource::collection(Property::query()->latest()->paginate($perPage));
+
+        $validated = $request->validate([
+            'search' => ['nullable', 'string', 'max:200'],
+            'name' => ['nullable', 'string', 'max:150'],
+            'address' => ['nullable', 'string', 'max:200'],
+            'city' => ['nullable', 'string', 'max:100'],
+            'rent_min' => ['nullable', 'numeric', 'min:0', 'lte:rent_max'],
+            'rent_max' => ['nullable', 'numeric', 'min:0', 'gte:rent_min'],
+            'utilities_min' => ['nullable', 'numeric', 'min:0', 'lte:utilities_max'],
+            'utilities_max' => ['nullable', 'numeric', 'min:0', 'gte:utilities_min'],
+            'has_balcony' => ['nullable', 'boolean'],
+            'sort_by' => ['nullable', Rule::in(['name', 'address', 'city', 'rent_cost', 'utilities_cost', 'has_balcony'])],
+            'sort_dir' => ['nullable', Rule::in(['asc', 'desc'])],
+        ]);
+
+        $query = Property::query();
+
+        if (!empty($validated['search'])) {
+            $query->where(function ($subQuery) use ($validated) {
+                $term = '%' . $validated['search'] . '%';
+                $subQuery->where('name', 'like', $term)
+                    ->orWhere('city', 'like', $term)
+                    ->orWhere('street', 'like', $term)
+                    ->orWhere('street_number', 'like', $term)
+                    ->orWhere('apartment_number', 'like', $term);
+            });
+        }
+
+        if (!empty($validated['name'])) {
+            $query->where('name', 'like', '%' . $validated['name'] . '%');
+        }
+
+        if (!empty($validated['address'])) {
+            $query->where(function ($subQuery) use ($validated) {
+                $term = '%' . $validated['address'] . '%';
+                $subQuery->where('street', 'like', $term)
+                    ->orWhere('street_number', 'like', $term)
+                    ->orWhere('apartment_number', 'like', $term);
+            });
+        }
+
+        if (!empty($validated['city'])) {
+            $query->where('city', 'like', '%' . $validated['city'] . '%');
+        }
+
+        if (isset($validated['rent_min'])) {
+            $query->where('rent_cost', '>=', $validated['rent_min']);
+        }
+
+        if (isset($validated['rent_max'])) {
+            $query->where('rent_cost', '<=', $validated['rent_max']);
+        }
+
+        if (isset($validated['utilities_min'])) {
+            $query->where('utilities_cost', '>=', $validated['utilities_min']);
+        }
+
+        if (isset($validated['utilities_max'])) {
+            $query->where('utilities_cost', '<=', $validated['utilities_max']);
+        }
+
+        if (isset($validated['has_balcony'])) {
+            $query->where('has_balcony', (bool) $validated['has_balcony']);
+        }
+
+        if (!empty($validated['sort_by'])) {
+            $direction = $validated['sort_dir'] ?? 'asc';
+
+            if ($validated['sort_by'] === 'address') {
+                $query->orderBy('street', $direction)
+                    ->orderBy('street_number', $direction)
+                    ->orderBy('apartment_number', $direction);
+            } else {
+                $query->orderBy($validated['sort_by'], $direction);
+            }
+        } else {
+            $query->latest();
+        }
+
+        return PropertyResource::collection($query->paginate($perPage));
     }
 
     /**
