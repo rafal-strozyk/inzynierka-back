@@ -6,6 +6,245 @@ endpoints:
   -
     custom: []
     httpMethods:
+      - GET
+    uri: api/owner/tenants
+    metadata:
+      custom: []
+      groupName: Owner
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lista tenantow.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page:
+        custom: []
+        name: page
+        description: 'Numer strony.'
+        required: false
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Liczba rekordow na strone.'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      page: 2
+      per_page: 10
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Missing token."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/owner/tenants
+    metadata:
+      custom: []
+      groupName: Owner
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Tworzenie tenanta.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Imie i nazwisko.'
+        required: true
+        example: 'Jan Kowalski'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      email:
+        custom: []
+        name: email
+        description: 'Email uzytkownika.'
+        required: true
+        example: user@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: 'Haslo (min. 8 znakow).'
+        required: true
+        example: secret123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      first_name:
+        custom: []
+        name: first_name
+        description: Imie.
+        required: false
+        example: Jan
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      last_name:
+        custom: []
+        name: last_name
+        description: Nazwisko.
+        required: false
+        example: Kowalski
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      phone:
+        custom: []
+        name: phone
+        description: 'Numer telefonu.'
+        required: false
+        example: '+48 500 000 001'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      address_registered:
+        custom: []
+        name: address_registered
+        description: 'Adres zameldowania.'
+        required: false
+        example: 'ul. Glowna 1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      city:
+        custom: []
+        name: city
+        description: Miasto.
+        required: false
+        example: Warszawa
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      birth_date:
+        custom: []
+        name: birth_date
+        description: 'Data urodzenia (YYYY-MM-DD).'
+        required: false
+        example: '1990-01-01'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      pesel:
+        custom: []
+        name: pesel
+        description: PESEL.
+        required: false
+        example: '90010112345'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      notes:
+        custom: []
+        name: notes
+        description: Uwagi.
+        required: false
+        example: 'Nowy najemca.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      password_confirmation:
+        custom: []
+        name: password_confirmation
+        description: 'Potwierdzenie hasla.'
+        required: true
+        example: secret123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name: 'Jan Kowalski'
+      email: user@example.com
+      password: secret123
+      first_name: Jan
+      last_name: Kowalski
+      phone: '+48 500 000 001'
+      address_registered: 'ul. Glowna 1'
+      city: Warszawa
+      birth_date: '1990-01-01'
+      pesel: '90010112345'
+      notes: 'Nowy najemca.'
+      password_confirmation: secret123
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
       - PUT
     uri: 'api/owner/tenants/{user_id}'
     metadata:
@@ -132,7 +371,7 @@ endpoints:
         name: birth_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-01-28T20:30:31'
+        example: '2026-01-28T22:29:00'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -168,9 +407,64 @@ endpoints:
       phone: vdljnikhwaykcmyu
       address_registered: w
       city: p
-      birth_date: '2026-01-28T20:30:31'
+      birth_date: '2026-01-28T22:29:00'
       pesel: wlvqwr
       notes: architecto
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/owner/tenants/{user_id}'
+    metadata:
+      custom: []
+      groupName: Owner
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Usuwanie tenanta.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        custom: []
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      user:
+        custom: []
+        name: user
+        description: 'ID tenanta.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      user_id: 1
+      user: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []
