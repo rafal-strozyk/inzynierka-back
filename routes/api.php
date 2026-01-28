@@ -30,7 +30,13 @@ Route::middleware('auth.token')->group(function (): void {
     Route::put('/owner/tenants/{user}', [OwnerTenantController::class, 'update'])
         ->middleware('role:owner');
     Route::get('/properties', [\App\Http\Controllers\Api\PropertyController::class, 'index']);
+    Route::post('/properties', [\App\Http\Controllers\Api\PropertyController::class, 'store'])
+        ->middleware('role:owner,admin');
     Route::get('/properties/{property}', [\App\Http\Controllers\Api\PropertyController::class, 'show']);
+    Route::put('/properties/{property}', [\App\Http\Controllers\Api\PropertyController::class, 'update'])
+        ->middleware('role:owner,admin');
+    Route::delete('/properties/{property}', [\App\Http\Controllers\Api\PropertyController::class, 'destroy'])
+        ->middleware('role:owner,admin');
     Route::get('/properties/{property}/photos', [PropertyPhotoController::class, 'index']);
     Route::post('/properties/{property}/photos', [PropertyPhotoController::class, 'store']);
     Route::get('/rooms/{room}', [RoomController::class, 'show']);
