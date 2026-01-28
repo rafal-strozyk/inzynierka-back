@@ -2749,7 +2749,7 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 109,
+            &quot;id&quot;: 143,
             &quot;name&quot;: &quot;sunt nihil&quot;,
             &quot;address&quot;: &quot;Dickens Inlet 7763, m. -&quot;,
             &quot;city&quot;: &quot;Port Gilbertstad&quot;,
@@ -2758,7 +2758,7 @@ fetch(url, {
             &quot;has_balcony&quot;: false
         },
         {
-            &quot;id&quot;: 110,
+            &quot;id&quot;: 144,
             &quot;name&quot;: &quot;aut dolores&quot;,
             &quot;address&quot;: &quot;Keely Wells 1490, m. 10&quot;,
             &quot;city&quot;: &quot;Haagborough&quot;,
@@ -3632,8 +3632,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 111,
-        &quot;owner_id&quot;: 114,
+        &quot;id&quot;: 145,
+        &quot;owner_id&quot;: 152,
         &quot;name&quot;: &quot;aut adipisci&quot;,
         &quot;street&quot;: &quot;Cronin Crossing&quot;,
         &quot;street_number&quot;: &quot;44902&quot;,
@@ -3648,8 +3648,8 @@ fetch(url, {
         &quot;status&quot;: &quot;remontowana&quot;,
         &quot;has_balcony&quot;: false,
         &quot;rent_by_rooms&quot;: true,
-        &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+        &quot;created_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;
     }
 }</code>
  </pre>
@@ -4632,7 +4632,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/php2dv0kgtnpg9aeHPcOj3" \
+    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phpvc31tnbd8sgefjZQFyE" \
     --form "photos[]=@/Users/oskarszmyt/Dokumenty_Lokalne/Politechnika/inz/storage/app/scribe/example.jpg" </code></pre></div>
 
 
@@ -5804,28 +5804,28 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 13,
-            &quot;property_id&quot;: 117,
+            &quot;id&quot;: 34,
+            &quot;property_id&quot;: 151,
             &quot;name&quot;: &quot;eius et&quot;,
             &quot;room_number&quot;: null,
             &quot;area&quot;: 12.5,
             &quot;rent_cost&quot;: 1270.22,
             &quot;status&quot;: &quot;wolny&quot;,
             &quot;assignment&quot;: null,
-            &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+            &quot;created_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;
         },
         {
-            &quot;id&quot;: 14,
-            &quot;property_id&quot;: 118,
+            &quot;id&quot;: 35,
+            &quot;property_id&quot;: 152,
             &quot;name&quot;: &quot;facere tempora&quot;,
             &quot;room_number&quot;: &quot;90j&quot;,
             &quot;area&quot;: 14.78,
             &quot;rent_cost&quot;: 1839.28,
             &quot;status&quot;: &quot;wolny&quot;,
             &quot;assignment&quot;: null,
-            &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+            &quot;created_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;
         }
     ]
 }</code>
@@ -6502,26 +6502,26 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 8,
-            &quot;property_id&quot;: 112,
-            &quot;name&quot;: &quot;autem placeat&quot;,
-            &quot;room_number&quot;: &quot;64z&quot;,
-            &quot;area&quot;: 15.94,
-            &quot;rent_cost&quot;: 1474.87,
+            &quot;id&quot;: 29,
+            &quot;property_id&quot;: 146,
+            &quot;name&quot;: &quot;tempora ea&quot;,
+            &quot;room_number&quot;: null,
+            &quot;area&quot;: 31.51,
+            &quot;rent_cost&quot;: 472.92,
             &quot;status&quot;: &quot;wolny&quot;,
-            &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+            &quot;created_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;
         },
         {
-            &quot;id&quot;: 9,
-            &quot;property_id&quot;: 113,
-            &quot;name&quot;: &quot;et modi&quot;,
-            &quot;room_number&quot;: &quot;27f&quot;,
-            &quot;area&quot;: null,
-            &quot;rent_cost&quot;: 1583.62,
+            &quot;id&quot;: 30,
+            &quot;property_id&quot;: 147,
+            &quot;name&quot;: &quot;illum quos&quot;,
+            &quot;room_number&quot;: null,
+            &quot;area&quot;: 29.01,
+            &quot;rent_cost&quot;: 394.44,
             &quot;status&quot;: &quot;wolny&quot;,
-            &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+            &quot;created_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;
         }
     ]
 }</code>
@@ -6973,26 +6973,26 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 10,
-            &quot;property_id&quot;: 114,
+            &quot;id&quot;: 31,
+            &quot;property_id&quot;: 148,
             &quot;name&quot;: &quot;aut adipisci&quot;,
             &quot;room_number&quot;: &quot;32l&quot;,
             &quot;area&quot;: 27.47,
             &quot;rent_cost&quot;: 634.06,
             &quot;status&quot;: &quot;wolny&quot;,
-            &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+            &quot;created_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;
         },
         {
-            &quot;id&quot;: 11,
-            &quot;property_id&quot;: 115,
-            &quot;name&quot;: &quot;veniam corporis&quot;,
-            &quot;room_number&quot;: &quot;51n&quot;,
-            &quot;area&quot;: 17.85,
-            &quot;rent_cost&quot;: 1872.76,
+            &quot;id&quot;: 32,
+            &quot;property_id&quot;: 149,
+            &quot;name&quot;: &quot;nemo odit&quot;,
+            &quot;room_number&quot;: null,
+            &quot;area&quot;: null,
+            &quot;rent_cost&quot;: 1580.01,
             &quot;status&quot;: &quot;wolny&quot;,
-            &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+            &quot;created_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;
         }
     ]
 }</code>
@@ -7154,15 +7154,15 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 12,
-        &quot;property_id&quot;: 116,
+        &quot;id&quot;: 33,
+        &quot;property_id&quot;: 150,
         &quot;name&quot;: &quot;aut adipisci&quot;,
         &quot;room_number&quot;: &quot;32l&quot;,
         &quot;area&quot;: 27.47,
         &quot;rent_cost&quot;: 634.06,
         &quot;status&quot;: &quot;wolny&quot;,
-        &quot;created_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2026-01-28T23:24:52.000000Z&quot;
+        &quot;created_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-28T23:49:24.000000Z&quot;
     }
 }</code>
  </pre>
@@ -7907,7 +7907,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Authorization: Bearer Bearer {YOUR_TOKEN}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/phpkgh5o5fn7qv49jfDskb" \
+    --form "photos[]=@/private/var/folders/db/w20wxlbj1jzchmqhb0xh365h0000gn/T/php07oon89kcqtt3t6dJXI" \
     --form "photos[]=@/Users/oskarszmyt/Dokumenty_Lokalne/Politechnika/inz/storage/app/scribe/example.jpg" </code></pre></div>
 
 
@@ -8281,22 +8281,22 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: null,
-            &quot;tenant_id&quot;: null,
-            &quot;property_id&quot;: null,
+            &quot;id&quot;: 3,
+            &quot;tenant_id&quot;: 146,
+            &quot;property_id&quot;: 141,
             &quot;room_id&quot;: null,
-            &quot;start_date&quot;: null,
+            &quot;start_date&quot;: &quot;2025-10-01&quot;,
             &quot;end_date&quot;: null,
-            &quot;is_active&quot;: null
+            &quot;is_active&quot;: true
         },
         {
-            &quot;id&quot;: null,
-            &quot;tenant_id&quot;: null,
-            &quot;property_id&quot;: null,
+            &quot;id&quot;: 4,
+            &quot;tenant_id&quot;: 148,
+            &quot;property_id&quot;: 142,
             &quot;room_id&quot;: null,
-            &quot;start_date&quot;: null,
+            &quot;start_date&quot;: &quot;2025-12-30&quot;,
             &quot;end_date&quot;: null,
-            &quot;is_active&quot;: null
+            &quot;is_active&quot;: true
         }
     ]
 }</code>

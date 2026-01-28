@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class TenantProperty extends Model
 {
+    use HasFactory;
+
     protected $table = 'tenants_properties';
 
     public $timestamps = false;
