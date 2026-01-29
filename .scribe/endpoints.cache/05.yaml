@@ -81,7 +81,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"data":[{"id":43,"property_id":170,"name":"ea perspiciatis","room_number":null,"area":8.62,"rent_cost":356.85,"status":"wolny","created_at":"2026-01-28T23:53:39.000000Z","updated_at":"2026-01-28T23:53:39.000000Z"},{"id":44,"property_id":171,"name":"sit aut","room_number":null,"area":null,"rent_cost":1018.91,"status":"wolny","created_at":"2026-01-28T23:53:39.000000Z","updated_at":"2026-01-28T23:53:39.000000Z"}]}'
+        content: '{"data":[{"id":50,"property_id":182,"name":"eius officia","room_number":"77l","area":9.81,"rent_cost":410.87,"status":"wolny","created_at":"2026-01-29T00:03:09.000000Z","updated_at":"2026-01-29T00:03:09.000000Z"},{"id":51,"property_id":183,"name":"voluptas id","room_number":null,"area":22.68,"rent_cost":318.33,"status":"wolny","created_at":"2026-01-29T00:03:09.000000Z","updated_at":"2026-01-29T00:03:09.000000Z"}]}'
         headers: []
         description: ''
     responseFields: []
@@ -294,7 +294,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"data":[{"id":45,"property_id":172,"name":"aut adipisci","room_number":"32l","area":27.47,"rent_cost":634.06,"status":"wolny","created_at":"2026-01-28T23:53:39.000000Z","updated_at":"2026-01-28T23:53:39.000000Z"},{"id":46,"property_id":173,"name":"nemo odit","room_number":null,"area":null,"rent_cost":1580.01,"status":"wolny","created_at":"2026-01-28T23:53:39.000000Z","updated_at":"2026-01-28T23:53:39.000000Z"}]}'
+        content: '{"data":[{"id":52,"property_id":184,"name":"aut adipisci","room_number":"32l","area":27.47,"rent_cost":634.06,"status":"wolny","created_at":"2026-01-29T00:03:09.000000Z","updated_at":"2026-01-29T00:03:09.000000Z"},{"id":53,"property_id":185,"name":"nemo odit","room_number":null,"area":null,"rent_cost":1580.01,"status":"wolny","created_at":"2026-01-29T00:03:09.000000Z","updated_at":"2026-01-29T00:03:09.000000Z"}]}'
         headers: []
         description: ''
     responseFields: []
@@ -359,7 +359,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"data":{"id":47,"property_id":174,"name":"aut adipisci","room_number":"32l","area":27.47,"rent_cost":634.06,"status":"wolny","created_at":"2026-01-28T23:53:39.000000Z","updated_at":"2026-01-28T23:53:39.000000Z"}}'
+        content: '{"data":{"id":54,"property_id":186,"name":"aut adipisci","room_number":"32l","area":27.47,"rent_cost":634.06,"status":"wolny","created_at":"2026-01-29T00:03:09.000000Z","updated_at":"2026-01-29T00:03:09.000000Z"}}'
         headers: []
         description: ''
     responseFields: []
@@ -758,7 +758,7 @@ endpoints:
         example: null
         type: file
         enumValues: []
-        exampleWasSpecified: true
+        exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanBodyParameters: []

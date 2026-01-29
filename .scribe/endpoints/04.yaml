@@ -274,7 +274,7 @@ endpoints:
         name: has_balcony
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -311,13 +311,13 @@ endpoints:
       rent_max: 8
       utilities_min: 76
       utilities_max: 60
-      has_balcony: true
+      has_balcony: false
     fileParameters: []
     responses:
       -
         custom: []
         status: 200
-        content: '{"data":[{"id":167,"name":"sunt nihil","address":"Dickens Inlet 7763, m. -","city":"Port Gilbertstad","rent_cost":2341.09,"utilities_cost":794.44,"has_balcony":false},{"id":168,"name":"aut dolores","address":"Keely Wells 1490, m. 10","city":"Haagborough","rent_cost":3461.42,"utilities_cost":1118.01,"has_balcony":false}]}'
+        content: '{"data":[{"id":179,"name":"sunt nihil","address":"Dickens Inlet 7763, m. -","city":"Port Gilbertstad","rent_cost":2341.09,"utilities_cost":794.44,"has_balcony":false},{"id":180,"name":"aut dolores","address":"Keely Wells 1490, m. 10","city":"Haagborough","rent_cost":3461.42,"utilities_cost":1118.01,"has_balcony":false}]}'
         headers: []
         description: ''
     responseFields:
@@ -674,7 +674,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"data":{"id":169,"owner_id":180,"name":"aut adipisci","street":"Cronin Crossing","street_number":"44902","apartment_number":null,"city":"Ferneville","rent_cost":3242.12,"utilities_cost":918.34,"additional_costs":394.23,"description":"","area_total":0,"bathrooms_count":2,"status":"remontowana","has_balcony":false,"rent_by_rooms":true,"created_at":"2026-01-28T23:53:38.000000Z","updated_at":"2026-01-28T23:53:38.000000Z"}}'
+        content: '{"data":{"id":181,"owner_id":194,"name":"aut adipisci","street":"Cronin Crossing","street_number":"44902","apartment_number":null,"city":"Ferneville","rent_cost":3242.12,"utilities_cost":918.34,"additional_costs":394.23,"description":"","area_total":0,"bathrooms_count":2,"status":"remontowana","has_balcony":false,"rent_by_rooms":true,"created_at":"2026-01-29T00:03:09.000000Z","updated_at":"2026-01-29T00:03:09.000000Z"}}'
         headers: []
         description: ''
     responseFields:
@@ -1324,7 +1324,7 @@ endpoints:
         example: null
         type: file
         enumValues: []
-        exampleWasSpecified: true
+        exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanBodyParameters: []
