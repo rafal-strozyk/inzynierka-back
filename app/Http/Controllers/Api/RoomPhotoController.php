@@ -16,7 +16,7 @@ class RoomPhotoController extends Controller
      * @authenticated
      *
      * @urlParam room int required ID pokoju. Example: 1
-     * @bodyParam photos[] file required Zdjecia do dodania. Example: storage/app/scribe/example.jpg
+     * @bodyParam photos[] file required Zdjecia do dodania.
      *
      * @response 201 {
      *  "data": [

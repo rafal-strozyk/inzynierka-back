@@ -49,7 +49,7 @@ class PropertyPhotoController extends Controller
      * @authenticated
      *
      * @urlParam property int required ID nieruchomosci. Example: 1
-     * @bodyParam photos[] file required Zdjecia do dodania. Example: storage/app/scribe/example.jpg
+     * @bodyParam photos[] file required Zdjecia do dodania.
      *
      * @response 201 {
      *  "data": [

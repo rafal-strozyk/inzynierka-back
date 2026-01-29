@@ -564,7 +564,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"data":[{"id":48,"property_id":175,"name":"eius et","room_number":null,"area":12.5,"rent_cost":1270.22,"status":"wolny","assignment":null,"created_at":"2026-01-28T23:53:39.000000Z","updated_at":"2026-01-28T23:53:39.000000Z"},{"id":49,"property_id":176,"name":"facere tempora","room_number":"90j","area":14.78,"rent_cost":1839.28,"status":"wolny","assignment":null,"created_at":"2026-01-28T23:53:39.000000Z","updated_at":"2026-01-28T23:53:39.000000Z"}]}'
+        content: '{"data":[{"id":55,"property_id":187,"name":"eius et","room_number":null,"area":12.5,"rent_cost":1270.22,"status":"wolny","assignment":null,"created_at":"2026-01-29T00:03:09.000000Z","updated_at":"2026-01-29T00:03:09.000000Z"},{"id":56,"property_id":188,"name":"facere tempora","room_number":"90j","area":14.78,"rent_cost":1839.28,"status":"wolny","assignment":null,"created_at":"2026-01-29T00:03:09.000000Z","updated_at":"2026-01-29T00:03:09.000000Z"}]}'
         headers: []
         description: ''
     responseFields: []
