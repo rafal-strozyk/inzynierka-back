@@ -25,7 +25,20 @@ jobs:
           remote_user: ${{ secrets.SERVER_USER }}
           remote_port: ${{ secrets.SERVER_PORT }}
           remote_key: ${{ secrets.SERVER_SSH_KEY }}
-
+          
+      # 3. Update migrations directory
+      - name: Rsync database folder (with delete)
+        uses: burnett01/rsync-deployments@v8
+        with:
+          switches: -avz --delete
+          path: database/
+          remote_path: /home/inzynierka/www/database/
+          remote_host: ${{ secrets.SERVER_HOST }}
+          remote_user: ${{ secrets.SERVER_USER }}
+          remote_port: ${{ secrets.SERVER_PORT }}
+          remote_key: ${{ secrets.SERVER_SSH_KEY }}
+    
+      # 4. Run startup commands
       - name: SSH run (Laravel build)
         uses: appleboy/ssh-action@v1.0.3
         with:
