@@ -24,6 +24,8 @@ Route::middleware('auth.token')->group(function (): void {
         ->middleware('role:owner,admin');
     Route::get('/admin/users', [AdminUserController::class, 'index'])
         ->middleware('role:admin');
+    Route::get('/admin/users/{user}', [AdminUserController::class, 'show'])
+        ->middleware('role:admin');
     Route::post('/admin/users', [AdminUserController::class, 'store'])
         ->middleware('role:admin');
     Route::put('/admin/users/{user}', [AdminUserController::class, 'update'])

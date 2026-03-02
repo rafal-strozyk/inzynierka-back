@@ -21,6 +21,11 @@ class AdminUserController extends Controller
         return UserResource::collection(User::query()->latest()->paginate($perPage));
     }
 
+    public function show(User $user): UserResource
+    {
+        return new UserResource($user);
+    }
+
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
