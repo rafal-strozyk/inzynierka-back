@@ -6,31 +6,34 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class PropertyPhoto extends Model
+class Attachment extends Model
 {
     use HasFactory;
 
     public $timestamps = false;
 
     protected $fillable = [
-        'property_id',
-        'photo_name',
-        'alt_name',
-        'path',
-        'is_main',
+        'ticket_id',
+        'ticket_reply_id',
+        'attachment_name',
+        'attachment_path',
         'uploaded_at',
     ];
 
     protected function casts(): array
     {
         return [
-            'is_main' => 'boolean',
             'uploaded_at' => 'datetime',
         ];
     }
 
-    public function property(): BelongsTo
+    public function ticket(): BelongsTo
     {
-        return $this->belongsTo(Property::class);
+        return $this->belongsTo(Ticket::class);
+    }
+
+    public function ticketReply(): BelongsTo
+    {
+        return $this->belongsTo(TicketReply::class);
     }
 }

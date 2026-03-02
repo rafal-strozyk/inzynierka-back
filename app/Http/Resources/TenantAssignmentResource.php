@@ -7,50 +7,36 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class TenantAssignmentResource extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @return array<string, mixed>
-     */
     public function toArray(Request $request): array
     {
         return [
             'id' => $this->id,
-            'tenant_id' => $this->tenant_id,
-            'property_id' => $this->property_id,
-            'room_id' => $this->room_id,
-            'start_date' => $this->start_date?->toDateString(),
-            'end_date' => $this->end_date?->toDateString(),
-            'is_active' => $this->is_active,
-            'property' => $this->whenLoaded('property', function () {
+            'contract_id' => $this->contract_id,
+            'user_id' => $this->user_id,
+            'is_primary' => (bool) $this->is_primary,
+            'joined_at' => $this->joined_at?->toISOString(),
+            'contract' => $this->whenLoaded('contract', function () {
                 return [
-                    'id' => $this->property?->id,
-                    'name' => $this->property?->name,
-                    'street' => $this->property?->street,
-                    'street_number' => $this->property?->street_number,
-                    'apartment_number' => $this->property?->apartment_number,
-                    'city' => $this->property?->city,
+                    'id' => $this->contract?->id,
+                    'contract_number' => $this->contract?->contract_number,
+                    'status' => $this->contract?->status,
+                    'start_date' => $this->contract?->start_date?->toDateString(),
+                    'end_date' => $this->contract?->end_date?->toDateString(),
+                    'property' => $this->contract?->relationLoaded('property') ? [
+                        'id' => $this->contract?->property?->id,
+                        'name' => $this->contract?->property?->name,
+                        'type' => $this->contract?->property?->type,
+                        'city' => $this->contract?->property?->city,
+                    ] : null,
                 ];
             }),
-            'room' => $this->whenLoaded('room', function () {
-                if (!$this->room) {
-                    return null;
-                }
-
+            'tenant' => $this->whenLoaded('user', function () {
                 return [
-                    'id' => $this->room->id,
-                    'name' => $this->room->name,
-                    'room_number' => $this->room->room_number,
-                    'area' => $this->room->area !== null ? (float) $this->room->area : null,
-                    'rent_cost' => $this->room->rent_cost !== null ? (float) $this->room->rent_cost : null,
-                ];
-            }),
-            'tenant' => $this->whenLoaded('tenant', function () {
-                return [
-                    'id' => $this->tenant?->id,
-                    'name' => $this->tenant?->name,
-                    'email' => $this->tenant?->email,
-                    'phone' => $this->tenant?->phone,
+                    'id' => $this->user?->id,
+                    'name' => $this->user?->name,
+                    'surname' => $this->user?->surname,
+                    'email' => $this->user?->email,
+                    'phone' => $this->user?->phone,
                 ];
             }),
         ];

@@ -2,24 +2,33 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class LoginSession extends Model
+class Notification extends Model
 {
+    use HasFactory;
+
     public $timestamps = false;
 
     protected $fillable = [
         'user_id',
-        'token',
-        'expires_at',
+        'notification',
+        'type',
+        'data',
+        'is_read',
+        'sent_at',
+        'read_at',
     ];
 
     protected function casts(): array
     {
         return [
-            'expires_at' => 'datetime',
-            'created_at' => 'datetime',
+            'data' => 'array',
+            'is_read' => 'boolean',
+            'sent_at' => 'datetime',
+            'read_at' => 'datetime',
         ];
     }
 

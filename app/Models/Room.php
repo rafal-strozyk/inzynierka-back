@@ -4,46 +4,71 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Room extends Model
 {
     use HasFactory;
 
+    protected $table = 'properties';
+
+    public $timestamps = false;
+
     protected $fillable = [
-        'property_id',
+        'owner_user_id',
         'name',
-        'room_number',
+        'street',
+        'street_number',
+        'apartment_number',
+        'city',
+        'postal_code',
         'area',
+        'rooms_count',
+        'bathrooms_count',
+        'has_balcony',
         'rent_cost',
-        'status',
+        'utilities_cost',
+        'additional_costs',
+        'type',
+        'description',
     ];
 
-    protected $casts = [
-        'area' => 'decimal:2',
-        'rent_cost' => 'decimal:2',
-    ];
-
-    public function property()
+    protected static function booted(): void
     {
-        return $this->belongsTo(Property::class);
+        static::addGlobalScope('room_type', function ($query): void {
+            $query->where('type', 'room');
+        });
+
+        static::creating(function (self $room): void {
+            $room->type = 'room';
+        });
     }
 
-    public function photos()
+    protected function casts(): array
     {
-        return $this->hasMany(RoomPhoto::class);
+        return [
+            'area' => 'decimal:2',
+            'rent_cost' => 'decimal:2',
+            'utilities_cost' => 'decimal:2',
+            'additional_costs' => 'decimal:2',
+            'has_balcony' => 'boolean',
+            'created_at' => 'datetime',
+        ];
     }
 
-    public function assignments(): HasMany
+    public function owner(): BelongsTo
     {
-        return $this->hasMany(TenantProperty::class);
+        return $this->belongsTo(User::class, 'owner_user_id');
     }
 
-    public function activeAssignment(): HasOne
+    public function photos(): HasMany
     {
-        return $this->hasOne(TenantProperty::class)
-            ->where('is_active', true)
-            ->orderByDesc('start_date');
+        return $this->hasMany(PropertyPhoto::class, 'property_id');
+    }
+
+    public function contracts(): HasMany
+    {
+        return $this->hasMany(Contract::class, 'property_id');
     }
 }

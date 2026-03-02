@@ -6,26 +6,26 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class PropertyPhoto extends Model
+class PriceHistory extends Model
 {
     use HasFactory;
 
     public $timestamps = false;
 
+    protected $table = 'price_history';
+
     protected $fillable = [
         'property_id',
-        'photo_name',
-        'alt_name',
-        'path',
-        'is_main',
-        'uploaded_at',
+        'type',
+        'price',
+        'updated_at',
     ];
 
     protected function casts(): array
     {
         return [
-            'is_main' => 'boolean',
-            'uploaded_at' => 'datetime',
+            'price' => 'decimal:2',
+            'updated_at' => 'datetime',
         ];
     }
 
