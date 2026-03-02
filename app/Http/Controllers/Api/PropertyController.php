@@ -8,6 +8,7 @@ use App\Http\Resources\PropertyResource;
 use App\Models\Property;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 use Illuminate\Validation\Rule;
 
 class PropertyController extends Controller
@@ -132,7 +133,13 @@ class PropertyController extends Controller
             return response()->json(['message' => 'Forbidden.'], 403);
         }
 
-        $property->delete();
+        try {
+            $property->delete();
+        } catch (QueryException $e) {
+            return response()->json([
+                'message' => 'Property cannot be deleted because it is linked to active records.',
+            ], 409);
+        }
 
         return response()->json(['message' => 'Property deleted.']);
     }
