@@ -21,9 +21,9 @@ class TenantResource extends JsonResource
             'birth_date' => $this->birth_date?->toDateString(),
             'pesel' => $this->pesel,
             'role' => $this->role,
+            'assigned_to' => $this->assigned_to,
             'created_at' => $this->created_at?->toISOString(),
             'updated_at' => $this->updated_at?->toISOString(),
         ];
     }
 }
-

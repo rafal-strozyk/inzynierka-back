@@ -33,6 +33,14 @@ return new class extends Migration
             if (!Schema::hasColumn('users', 'pesel')) {
                 $table->string('pesel', 11)->nullable()->unique()->after('birth_date');
             }
+            if (!Schema::hasColumn('users', 'assigned_to')) {
+                $table->foreignId('assigned_to')
+                    ->nullable()
+                    ->after('role')
+                    ->constrained('users')
+                    ->nullOnDelete()
+                    ->cascadeOnUpdate();
+            }
         });
 
         Schema::create('properties', function (Blueprint $table) {

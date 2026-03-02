@@ -21,6 +21,19 @@ class AdminUserController extends Controller
         return UserResource::collection(User::query()->latest()->paginate($perPage));
     }
 
+    public function owners(Request $request)
+    {
+        $perPage = (int) $request->query('per_page', 10);
+        $perPage = max(1, min($perPage, 100));
+
+        return UserResource::collection(
+            User::query()
+                ->where('role', 'owner')
+                ->latest()
+                ->paginate($perPage)
+        );
+    }
+
     public function show(User $user): UserResource
     {
         return new UserResource($user);

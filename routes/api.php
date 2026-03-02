@@ -24,6 +24,8 @@ Route::middleware('auth.token')->group(function (): void {
         ->middleware('role:owner,admin');
     Route::get('/admin/users', [AdminUserController::class, 'index'])
         ->middleware('role:admin');
+    Route::get('/admin/owners', [AdminUserController::class, 'owners'])
+        ->middleware('role:admin');
     Route::get('/admin/users/{user}', [AdminUserController::class, 'show'])
         ->middleware('role:admin');
     Route::post('/admin/users', [AdminUserController::class, 'store'])
@@ -33,6 +35,8 @@ Route::middleware('auth.token')->group(function (): void {
     Route::post('/admin/users/{user}/reset-password', [AuthController::class, 'adminResetPassword'])
         ->middleware('role:admin');
     Route::get('/owner/tenants', [OwnerTenantController::class, 'index'])
+        ->middleware('role:owner,admin');
+    Route::get('/owner/tenants/{user}', [OwnerTenantController::class, 'show'])
         ->middleware('role:owner,admin');
     Route::post('/owner/tenants', [OwnerTenantController::class, 'store'])
         ->middleware('role:owner,admin');
