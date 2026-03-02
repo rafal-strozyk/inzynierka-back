@@ -9,32 +9,15 @@ use Illuminate\Support\Facades\Storage;
 
 class PropertyPhotoController extends Controller
 {
-    /**
-     * Lista zdjec nieruchomosci.
-     *
-     * @group Nieruchomości
-     * @authenticated
-     *
-     * @urlParam property int required ID nieruchomosci. Example: 1
-     *
-     * @response 200 {
-     *  "data": [
-     *    {
-     *      "id": 1,
-     *      "file_name": "mieszkanie-1.jpg",
-     *      "url": "https://example.com/storage/images/properties/1/mieszkanie-1.jpg",
-     *      "uploaded_at": "2026-01-11T10:00:00+00:00"
-     *    }
-     *  ]
-     * }
-     */
     public function index(Property $property)
     {
         $photos = $property->photos()->get()->map(function ($photo) {
             return [
                 'id' => $photo->id,
-                'file_name' => $photo->file_name,
-                'url' => Storage::url($photo->file_path),
+                'photo_name' => $photo->photo_name,
+                'alt_name' => $photo->alt_name,
+                'url' => Storage::url($photo->path),
+                'is_main' => (bool) $photo->is_main,
                 'uploaded_at' => $photo->uploaded_at?->toISOString(),
             ];
         });
@@ -42,26 +25,6 @@ class PropertyPhotoController extends Controller
         return response()->json(['data' => $photos]);
     }
 
-    /**
-     * Dodanie zdjec nieruchomosci.
-     *
-     * @group Nieruchomości
-     * @authenticated
-     *
-     * @urlParam property int required ID nieruchomosci. Example: 1
-     * @bodyParam photos[] file required Zdjecia do dodania.
-     *
-     * @response 201 {
-     *  "data": [
-     *    {
-     *      "id": 1,
-     *      "file_name": "mieszkanie-1.jpg",
-     *      "url": "https://example.com/storage/images/properties/1/mieszkanie-1.jpg",
-     *      "uploaded_at": "2026-01-11T10:00:00+00:00"
-     *    }
-     *  ]
-     * }
-     */
     public function store(Request $request, Property $property)
     {
         $validated = $request->validate([
@@ -70,11 +33,13 @@ class PropertyPhotoController extends Controller
         ]);
 
         $created = [];
-        foreach ($validated['photos'] as $file) {
+        foreach ($validated['photos'] as $index => $file) {
             $path = $file->store("images/properties/{$property->id}", 'public');
             $created[] = $property->photos()->create([
-                'file_path' => $path,
-                'file_name' => $file->getClientOriginalName(),
+                'photo_name' => $file->getClientOriginalName(),
+                'alt_name' => 'property-photo-' . ($index + 1),
+                'path' => $path,
+                'is_main' => false,
                 'uploaded_at' => now(),
             ]);
         }
@@ -83,8 +48,10 @@ class PropertyPhotoController extends Controller
             'data' => collect($created)->map(function ($photo) {
                 return [
                     'id' => $photo->id,
-                    'file_name' => $photo->file_name,
-                    'url' => Storage::url($photo->file_path),
+                    'photo_name' => $photo->photo_name,
+                    'alt_name' => $photo->alt_name,
+                    'url' => Storage::url($photo->path),
+                    'is_main' => (bool) $photo->is_main,
                     'uploaded_at' => $photo->uploaded_at?->toISOString(),
                 ];
             }),

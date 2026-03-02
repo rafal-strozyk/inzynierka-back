@@ -18,9 +18,12 @@ class RoomPhoto extends Model
         'uploaded_at',
     ];
 
-    protected $casts = [
-        'uploaded_at' => 'datetime',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'uploaded_at' => 'datetime',
+        ];
+    }
 
     public function room()
     {

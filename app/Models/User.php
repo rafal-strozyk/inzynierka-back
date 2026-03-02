@@ -2,67 +2,77 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
     protected $fillable = [
-        'role',
-        'name',
+        'username',
         'email',
         'password',
-        'first_name',
-        'last_name',
+        'role',
+        'name',
+        'surname',
         'phone',
-        'address_registered',
-        'city',
+        'address',
+        'postal_code',
         'birth_date',
         'pesel',
-        'notes',
-        'password_hash',
-        'reset_token',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
     protected $hidden = [
         'password',
-        'password_hash',
         'remember_token',
-        'reset_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [
+            'password' => 'hashed',
             'email_verified_at' => 'datetime',
             'birth_date' => 'date',
-            'password' => 'hashed',
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
         ];
     }
 
-    public function tenantAssignments(): HasMany
+    public function ownedProperties(): HasMany
     {
-        return $this->hasMany(TenantProperty::class, 'tenant_id');
+        return $this->hasMany(Property::class, 'owner_user_id');
+    }
+
+    public function contractTenants(): HasMany
+    {
+        return $this->hasMany(ContractTenant::class);
+    }
+
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class, 'paid_by_user_id');
+    }
+
+    public function taxes(): HasMany
+    {
+        return $this->hasMany(Tax::class, 'owner_user_id');
+    }
+
+    public function ticketsCreated(): HasMany
+    {
+        return $this->hasMany(Ticket::class, 'created_by_user_id');
+    }
+
+    public function ticketReplies(): HasMany
+    {
+        return $this->hasMany(TicketReply::class, 'responded_by_user_id');
+    }
+
+    public function notifications(): HasMany
+    {
+        return $this->hasMany(Notification::class);
     }
 }

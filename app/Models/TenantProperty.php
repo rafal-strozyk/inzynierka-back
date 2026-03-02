@@ -23,11 +23,14 @@ class TenantProperty extends Model
         'is_active',
     ];
 
-    protected $casts = [
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'is_active' => 'boolean',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'start_date' => 'date',
+            'end_date' => 'date',
+            'is_active' => 'boolean',
+        ];
+    }
 
     public function tenant(): BelongsTo
     {

@@ -8,33 +8,38 @@ use Illuminate\Support\Facades\Storage;
 
 class RoomDetailsResource extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @return array<string, mixed>
-     */
     public function toArray(Request $request): array
     {
         return [
             'id' => $this->id,
-            'property_id' => $this->property_id,
+            'owner_user_id' => $this->owner_user_id,
             'name' => $this->name,
-            'room_number' => $this->room_number,
-            'area' => (float) $this->area,
+            'street' => $this->street,
+            'street_number' => $this->street_number,
+            'apartment_number' => $this->apartment_number,
+            'city' => $this->city,
+            'postal_code' => $this->postal_code,
+            'area' => $this->area !== null ? (float) $this->area : null,
+            'rooms_count' => $this->rooms_count,
+            'bathrooms_count' => $this->bathrooms_count,
+            'has_balcony' => (bool) $this->has_balcony,
             'rent_cost' => (float) $this->rent_cost,
-            'status' => $this->status,
+            'utilities_cost' => (float) $this->utilities_cost,
+            'additional_costs' => (float) $this->additional_costs,
+            'description' => $this->description,
             'photos' => $this->whenLoaded('photos', function () {
                 return $this->photos->map(function ($photo) {
                     return [
                         'id' => $photo->id,
-                        'file_name' => $photo->file_name,
-                        'url' => Storage::url($photo->file_path),
+                        'photo_name' => $photo->photo_name,
+                        'alt_name' => $photo->alt_name,
+                        'url' => Storage::url($photo->path),
+                        'is_main' => (bool) $photo->is_main,
                         'uploaded_at' => $photo->uploaded_at?->toISOString(),
                     ];
                 });
             }),
             'created_at' => $this->created_at?->toISOString(),
-            'updated_at' => $this->updated_at?->toISOString(),
         ];
     }
 }

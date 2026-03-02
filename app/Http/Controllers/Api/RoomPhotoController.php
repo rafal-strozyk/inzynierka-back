@@ -9,26 +9,6 @@ use Illuminate\Support\Facades\Storage;
 
 class RoomPhotoController extends Controller
 {
-    /**
-     * Dodanie zdjec pokoju.
-     *
-     * @group Pokoje
-     * @authenticated
-     *
-     * @urlParam room int required ID pokoju. Example: 1
-     * @bodyParam photos[] file required Zdjecia do dodania.
-     *
-     * @response 201 {
-     *  "data": [
-     *    {
-     *      "id": 1,
-     *      "file_name": "pokoj-1.jpg",
-     *      "url": "https://example.com/storage/images/rooms/1/pokoj-1.jpg",
-     *      "uploaded_at": "2026-01-11T10:00:00+00:00"
-     *    }
-     *  ]
-     * }
-     */
     public function store(Request $request, Room $room)
     {
         $validated = $request->validate([
@@ -37,11 +17,13 @@ class RoomPhotoController extends Controller
         ]);
 
         $created = [];
-        foreach ($validated['photos'] as $file) {
+        foreach ($validated['photos'] as $index => $file) {
             $path = $file->store("images/rooms/{$room->id}", 'public');
             $created[] = $room->photos()->create([
-                'file_path' => $path,
-                'file_name' => $file->getClientOriginalName(),
+                'photo_name' => $file->getClientOriginalName(),
+                'alt_name' => 'room-photo-' . ($index + 1),
+                'path' => $path,
+                'is_main' => false,
                 'uploaded_at' => now(),
             ]);
         }
@@ -50,8 +32,10 @@ class RoomPhotoController extends Controller
             'data' => collect($created)->map(function ($photo) {
                 return [
                     'id' => $photo->id,
-                    'file_name' => $photo->file_name,
-                    'url' => Storage::url($photo->file_path),
+                    'photo_name' => $photo->photo_name,
+                    'alt_name' => $photo->alt_name,
+                    'url' => Storage::url($photo->path),
+                    'is_main' => (bool) $photo->is_main,
                     'uploaded_at' => $photo->uploaded_at?->toISOString(),
                 ];
             }),

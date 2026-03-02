@@ -2,25 +2,34 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class LoginSession extends Model
+class ContractTenant extends Model
 {
+    use HasFactory;
+
     public $timestamps = false;
 
     protected $fillable = [
+        'contract_id',
         'user_id',
-        'token',
-        'expires_at',
+        'is_primary',
+        'joined_at',
     ];
 
     protected function casts(): array
     {
         return [
-            'expires_at' => 'datetime',
-            'created_at' => 'datetime',
+            'is_primary' => 'boolean',
+            'joined_at' => 'datetime',
         ];
+    }
+
+    public function contract(): BelongsTo
+    {
+        return $this->belongsTo(Contract::class);
     }
 
     public function user(): BelongsTo
