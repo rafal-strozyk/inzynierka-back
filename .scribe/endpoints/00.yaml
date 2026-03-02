@@ -363,6 +363,106 @@ endpoints:
   -
     custom: []
     httpMethods:
+      - GET
+    uri: api/admin/owners
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Invalid token."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/admin/users/{user_id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        custom: []
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      user_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Invalid token."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
       - POST
     uri: api/admin/users
     metadata:
@@ -488,7 +588,7 @@ endpoints:
         name: birth_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-03-02T18:21:13'
+        example: '2026-03-02T21:11:08'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -514,7 +614,7 @@ endpoints:
       phone: w
       address: l
       postal_code: vqwr
-      birth_date: '2026-03-02T18:21:13'
+      birth_date: '2026-03-02T21:11:08'
       pesel: sitcpscqldz
     fileParameters: []
     responses: []
@@ -666,7 +766,7 @@ endpoints:
         name: birth_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-03-02T18:21:13'
+        example: '2026-03-02T21:11:08'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -692,7 +792,7 @@ endpoints:
       phone: w
       address: l
       postal_code: vqwr
-      birth_date: '2026-03-02T18:21:13'
+      birth_date: '2026-03-02T21:11:08'
       pesel: sitcpscqldz
     fileParameters: []
     responses: []
@@ -798,6 +898,73 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
+    bodyParameters:
+      owner_user_id:
+        custom: []
+        name: owner_user_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Invalid token."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/owner/tenants/{user_id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        custom: []
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      user_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -898,6 +1065,17 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      assigned_to:
+        custom: []
+        name: assigned_to
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
       phone:
         custom: []
         name: phone
@@ -936,7 +1114,7 @@ endpoints:
         name: birth_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-03-02T18:21:13'
+        example: '2026-03-02T21:11:08'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -962,7 +1140,7 @@ endpoints:
       phone: w
       address: l
       postal_code: vqwr
-      birth_date: '2026-03-02T18:21:13'
+      birth_date: '2026-03-02T21:11:08'
       pesel: sitcpscqldz
     fileParameters: []
     responses: []
@@ -1054,6 +1232,17 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      assigned_to:
+        custom: []
+        name: assigned_to
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
       phone:
         custom: []
         name: phone
@@ -1092,7 +1281,7 @@ endpoints:
         name: birth_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-03-02T18:21:13'
+        example: '2026-03-02T21:11:08'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1117,7 +1306,7 @@ endpoints:
       phone: d
       address: l
       postal_code: jnik
-      birth_date: '2026-03-02T18:21:13'
+      birth_date: '2026-03-02T21:11:08'
       pesel: hwaykcmyuwp
     fileParameters: []
     responses: []
@@ -1829,28 +2018,6 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      rooms_count:
-        custom: []
-        name: rooms_count
-        description: 'Must be at least 1.'
-        required: false
-        example: 67
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      bathrooms_count:
-        custom: []
-        name: bathrooms_count
-        description: 'Must be at least 1.'
-        required: false
-        example: 66
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
       has_balcony:
         custom: []
         name: has_balcony
@@ -1867,7 +2034,7 @@ endpoints:
         name: rent_cost
         description: 'Must be at least 0.'
         required: true
-        example: 77
+        example: 84
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1878,7 +2045,7 @@ endpoints:
         name: utilities_cost
         description: 'Must be at least 0.'
         required: false
-        example: 8
+        example: 12
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1889,7 +2056,7 @@ endpoints:
         name: additional_costs
         description: 'Must be at least 0.'
         required: false
-        example: 76
+        example: 77
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1906,15 +2073,112 @@ endpoints:
         exampleWasSpecified: false
         nullable: true
         deprecated: false
+      owner_user_id:
+        custom: []
+        name: owner_user_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      street:
+        custom: []
+        name: street
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      street_number:
+        custom: []
+        name: street_number
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      apartment_number:
+        custom: []
+        name: apartment_number
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      city:
+        custom: []
+        name: city
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      postal_code:
+        custom: []
+        name: postal_code
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      rooms_count:
+        custom: []
+        name: rooms_count
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      bathrooms_count:
+        custom: []
+        name: bathrooms_count
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      type:
+        custom: []
+        name: type
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
     cleanBodyParameters:
       name: b
       area: 39
-      rooms_count: 67
-      bathrooms_count: 66
       has_balcony: false
-      rent_cost: 77
-      utilities_cost: 8
-      additional_costs: 76
+      rent_cost: 84
+      utilities_cost: 12
+      additional_costs: 77
       description: 'Eius et animi quos velit et.'
     fileParameters: []
     responses: []
@@ -1995,14 +2259,14 @@ endpoints:
         name: room_id
         description: 'The ID of the room.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      room_id: 1
+      room_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2051,14 +2315,14 @@ endpoints:
         name: room_id
         description: 'The ID of the room.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      room_id: 1
+      room_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -2111,7 +2375,7 @@ endpoints:
         name: has_balcony
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -2188,7 +2452,7 @@ endpoints:
       area: 39
       rooms_count: 67
       bathrooms_count: 66
-      has_balcony: false
+      has_balcony: true
       rent_cost: 77
       utilities_cost: 8
       additional_costs: 76
@@ -2228,14 +2492,14 @@ endpoints:
         name: room_id
         description: 'The ID of the room.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      room_id: 1
+      room_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2275,14 +2539,14 @@ endpoints:
         name: room_id
         description: 'The ID of the room.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      room_id: 1
+      room_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2331,14 +2595,14 @@ endpoints:
         name: room_id
         description: 'The ID of the room.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      room_id: 1
+      room_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:

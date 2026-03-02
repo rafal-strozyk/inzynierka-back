@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        User::updateOrCreate(
+        $baseOwner = User::updateOrCreate(
             ['email' => 'owner@inz.test'],
             [
                 'username' => 'owner',
@@ -48,6 +48,7 @@ class DatabaseSeeder extends Seeder
                 'surname' => 'Najemca',
                 'role' => 'tenant',
                 'password' => $password,
+                'assigned_to' => $baseOwner->id,
                 'phone' => '+48333333333',
                 'address' => 'ul. Najemcy 3, Gdansk',
                 'postal_code' => '80-003',
@@ -55,8 +56,14 @@ class DatabaseSeeder extends Seeder
         );
 
         User::factory()->count(3)->create(['role' => 'admin']);
-        User::factory()->count(8)->create(['role' => 'owner']);
-        User::factory()->count(28)->create(['role' => 'tenant']);
+        $owners = User::factory()->count(8)->create(['role' => 'owner'])->prepend($baseOwner);
+        $ownerIds = $owners->pluck('id');
+        User::factory()
+            ->count(28)
+            ->create(['role' => 'tenant'])
+            ->each(function (User $tenant) use ($ownerIds): void {
+                $tenant->update(['assigned_to' => $ownerIds->random()]);
+            });
 
         $this->call([
             PropertySeeder::class,

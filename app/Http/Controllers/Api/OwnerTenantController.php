@@ -14,23 +14,38 @@ use Illuminate\Validation\Rule;
 
 class OwnerTenantController extends Controller
 {
-    public function index(Request $request)
+      public function index(Request $request)
     {
         $actor = $request->user();
-
         if (!$actor || !in_array($actor->role, ['admin', 'owner'], true)) {
             abort(403, 'Forbidden');
         }
-
         $perPage = (int) $request->query('per_page', 10);
         $perPage = max(1, min($perPage, 100));
 
-        $query = User::query()
-            ->where('role', 'tenant');
+        $filters = $request->validate([
+            'owner_user_id' => ['nullable', Rule::exists('users', 'id')->where('role', 'owner')],
+        ]);
 
-        return TenantResource::collection(
-            $query->latest()->paginate($perPage)
-        );
+        $query = User::query()->where('role', 'tenant');
+
+        if ($actor?->role === 'owner') {
+            $query->where('assigned_to', $actor->id);
+        } elseif (!empty($filters['owner_user_id'])) {
+            $query->where('assigned_to', $filters['owner_user_id']);
+        }
+
+        return TenantResource::collection($query->latest()->paginate($perPage));
+    }
+
+    public function show(Request $request, User $user)
+    {
+        $accessError = $this->ensureTenantAccess($request, $user);
+        if ($accessError) {
+            return $accessError;
+        }
+
+        return new TenantResource($user);
     }
 
     public function store(Request $request): JsonResponse
@@ -41,12 +56,17 @@ class OwnerTenantController extends Controller
             'username' => ['nullable', 'string', 'max:50', 'unique:users,username'],
             'email' => ['required', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'assigned_to' => [$request->user()?->role === 'admin' ? 'required' : 'prohibited', Rule::exists('users', 'id')->where('role', 'owner')],
             'phone' => ['nullable', 'string', 'max:30'],
             'address' => ['nullable', 'string', 'max:255'],
             'postal_code' => ['nullable', 'string', 'max:12'],
             'birth_date' => ['nullable', 'date'],
             'pesel' => ['nullable', 'string', 'size:11', 'unique:users,pesel'],
         ]);
+
+        $assignedOwnerId = $request->user()?->role === 'admin'
+            ? $validated['assigned_to']
+            : $request->user()?->id;
 
         $user = User::query()->create([
             'role' => 'tenant',
@@ -55,6 +75,7 @@ class OwnerTenantController extends Controller
             'surname' => $validated['surname'] ?? '-',
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
+            'assigned_to' => $assignedOwnerId,
             'phone' => $validated['phone'] ?? null,
             'address' => $validated['address'] ?? null,
             'postal_code' => $validated['postal_code'] ?? null,
@@ -77,6 +98,7 @@ class OwnerTenantController extends Controller
             'surname' => ['nullable', 'string', 'max:120'],
             'username' => ['sometimes', 'string', 'max:50', Rule::unique('users', 'username')->ignore($user->id)],
             'email' => ['sometimes', 'email', 'max:255', Rule::unique('users', 'email')->ignore($user->id)],
+            'assigned_to' => [$request->user()?->role === 'admin' ? 'sometimes' : 'prohibited', Rule::exists('users', 'id')->where('role', 'owner')],
             'phone' => ['nullable', 'string', 'max:30'],
             'address' => ['nullable', 'string', 'max:255'],
             'postal_code' => ['nullable', 'string', 'max:12'],
@@ -123,13 +145,7 @@ class OwnerTenantController extends Controller
             return null;
         }
 
-        $hasTenant = $user->contractTenants()
-            ->join('contracts', 'contract_tenants.contract_id', '=', 'contracts.id')
-            ->join('properties', 'contracts.property_id', '=', 'properties.id')
-            ->where('properties.owner_user_id', $actor->id)
-            ->exists();
-
-        if (!$hasTenant) {
+        if ($user->assigned_to !== $actor->id) {
             return response()->json(['message' => 'Tenant not found.'], 404);
         }
 

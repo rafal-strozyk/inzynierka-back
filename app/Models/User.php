@@ -18,6 +18,7 @@ class User extends Authenticatable
         'role',
         'name',
         'surname',
+        'assigned_to',
         'phone',
         'address',
         'postal_code',
@@ -44,6 +45,16 @@ class User extends Authenticatable
     public function ownedProperties(): HasMany
     {
         return $this->hasMany(Property::class, 'owner_user_id');
+    }
+
+    public function assignedOwner()
+    {
+        return $this->belongsTo(self::class, 'assigned_to');
+    }
+
+    public function assignedTenants(): HasMany
+    {
+        return $this->hasMany(self::class, 'assigned_to');
     }
 
     public function contractTenants(): HasMany
