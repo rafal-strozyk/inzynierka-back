@@ -86,6 +86,7 @@ class PropertyController extends Controller
         $user = $request->user();
 
         $rules = $this->basePropertyRules();
+        $rules['type'] = ['prohibited'];
         if ($user?->role === 'admin') {
             $rules['owner_user_id'] = ['required', Rule::exists('users', 'id')->where('role', 'owner')];
         } else {
@@ -97,6 +98,7 @@ class PropertyController extends Controller
         if ($user?->role !== 'admin') {
             $validated['owner_user_id'] = $user?->id;
         }
+        $validated['type'] = 'flat';
 
         $property = Property::query()->create($validated);
 
