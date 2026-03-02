@@ -41,7 +41,7 @@ return new class extends Migration
             $table->string('name', 150);
             $table->string('street', 150);
             $table->string('street_number', 30);
-            $table->string('apartment_number', 30)->nullable();
+            $table->string('apartment_number', 4);
             $table->string('city', 120);
             $table->string('postal_code', 12);
             $table->decimal('area', 10, 2);

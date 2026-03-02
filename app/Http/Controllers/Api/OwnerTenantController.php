@@ -17,22 +17,20 @@ class OwnerTenantController extends Controller
     public function index(Request $request)
     {
         $actor = $request->user();
+
+        if (!$actor || !in_array($actor->role, ['admin', 'owner'], true)) {
+            abort(403, 'Forbidden');
+        }
+
         $perPage = (int) $request->query('per_page', 10);
         $perPage = max(1, min($perPage, 100));
 
-        $query = User::query()->where('role', 'tenant');
+        $query = User::query()
+            ->where('role', 'tenant');
 
-        if ($actor?->role === 'owner') {
-            $query->whereIn('id', function ($subQuery) use ($actor) {
-                $subQuery->select('contract_tenants.user_id')
-                    ->from('contract_tenants')
-                    ->join('contracts', 'contract_tenants.contract_id', '=', 'contracts.id')
-                    ->join('properties', 'contracts.property_id', '=', 'properties.id')
-                    ->where('properties.owner_user_id', $actor->id);
-            });
-        }
-
-        return TenantResource::collection($query->latest()->paginate($perPage));
+        return TenantResource::collection(
+            $query->latest()->paginate($perPage)
+        );
     }
 
     public function store(Request $request): JsonResponse
