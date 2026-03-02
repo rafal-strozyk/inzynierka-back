@@ -69,13 +69,21 @@ class RoomController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:150'],
             'area' => ['required', 'numeric', 'min:0'],
-            'rooms_count' => ['nullable', 'integer', 'min:1'],
-            'bathrooms_count' => ['nullable', 'integer', 'min:1'],
             'has_balcony' => ['nullable', 'boolean'],
             'rent_cost' => ['required', 'numeric', 'min:0'],
             'utilities_cost' => ['nullable', 'numeric', 'min:0'],
             'additional_costs' => ['nullable', 'numeric', 'min:0'],
             'description' => ['nullable', 'string'],
+
+            'owner_user_id' => ['prohibited'],
+            'street' => ['prohibited'],
+            'street_number' => ['prohibited'],
+            'apartment_number' => ['prohibited'],
+            'city' => ['prohibited'],
+            'postal_code' => ['prohibited'],
+            'rooms_count' => ['prohibited'],
+            'bathrooms_count' => ['prohibited'],
+            'type' => ['prohibited'],
         ]);
 
         $room = Room::query()->create([
@@ -87,8 +95,8 @@ class RoomController extends Controller
             'city' => $property->city,
             'postal_code' => $property->postal_code,
             'area' => $validated['area'],
-            'rooms_count' => $validated['rooms_count'] ?? 1,
-            'bathrooms_count' => $validated['bathrooms_count'] ?? 1,
+            'rooms_count' => 1,
+            'bathrooms_count' => $property->bathrooms_count,
             'has_balcony' => (bool) ($validated['has_balcony'] ?? false),
             'rent_cost' => $validated['rent_cost'],
             'utilities_cost' => $validated['utilities_cost'] ?? 0,
