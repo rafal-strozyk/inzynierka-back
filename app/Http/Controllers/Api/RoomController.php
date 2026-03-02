@@ -9,6 +9,7 @@ use App\Models\Property;
 use App\Models\Room;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Storage;
 
 class RoomController extends Controller
@@ -132,7 +133,13 @@ class RoomController extends Controller
             return $accessError;
         }
 
-        $room->delete();
+        try {
+            $room->delete();
+        } catch (QueryException $e) {
+            return response()->json([
+                'message' => 'Room cannot be deleted because it is linked to active records.',
+            ], 409);
+        }
 
         return response()->json(['message' => 'Room deleted.']);
     }

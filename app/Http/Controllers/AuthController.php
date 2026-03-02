@@ -19,6 +19,25 @@ class AuthController extends Controller
     private const RESET_TOKEN_BYTES = 64;
     private const SESSION_DAYS = 7;
 
+    /**
+     * Rejestracja nowego użytkownika.
+     *
+     * @group Auth
+     * @authenticated
+     *
+     * @bodyParam name string required Imię. Example: Jan
+     * @bodyParam surname string Nazwisko. Example: Kowalski
+     * @bodyParam username string Unikalna nazwa użytkownika (opcjonalnie). Example: jan.kowalski
+     * @bodyParam email string required Email użytkownika. Example: jan@example.com
+     * @bodyParam password string required Hasło (min. 8 znaków). Example: haslo1234
+     * @bodyParam password_confirmation string required Potwierdzenie hasła (musi być identyczne jak `password`). Example: haslo1234
+     * @bodyParam role string Rola nowego użytkownika: `owner` lub `tenant`. Example: tenant
+     * @bodyParam phone string Telefon. Example: +48500100100
+     * @bodyParam address string Adres. Example: ul. Testowa 10
+     * @bodyParam postal_code string Kod pocztowy. Example: 00-001
+     * @bodyParam birth_date date Data urodzenia (YYYY-MM-DD). Example: 1998-04-12
+     * @bodyParam pesel string PESEL (11 cyfr). Example: 98041212345
+     */
     public function register(Request $request): JsonResponse
     {
         $validated = $request->validate([

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -100,7 +101,13 @@ class OwnerTenantController extends Controller
             return $accessError;
         }
 
-        $user->delete();
+        try {
+            $user->delete();
+        } catch (QueryException $e) {
+            return response()->json([
+                'message' => 'Tenant cannot be deleted because it is linked to active records.',
+            ], 409);
+        }
 
         return response()->json(['message' => 'Tenant deleted.']);
     }

@@ -1,0 +1,182 @@
+name: Auth
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/register
+    metadata:
+      custom: []
+      groupName: Auth
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Rejestracja nowego użytkownika.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: Imię.
+        required: true
+        example: Jan
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      surname:
+        custom: []
+        name: surname
+        description: Nazwisko.
+        required: false
+        example: Kowalski
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      username:
+        custom: []
+        name: username
+        description: 'Unikalna nazwa użytkownika (opcjonalnie).'
+        required: false
+        example: jan.kowalski
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      email:
+        custom: []
+        name: email
+        description: 'Email użytkownika.'
+        required: true
+        example: jan@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: 'Hasło (min. 8 znaków).'
+        required: true
+        example: haslo1234
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      role:
+        custom: []
+        name: role
+        description: 'Rola nowego użytkownika: `owner` lub `tenant`.'
+        required: false
+        example: tenant
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      phone:
+        custom: []
+        name: phone
+        description: Telefon.
+        required: false
+        example: '+48500100100'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      address:
+        custom: []
+        name: address
+        description: Adres.
+        required: false
+        example: 'ul. Testowa 10'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      postal_code:
+        custom: []
+        name: postal_code
+        description: 'Kod pocztowy.'
+        required: false
+        example: 00-001
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      birth_date:
+        custom: []
+        name: birth_date
+        description: 'Data urodzenia (YYYY-MM-DD).'
+        required: false
+        example: '1998-04-12'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      pesel:
+        custom: []
+        name: pesel
+        description: 'PESEL (11 cyfr).'
+        required: false
+        example: '98041212345'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      password_confirmation:
+        custom: []
+        name: password_confirmation
+        description: 'Potwierdzenie hasła (musi być identyczne jak `password`).'
+        required: true
+        example: haslo1234
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name: Jan
+      surname: Kowalski
+      username: jan.kowalski
+      email: jan@example.com
+      password: haslo1234
+      role: tenant
+      phone: '+48500100100'
+      address: 'ul. Testowa 10'
+      postal_code: 00-001
+      birth_date: '1998-04-12'
+      pesel: '98041212345'
+      password_confirmation: haslo1234
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
