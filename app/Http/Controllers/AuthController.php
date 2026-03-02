@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
@@ -54,7 +55,7 @@ class AuthController extends Controller
             'pesel' => ['nullable', 'string', 'size:11', 'unique:users,pesel'],
         ]);
 
-        $user = User::query()->create([
+        $userPayload = [
             'username' => $validated['username'] ?? $this->generateUniqueUsername($validated['name'], $validated['surname'] ?? null),
             'role' => $validated['role'] ?? 'tenant',
             'name' => $validated['name'],
@@ -66,7 +67,13 @@ class AuthController extends Controller
             'postal_code' => $validated['postal_code'] ?? null,
             'birth_date' => $validated['birth_date'] ?? null,
             'pesel' => $validated['pesel'] ?? null,
-        ]);
+        ];
+
+        // Fallback dla środowisk, gdzie migracje users nie zostały jeszcze dograne.
+        $existingColumns = array_flip(Schema::getColumnListing('users'));
+        $userPayload = array_intersect_key($userPayload, $existingColumns);
+
+        $user = User::query()->create($userPayload);
 
         return response()->json(['user' => $user], 201);
     }

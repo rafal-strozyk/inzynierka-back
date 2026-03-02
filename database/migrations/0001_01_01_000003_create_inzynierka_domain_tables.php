@@ -9,14 +9,30 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('username', 50)->unique()->after('id');
-            $table->enum('role', ['admin', 'owner', 'tenant'])->default('tenant')->after('password');
-            $table->string('surname', 120)->after('name');
-            $table->string('phone', 30)->nullable()->after('surname');
-            $table->string('address')->nullable()->after('phone');
-            $table->string('postal_code', 12)->nullable()->after('address');
-            $table->date('birth_date')->nullable()->after('postal_code');
-            $table->string('pesel', 11)->nullable()->unique()->after('birth_date');
+            if (!Schema::hasColumn('users', 'username')) {
+                $table->string('username', 50)->unique()->after('id');
+            }
+            if (!Schema::hasColumn('users', 'role')) {
+                $table->enum('role', ['admin', 'owner', 'tenant'])->default('tenant')->after('password');
+            }
+            if (!Schema::hasColumn('users', 'surname')) {
+                $table->string('surname', 120)->after('name');
+            }
+            if (!Schema::hasColumn('users', 'phone')) {
+                $table->string('phone', 30)->nullable()->after('surname');
+            }
+            if (!Schema::hasColumn('users', 'address')) {
+                $table->string('address')->nullable()->after('phone');
+            }
+            if (!Schema::hasColumn('users', 'postal_code')) {
+                $table->string('postal_code', 12)->nullable()->after('address');
+            }
+            if (!Schema::hasColumn('users', 'birth_date')) {
+                $table->date('birth_date')->nullable()->after('postal_code');
+            }
+            if (!Schema::hasColumn('users', 'pesel')) {
+                $table->string('pesel', 11)->nullable()->unique()->after('birth_date');
+            }
         });
 
         Schema::create('properties', function (Blueprint $table) {
@@ -183,18 +199,23 @@ return new class extends Migration
         Schema::dropIfExists('properties');
 
         Schema::table('users', function (Blueprint $table) {
-            $table->dropUnique('users_username_unique');
-            $table->dropUnique('users_pesel_unique');
-            $table->dropColumn([
-                'username',
-                'role',
-                'surname',
-                'phone',
-                'address',
-                'postal_code',
-                'birth_date',
-                'pesel',
-            ]);
+            if (Schema::hasColumn('users', 'username')) {
+                $table->dropUnique('users_username_unique');
+                $table->dropColumn('username');
+            }
+            if (Schema::hasColumn('users', 'pesel')) {
+                $table->dropUnique('users_pesel_unique');
+                $table->dropColumn('pesel');
+            }
+            $dropColumns = [];
+            foreach (['role', 'surname', 'phone', 'address', 'postal_code', 'birth_date'] as $column) {
+                if (Schema::hasColumn('users', $column)) {
+                    $dropColumns[] = $column;
+                }
+            }
+            if (!empty($dropColumns)) {
+                $table->dropColumn($dropColumns);
+            }
         });
     }
 };
