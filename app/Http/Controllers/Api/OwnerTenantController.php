@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\TenantResource;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ use Illuminate\Validation\Rule;
 
 class OwnerTenantController extends Controller
 {
-    public function index(Request $request): JsonResponse
+    public function index(Request $request)
     {
         $actor = $request->user();
         $perPage = (int) $request->query('per_page', 10);
@@ -31,7 +32,7 @@ class OwnerTenantController extends Controller
             });
         }
 
-        return response()->json($query->latest()->paginate($perPage));
+        return TenantResource::collection($query->latest()->paginate($perPage));
     }
 
     public function store(Request $request): JsonResponse
