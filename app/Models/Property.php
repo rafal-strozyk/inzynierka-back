@@ -13,6 +13,15 @@ class Property extends Model
 
     public $timestamps = false;
 
+    protected static function booted(): void
+    {
+        static::creating(function (self $property): void {
+            if (trim((string) $property->apartment_number) === '') {
+                $property->apartment_number = '1';
+            }
+        });
+    }
+
     protected $fillable = [
         'owner_user_id',
         'name',
