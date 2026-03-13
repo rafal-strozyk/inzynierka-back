@@ -15,8 +15,11 @@ class ContractFactory extends Factory
 
     public function definition(): array
     {
+        $property = Property::factory()->create();
+
         return [
-            'property_id' => Property::factory(),
+            'property_id' => $property->id,
+            'properties_name' => $property->name,
             'contract_number' => strtoupper(fake()->bothify('CTR-####??')),
             'start_date' => fake()->dateTimeBetween('-12 months', 'now')->format('Y-m-d'),
             'end_date' => fake()->optional()->dateTimeBetween('now', '+24 months')->format('Y-m-d'),

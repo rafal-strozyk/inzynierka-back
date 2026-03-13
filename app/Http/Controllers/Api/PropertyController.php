@@ -13,6 +13,24 @@ use Illuminate\Validation\Rule;
 
 class PropertyController extends Controller
 {
+    /**
+     * @group Properties
+     * @unauthenticated
+     * @queryParam search string Search po nazwie, mieście, adresie.
+     * @queryParam name string Filtr po nazwie.
+     * @queryParam city string Filtr po mieście.
+     * @queryParam type string Typ (`room`, `flat`).
+     * @queryParam rent_min number Minimalny czynsz.
+     * @queryParam rent_max number Maksymalny czynsz.
+     * @queryParam has_balcony boolean Filtracja po `has_balcony`.
+     * @queryParam sort_by string Sortowanie (`name`,`city`,`rent_cost`,`utilities_cost`,`type`,`created_at`).
+     * @queryParam sort_dir string Kierunek sortowania (`asc`, `desc`).
+     * @queryParam per_page int Liczba elementów na stronę.
+     * @response 200
+     * {
+     *   "data": []
+     * }
+     */
     public function index(Request $request)
     {
         $perPage = (int) $request->query('per_page', 10);
@@ -76,11 +94,40 @@ class PropertyController extends Controller
         return PropertyResource::collection($query->paginate($perPage));
     }
 
+    /**
+     * @group Properties
+     * @unauthenticated
+     * @pathParam property int ID nieruchomości.
+     * @response
+     * {
+     *   "id": 3,
+     *   "name": "Apartment 1",
+     *   "type": "flat"
+     * }
+     */
     public function show(Property $property)
     {
         return new PropertyDetailsResource($property->load('photos'));
     }
 
+    /**
+     * @group Properties
+     * @authenticated
+     * @bodyParam name string required Nazwa nieruchomości. Example: Apartament 101
+     * @bodyParam street string required Ulica. Example: Marszałkowska
+     * @bodyParam street_number string required Numer ulicy. Example: 10
+     * @bodyParam apartment_number string required Numer mieszkania/lokalu. Example: 5
+     * @bodyParam city string required Miasto. Example: Warszawa
+     * @bodyParam postal_code string required Kod pocztowy. Example: 00-001
+     * @bodyParam area number required Powierzchnia m². Example: 48.5
+     * @bodyParam rooms_count number required Liczba pokoi. Example: 2
+     * @bodyParam bathrooms_count number required Liczba łazienek. Example: 1
+     * @bodyParam has_balcony number required Czy ma balkon. Example: 1
+     * @bodyParam rent_cost number required Czynsz. Example: 2000
+     * @bodyParam utilities_cost number required Koszty mediów. Example: 250
+     * @bodyParam additional_costs number required Koszty dodatkowe. Example: 50
+     * @bodyParam description string Opis nieruchomości.
+     */
     public function store(Request $request): JsonResponse
     {
         $user = $request->user();
@@ -127,6 +174,32 @@ class PropertyController extends Controller
         return response()->json(['property' => new PropertyDetailsResource($property->load('photos'))]);
     }
 
+    /**
+     * @group Properties
+     * @authenticated
+     * Aktualizacja nieruchomości.
+     * @pathParam property int ID nieruchomości.
+     * @bodyParam name string Nazwa nieruchomości. Example: Apartament 101
+     * @bodyParam street string Ulica.
+     * @bodyParam street_number string Numer.
+     * @bodyParam apartment_number string Numer lokalu.
+     * @bodyParam city string Miasto.
+     * @bodyParam postal_code string Kod pocztowy.
+     * @bodyParam area number Powierzchnia m². Example: 48.5
+     * @bodyParam rooms_count number Liczba pokoi.
+     * @bodyParam bathrooms_count number Liczba łazienek.
+     * @bodyParam has_balcony number Czy ma balkon (0/1). Example: 1
+     * @bodyParam rent_cost number Czynsz.
+     * @bodyParam utilities_cost number Koszty mediów.
+     * @bodyParam additional_costs number Dodatkowe koszty.
+     * @bodyParam description string Opis.
+     * @bodyParam owner_user_id int ID właściciela (admin).
+     */
+
+    /**
+     * @group Properties
+     * @authenticated
+     */
     public function destroy(Request $request, Property $property): JsonResponse
     {
         $user = $request->user();
@@ -154,16 +227,16 @@ class PropertyController extends Controller
             'name' => [$required, 'string', 'max:150'],
             'street' => [$required, 'string', 'max:150'],
             'street_number' => [$required, 'string', 'max:30'],
-            'apartment_number' => ['nullable', 'string', 'max:30'],
+            'apartment_number' => [$required, 'string', 'max:30'],
             'city' => [$required, 'string', 'max:120'],
             'postal_code' => [$required, 'string', 'max:12'],
             'area' => [$required, 'numeric', 'min:0'],
             'rooms_count' => [$required, 'integer', 'min:1'],
-            'bathrooms_count' => ['nullable', 'integer', 'min:1'],
-            'has_balcony' => ['nullable', 'boolean'],
+            'bathrooms_count' => [$required, 'integer', 'min:1'],
+            'has_balcony' => [$required, 'boolean'],
             'rent_cost' => [$required, 'numeric', 'min:0'],
-            'utilities_cost' => ['nullable', 'numeric', 'min:0'],
-            'additional_costs' => ['nullable', 'numeric', 'min:0'],
+            'utilities_cost' => [$required, 'numeric', 'min:0'],
+            'additional_costs' => [$required, 'numeric', 'min:0'],
             'type' => [$required, Rule::in(['room', 'flat'])],
             'description' => ['nullable', 'string'],
         ];

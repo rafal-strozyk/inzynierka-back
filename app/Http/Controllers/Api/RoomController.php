@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Storage;
 
 class RoomController extends Controller
 {
+    /**
+     * @group Rooms
+     * @unauthenticated
+     * Lista wszystkich pokoi.
+     * @queryParam per_page int Ilość elementów na stronie.
+     */
     public function index(Request $request)
     {
         $perPage = (int) $request->query('per_page', 10);
@@ -22,6 +28,12 @@ class RoomController extends Controller
         return RoomResource::collection(Room::query()->latest()->paginate($perPage));
     }
 
+    /**
+     * @group Rooms
+     * @unauthenticated
+     * @queryParam per_page int Ilość elementów na stronę. Example: 10
+     * @pathParam property int ID nieruchomości.
+     */
     public function indexByProperty(Request $request, Property $property)
     {
         $perPage = (int) $request->query('per_page', 10);
@@ -38,11 +50,23 @@ class RoomController extends Controller
         return RoomResource::collection($query->paginate($perPage));
     }
 
+    /**
+     * @group Rooms
+     * @unauthenticated
+     * @pathParam room int ID pokoju.
+     */
     public function show(Room $room)
     {
         return new RoomDetailsResource($room->load('photos'));
     }
 
+    /**
+     * @group Rooms
+     * @unauthenticated
+     * @pathParam room int ID pokoju.
+     * @response 200
+     * {"data":[{"id":1,"name":"pokoj"}]}
+     */
     public function photos(Room $room)
     {
         $photos = $room->photos()->get()->map(function ($photo) {
@@ -59,6 +83,15 @@ class RoomController extends Controller
         return response()->json(['data' => $photos]);
     }
 
+    /**
+     * @group Rooms
+     * @authenticated
+     * Tworzenie pokoju dla istniejącej nieruchomości.
+     * @bodyParam name string required Nazwa pokoju. Example: Pokój 1
+     * @bodyParam area number required Powierzchnia. Example: 18.5
+     * @bodyParam rent_cost number required Czynsz. Example: 600
+     * @pathParam property int ID nieruchomości.
+     */
     public function store(Request $request, Property $property): JsonResponse
     {
         $accessError = $this->ensurePropertyAccess($request, $property);
@@ -108,6 +141,17 @@ class RoomController extends Controller
         return response()->json(['room' => new RoomDetailsResource($room->load('photos'))], 201);
     }
 
+    /**
+     * @group Rooms
+     * @authenticated
+     * @pathParam room int ID pokoju.
+     * @bodyParam name string Nazwa pokoju.
+     * @bodyParam area number Powierzchnia.
+     * @bodyParam rent_cost number Czynsz.
+     * @bodyParam utilities_cost number Koszty mediów.
+     * @bodyParam additional_costs number Dodatkowe koszty.
+     * @bodyParam description string Opis.
+     */
     public function update(Request $request, Room $room): JsonResponse
     {
         $accessError = $this->ensureRoomAccess($request, $room);
@@ -134,6 +178,13 @@ class RoomController extends Controller
         return response()->json(['room' => new RoomDetailsResource($room->load('photos'))]);
     }
 
+    /**
+     * @group Rooms
+     * @authenticated
+     * @pathParam room int ID pokoju.
+     * @response 200
+     * {"message":"Room deleted."}
+     */
     public function destroy(Request $request, Room $room): JsonResponse
     {
         $accessError = $this->ensureRoomAccess($request, $room);

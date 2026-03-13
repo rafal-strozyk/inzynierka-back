@@ -12,11 +12,15 @@ class ContractTenant extends Model
 
     public $timestamps = false;
 
+    protected $table = 'contract_participants';
+
     protected $fillable = [
         'contract_id',
         'user_id',
         'is_primary',
         'joined_at',
+        'users_username',
+        'contracts_contract_number',
     ];
 
     protected function casts(): array

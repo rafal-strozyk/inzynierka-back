@@ -19,6 +19,7 @@ class PropertyPhoto extends Model
         'path',
         'is_main',
         'uploaded_at',
+        'properties_name',
     ];
 
     protected function casts(): array

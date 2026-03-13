@@ -10,6 +10,19 @@ use Illuminate\Http\Request;
 
 class TenantSelfController extends Controller
 {
+    /**
+     * @group Tenant
+     * @authenticated
+     * Dane aktualnego użytkownika (tenant).
+     * @response
+     * {
+     *   "user": {
+     *     "id": 4,
+     *     "email": "tenant@example.com",
+     *     "role": "tenant"
+     *   }
+     * }
+     */
     public function me(Request $request): JsonResponse
     {
         return response()->json([
@@ -17,6 +30,14 @@ class TenantSelfController extends Controller
         ]);
     }
 
+    /**
+     * @group Tenant
+     * @authenticated
+     *
+     * Aktualne przypisania najemcy.
+     * @response
+     * {"data":[]}
+     */
     public function assignments(Request $request): JsonResponse
     {
         $user = $request->user();

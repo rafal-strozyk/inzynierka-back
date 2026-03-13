@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\Storage;
 
 class RoomPhotoController extends Controller
 {
+    /**
+     * @group Media
+     * @unauthenticated
+     * @bodyParam photos array required Lista zdjęć.
+     * @bodyParam photos.* file required Plik zdjęcia.
+     * @pathParam room int ID pokoju.
+     * @response 201
+     * {"data":[{"id":2,"photo_name":"room.jpg"}]}
+     */
     public function store(Request $request, Room $room)
     {
         $validated = $request->validate([

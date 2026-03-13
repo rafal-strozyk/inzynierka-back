@@ -18,6 +18,9 @@ class Attachment extends Model
         'attachment_name',
         'attachment_path',
         'uploaded_at',
+        'tickets_ticket_number',
+        'ticket_number',
+        'responded_at',
     ];
 
     protected function casts(): array

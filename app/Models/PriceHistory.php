@@ -16,6 +16,7 @@ class PriceHistory extends Model
 
     protected $fillable = [
         'property_id',
+        'properties_name',
         'type',
         'price',
         'updated_at',

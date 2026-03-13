@@ -15,6 +15,7 @@ class TicketReply extends Model
 
     protected $fillable = [
         'ticket_id',
+        'tickets_ticket_number',
         'responded_by_user_id',
         'reply_title',
         'reply_description',

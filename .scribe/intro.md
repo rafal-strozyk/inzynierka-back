@@ -1,13 +1,18 @@
 # Introduction
 
-
+REST API do obsługi wynajmu nieruchomości: użytkownicy, właściciele, najemcy, nieruchomości, pokoje i przypisania.
 
 <aside>
     <strong>Base URL</strong>: <code>http://inz.test</code>
 </aside>
 
-    This documentation aims to provide all the information you need to work with our API.
+    Ta dokumentacja opisuje wszystkie publiczne i autoryzowane endpointy aplikacji.
 
-    <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
-    You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+    - autentykacja: `POST /login` + nagłówek `Authorization: Bearer {token}`
+    - role:
+      - `admin` – pełny dostęp do wszystkich zasobów
+      - `owner` – własne obiekty właściciela
+      - `tenant` – dostęp do przypisanych najemców i ich przypisań
+
+    Kod zapytań dostępny jest w kilku językach po prawej stronie strony, z domyślnymi przykładami `bash` i `javascript`.
 
