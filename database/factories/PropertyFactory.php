@@ -22,7 +22,7 @@ class PropertyFactory extends Factory
             'name' => fake()->words(2, true),
             'street' => fake()->streetName(),
             'street_number' => (string) fake()->buildingNumber(),
-            'apartment_number' => fake()->optional()->numberBetween(1, 200),
+            'apartment_number' => fake()->numberBetween(1, 200),
             'city' => fake()->city(),
             'postal_code' => fake()->postcode(),
             'area' => fake()->randomFloat(2, 12, 180),
