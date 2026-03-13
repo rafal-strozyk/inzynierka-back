@@ -43,6 +43,7 @@ class PropertySeeder extends Seeder
                 for ($i = 1; $i <= $photosCount; $i++) {
                     PropertyPhoto::query()->create([
                         'property_id' => $property->id,
+                        'properties_name' => $property->name,
                         'photo_name' => sprintf('property-%d-photo-%d.jpg', $property->id, $i),
                         'alt_name' => fake()->sentence(3),
                         'path' => sprintf('images/properties/%d/%s.jpg', $property->id, Str::lower(Str::random(12))),
@@ -55,6 +56,7 @@ class PropertySeeder extends Seeder
                     for ($i = 0; $i < $entries; $i++) {
                         PriceHistory::query()->create([
                             'property_id' => $property->id,
+                            'properties_name' => $property->name,
                             'type' => $type,
                             'price' => max(0, (float) $price + fake()->randomFloat(2, -250, 350)),
                             'updated_at' => now()->subDays(random_int(0, 360))->setTime(random_int(9, 18), random_int(0, 59), random_int(0, 59)),
@@ -69,6 +71,7 @@ class PropertySeeder extends Seeder
 
                     $contract = Contract::query()->create([
                         'property_id' => $property->id,
+                        'properties_name' => $property->name,
                         'contract_number' => 'CTR-' . strtoupper(Str::random(10)),
                         'start_date' => now()->subMonths(random_int(1, 24))->toDateString(),
                         'end_date' => $hasEndDate ? now()->addMonths(random_int(1, 18))->toDateString() : null,
@@ -87,6 +90,8 @@ class PropertySeeder extends Seeder
                         ContractTenant::query()->create([
                             'contract_id' => $contract->id,
                             'user_id' => $tenant->id,
+                            'users_username' => $tenant->username,
+                            'contracts_contract_number' => $contract->contract_number,
                             'is_primary' => $index === 0,
                         ]);
                     }
@@ -108,6 +113,8 @@ class PropertySeeder extends Seeder
                         $payment = Payment::query()->create([
                             'contract_id' => $contract->id,
                             'paid_by_user_id' => $primaryTenant->id,
+                            'username' => $primaryTenant->username,
+                            'contract_number' => $contract->contract_number,
                             'payment_number' => 'PAY-' . strtoupper(Str::random(10)),
                             'invoice_title' => 'Czynsz ' . now()->subMonths($paymentIndex)->format('m/Y'),
                             'invoice_description' => fake()->sentence(),
@@ -122,6 +129,7 @@ class PropertySeeder extends Seeder
                         if (fake()->boolean(75)) {
                             Invoice::query()->create([
                                 'payment_id' => $payment->id,
+                                'payments_payment_number' => $payment->payment_number,
                                 'invoice_name' => 'FV-' . $payment->payment_number . '.pdf',
                                 'invoice_path' => 'documents/invoices/' . $payment->payment_number . '.pdf',
                             ]);
@@ -130,8 +138,12 @@ class PropertySeeder extends Seeder
 
                     $ticketCount = random_int(1, 4);
                     for ($ticketIndex = 0; $ticketIndex < $ticketCount; $ticketIndex++) {
+                        $ticketNumber = 'TKT-' . strtoupper(Str::random(10));
+
                         $ticket = Ticket::query()->create([
-                            'ticket_number' => 'TKT-' . strtoupper(Str::random(10)),
+                            'ticket_number' => $ticketNumber,
+                            'contract_number' => $contract->contract_number,
+                            'username' => $primaryTenant->username,
                             'property_id' => $property->id,
                             'created_by_user_id' => $primaryTenant->id,
                             'title' => fake()->sentence(4),
@@ -148,6 +160,7 @@ class PropertySeeder extends Seeder
                             $responder = fake()->boolean(60) ? $owner : $primaryTenant;
                             $reply = TicketReply::query()->create([
                                 'ticket_id' => $ticket->id,
+                                'tickets_ticket_number' => $ticketNumber,
                                 'responded_by_user_id' => $responder->id,
                                 'reply_title' => fake()->sentence(3),
                                 'reply_description' => fake()->paragraph(),
@@ -158,6 +171,9 @@ class PropertySeeder extends Seeder
                             Attachment::query()->create([
                                 'ticket_id' => $ticket->id,
                                 'ticket_reply_id' => $reply->id,
+                                'tickets_ticket_number' => $ticketNumber,
+                                'ticket_number' => $reply->tickets_ticket_number,
+                                'responded_at' => $reply->responded_at,
                                 'attachment_name' => fake()->lexify('attachment-????') . '.txt',
                                 'attachment_path' => 'documents/tickets/' . $ticket->ticket_number . '/' . Str::lower(Str::random(8)) . '.txt',
                             ]);
@@ -166,6 +182,7 @@ class PropertySeeder extends Seeder
 
                     Notification::query()->create([
                         'user_id' => $primaryTenant->id,
+                        'users_username' => $primaryTenant->username,
                         'notification' => fake()->sentence(),
                         'type' => fake()->randomElement(['in_app', 'email', 'full']),
                         'data' => [
@@ -198,6 +215,8 @@ class PropertySeeder extends Seeder
                         'period_to' => $to,
                     ],
                     [
+                        'username' => $owner->username,
+                        'contract_number' => $contract->contract_number,
                         'tax_rate_percent' => $rate,
                         'income_base_amount' => $income,
                         'tax_amount' => round($income * ($rate / 100), 2),

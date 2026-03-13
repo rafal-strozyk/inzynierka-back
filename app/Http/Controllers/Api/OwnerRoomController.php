@@ -9,6 +9,14 @@ use Illuminate\Http\Request;
 
 class OwnerRoomController extends Controller
 {
+    /**
+     * @group Owner Rooms
+     * @authenticated
+     * @queryParam property_id int ID nieruchomości (opcjonalnie).
+     * @queryParam per_page int Liczba elementów na stronę.
+     * @response
+     * {"data":[]}
+     */
     public function index(Request $request)
     {
         $actor = $request->user();

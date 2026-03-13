@@ -16,6 +16,11 @@ use Illuminate\Validation\Rule;
 
 class AuthController extends Controller
 {
+    /**
+     * Operacje uwierzytelniania i resetu hasła.
+     *
+     * @group Auth
+     */
     private const TOKEN_BYTES = 48;
     private const RESET_TOKEN_BYTES = 64;
     private const SESSION_DAYS = 7;
@@ -25,6 +30,7 @@ class AuthController extends Controller
      *
      * @group Auth
      * @authenticated
+     * Dostęp: owner/admin (zgodnie z trasą `POST /register`).
      *
      * @bodyParam name string required Imię. Example: Jan
      * @bodyParam surname string Nazwisko. Example: Kowalski
@@ -38,6 +44,15 @@ class AuthController extends Controller
      * @bodyParam postal_code string Kod pocztowy. Example: 00-001
      * @bodyParam birth_date date Data urodzenia (YYYY-MM-DD). Example: 1998-04-12
      * @bodyParam pesel string PESEL (11 cyfr). Example: 98041212345
+     * @response 201
+     * {
+     *   "user": {
+     *     "id": 7,
+     *     "name": "Jan",
+     *     "email": "jan@example.com",
+     *     "role": "tenant"
+     *   }
+     * }
      */
     public function register(Request $request): JsonResponse
     {
@@ -78,6 +93,20 @@ class AuthController extends Controller
         return response()->json(['user' => $user], 201);
     }
 
+    /**
+     * @group Auth
+     * Logowanie i zwrócenie tokenu sesji.
+     * @unauthenticated
+     * @bodyParam email string required Email. Example: admin@example.com
+     * @bodyParam password string required Hasło. Example: haslo1234
+     * @response
+     * {
+     *   "token": "xxx",
+     *   "token_type": "Bearer",
+     *   "expires_at": "2026-03-20T10:00:00+00:00",
+     *   "user": {}
+     * }
+     */
     public function login(Request $request): JsonResponse
     {
         $credentials = $request->validate([
@@ -108,6 +137,13 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * @group Auth
+     * @authenticated
+     * Wylogowanie bieżącej sesji.
+     * @response 200
+     * {"message":"Logged out."}
+     */
     public function logout(Request $request): JsonResponse
     {
         $session = $request->attributes->get('login_session');
@@ -119,11 +155,25 @@ class AuthController extends Controller
         return response()->json(['message' => 'Logged out.']);
     }
 
+    /**
+     * @group Auth
+     * @authenticated
+     * Zwraca profil aktualnie zalogowanego użytkownika.
+     */
     public function me(Request $request): JsonResponse
     {
         return response()->json(['user' => $request->user()]);
     }
 
+    /**
+     * @group Auth
+     * @authenticated
+     * @bodyParam current_password string required Aktualne hasło. Example: oldpass123
+     * @bodyParam password string required Nowe hasło (min. 8). Example: newpass123
+     * @bodyParam password_confirmation string required Potwierdzenie nowego hasła.
+     * @response 200
+     * {"message":"Password updated."}
+     */
     public function changePassword(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -153,6 +203,13 @@ class AuthController extends Controller
         return response()->json(['message' => 'Password updated.']);
     }
 
+    /**
+     * @group Auth
+     * @unauthenticated
+     * @bodyParam email string required Email użytkownika. Example: user@example.com
+     * @response
+     * {"message":"If the email exists, a reset link was sent."}
+     */
     public function forgotPassword(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -172,6 +229,16 @@ class AuthController extends Controller
         return response()->json(['message' => 'If the email exists, a reset link was sent.']);
     }
 
+    /**
+     * @group Auth
+     * @unauthenticated
+     * @bodyParam email string required Email. Example: user@example.com
+     * @bodyParam token string required Token resetu. Example: 123abc
+     * @bodyParam password string required Nowe hasło (min. 8). Example: newpass123
+     * @bodyParam password_confirmation string required Powtórzenie nowego hasła. Example: newpass123
+     * @response 200
+     * {"message":"Password reset."}
+     */
     public function resetPassword(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -204,6 +271,17 @@ class AuthController extends Controller
         return response()->json(['message' => 'Password reset.']);
     }
 
+    /**
+     * @group Auth
+     * @authenticated
+     * Nadanie nowego hasła przez administratora.
+     * @bodyParam send_email boolean Czy wysłać mail resetowy. Example: false
+     * @bodyParam password string Hasło (min. 8), gdy send_email nie jest true. Example: nowyuser123
+     * @bodyParam password_confirmation string Potwierdzenie nowego hasła, gdy send_email nie jest true.
+     * @response 200
+     * {"message":"Password updated."}
+     * @response 200 {"message":"Reset link sent."}
+     */
     public function adminResetPassword(Request $request, User $user): JsonResponse
     {
         $validated = $request->validate([

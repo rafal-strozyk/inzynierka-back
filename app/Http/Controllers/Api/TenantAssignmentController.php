@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Http\Resources\TenantAssignmentResource;
 use App\Models\Contract;
 use App\Models\ContractTenant;
@@ -14,6 +15,22 @@ use Illuminate\Validation\Rule;
 
 class TenantAssignmentController extends Controller
 {
+    /**
+     * @group Assignments
+     * @authenticated
+     * @bodyParam tenant_id int required ID najemcy. Example: 12
+     * @bodyParam property_id int required ID nieruchomości. Example: 5
+     * @bodyParam contract_id int ID istniejącej umowy.
+     * @bodyParam is_primary bool Czy najemca jest główny. Example: false
+     * @response 201
+     * {
+     *   "assignment": {
+     *     "id": 8,
+     *     "contract_id": 3,
+     *     "users_username": "jan"
+     *   }
+     * }
+     */
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -49,6 +66,7 @@ class TenantAssignmentController extends Controller
         if (!$contract) {
             $contract = Contract::query()->create([
                 'property_id' => $property->id,
+                'properties_name' => $property->name,
                 'contract_number' => 'CTR-' . strtoupper(Str::random(10)),
                 'start_date' => now()->toDateString(),
                 'monthly_rent' => $property->rent_cost,
@@ -64,7 +82,9 @@ class TenantAssignmentController extends Controller
                 'user_id' => $validated['tenant_id'],
             ],
             [
+                'users_username' => User::query()->findOrFail($validated['tenant_id'])->username,
                 'is_primary' => (bool) ($validated['is_primary'] ?? false),
+                'contracts_contract_number' => $contract->contract_number,
             ]
         );
 
@@ -77,6 +97,16 @@ class TenantAssignmentController extends Controller
         ], 201);
     }
 
+    /**
+     * @group Assignments
+     * @authenticated
+     * @pathParam assignment int ID przypisania (contract_participants).
+     * @response 200
+     * {
+     *   "message": "Assignment deleted.",
+     *   "assignment": {}
+     * }
+     */
     public function destroy(Request $request, int $assignment): JsonResponse
     {
         $assignmentModel = ContractTenant::query()->with(['contract.property', 'user'])->findOrFail($assignment);

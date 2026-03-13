@@ -13,6 +13,8 @@ class PropertyFactory extends Factory
 {
     protected $model = Property::class;
 
+    private const PROPERTY_TYPES = ['room', 'flat'];
+
     public function definition(): array
     {
         return [
@@ -30,7 +32,7 @@ class PropertyFactory extends Factory
             'rent_cost' => fake()->randomFloat(2, 900, 9000),
             'utilities_cost' => fake()->randomFloat(2, 100, 2000),
             'additional_costs' => fake()->randomFloat(2, 0, 1000),
-            'type' => fake()->randomElement(['room', 'flat']),
+            'type' => fake()->randomElement(self::PROPERTY_TYPES),
             'description' => fake()->optional()->sentence(),
         ];
     }

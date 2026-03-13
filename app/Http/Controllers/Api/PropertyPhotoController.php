@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Storage;
 
 class PropertyPhotoController extends Controller
 {
+    /**
+     * @group Media
+     * @unauthenticated
+     * Lista zdjęć dla nieruchomości.
+     * @pathParam property int ID nieruchomości.
+     * @response 200
+     * {"data":[{"id":1,"photo_name":"front.jpg"}]}
+     */
     public function index(Property $property)
     {
         $photos = $property->photos()->get()->map(function ($photo) {
@@ -25,6 +33,15 @@ class PropertyPhotoController extends Controller
         return response()->json(['data' => $photos]);
     }
 
+    /**
+     * @group Media
+     * @unauthenticated
+     * @bodyParam photos array required Lista zdjęć.
+     * @bodyParam photos.* file required Plik zdjęcia.
+     * @pathParam property int ID nieruchomości.
+     * @response 201
+     * {"data":[{"id":1,"photo_name":"front.jpg"}]}
+     */
     public function store(Request $request, Property $property)
     {
         $validated = $request->validate([
@@ -41,6 +58,7 @@ class PropertyPhotoController extends Controller
                 'path' => $path,
                 'is_main' => false,
                 'uploaded_at' => now(),
+                'properties_name' => $property->name,
             ]);
         }
 

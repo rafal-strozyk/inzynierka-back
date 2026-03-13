@@ -1,18 +1,190 @@
-name: Auth
+name: 'Admin Users'
 description: ''
 endpoints:
   -
     custom: []
     httpMethods:
-      - POST
-    uri: api/register
+      - GET
+    uri: api/admin/users
     metadata:
       custom: []
-      groupName: Auth
+      groupName: 'Admin Users'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Rejestracja nowego użytkownika.'
+      title: 'Lista użytkowników.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Ilość elementów na stronę.'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      per_page: 10
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Invalid token."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/admin/owners
+    metadata:
+      custom: []
+      groupName: 'Admin Users'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Ilość elementów na stronę.'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      per_page: 10
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Invalid token."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/admin/users/{user_id}'
+    metadata:
+      custom: []
+      groupName: 'Admin Users'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        custom: []
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      user_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "id": 3,
+            "name": "Jan",
+            "surname": "Kowalski",
+            "email": "jan@example.com",
+            "role": "tenant"
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/admin/users
+    metadata:
+      custom: []
+      groupName: 'Admin Users'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
       description: ''
       authenticated: true
       deprecated: false
@@ -50,7 +222,7 @@ endpoints:
       username:
         custom: []
         name: username
-        description: 'Unikalna nazwa użytkownika (opcjonalnie).'
+        description: Login.
         required: false
         example: jan.kowalski
         type: string
@@ -61,7 +233,7 @@ endpoints:
       email:
         custom: []
         name: email
-        description: 'Email użytkownika.'
+        description: Email.
         required: true
         example: jan@example.com
         type: string
@@ -72,7 +244,7 @@ endpoints:
       password:
         custom: []
         name: password
-        description: 'Hasło (min. 8 znaków).'
+        description: 'Min. 8 znaków.'
         required: true
         example: haslo1234
         type: string
@@ -83,7 +255,7 @@ endpoints:
       role:
         custom: []
         name: role
-        description: 'Rola nowego użytkownika: `owner` lub `tenant`.'
+        description: 'Rola (`admin`, `owner`, `tenant`).'
         required: false
         example: tenant
         type: string
@@ -96,7 +268,7 @@ endpoints:
         name: phone
         description: Telefon.
         required: false
-        example: '+48500100100'
+        example: '+48111111111'
         type: string
         enumValues: []
         exampleWasSpecified: true
@@ -127,9 +299,9 @@ endpoints:
       birth_date:
         custom: []
         name: birth_date
-        description: 'Data urodzenia (YYYY-MM-DD).'
+        description: 'Data urodzenia.'
         required: false
-        example: '1998-04-12'
+        example: '1990-01-01'
         type: date
         enumValues: []
         exampleWasSpecified: true
@@ -140,22 +312,11 @@ endpoints:
         name: pesel
         description: 'PESEL (11 cyfr).'
         required: false
-        example: '98041212345'
+        example: '90010112345'
         type: string
         enumValues: []
         exampleWasSpecified: true
         nullable: true
-        deprecated: false
-      password_confirmation:
-        custom: []
-        name: password_confirmation
-        description: 'Potwierdzenie hasła (musi być identyczne jak `password`).'
-        required: true
-        example: haslo1234
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
         deprecated: false
     cleanBodyParameters:
       name: Jan
@@ -164,14 +325,205 @@ endpoints:
       email: jan@example.com
       password: haslo1234
       role: tenant
-      phone: '+48500100100'
+      phone: '+48111111111'
       address: 'ul. Testowa 10'
       postal_code: 00-001
-      birth_date: '1998-04-12'
-      pesel: '98041212345'
-      password_confirmation: haslo1234
+      birth_date: '1990-01-01'
+      pesel: '90010112345'
     fileParameters: []
     responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: 'api/admin/users/{user_id}'
+    metadata:
+      custom: []
+      groupName: 'Admin Users'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer {YOUR_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        custom: []
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      user_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: Imię.
+        required: false
+        example: Jan
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      surname:
+        custom: []
+        name: surname
+        description: Nazwisko.
+        required: false
+        example: Kowalski
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      username:
+        custom: []
+        name: username
+        description: Login.
+        required: false
+        example: jan.kowalski
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      email:
+        custom: []
+        name: email
+        description: Email.
+        required: false
+        example: jan@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: 'Min. 8 znaków.'
+        required: false
+        example: haslo1234
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      role:
+        custom: []
+        name: role
+        description: 'Rola (`admin`, `owner`, `tenant`).'
+        required: false
+        example: owner
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      phone:
+        custom: []
+        name: phone
+        description: Telefon.
+        required: false
+        example: '+48111111111'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      address:
+        custom: []
+        name: address
+        description: Adres.
+        required: false
+        example: 'ul. Testowa 10'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      postal_code:
+        custom: []
+        name: postal_code
+        description: 'Kod pocztowy.'
+        required: false
+        example: 00-001
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      birth_date:
+        custom: []
+        name: birth_date
+        description: 'Data urodzenia.'
+        required: false
+        example: '1990-01-01'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      pesel:
+        custom: []
+        name: pesel
+        description: 'PESEL (11 cyfr).'
+        required: false
+        example: '90010112345'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: Jan
+      surname: Kowalski
+      username: jan.kowalski
+      email: jan@example.com
+      password: haslo1234
+      role: owner
+      phone: '+48111111111'
+      address: 'ul. Testowa 10'
+      postal_code: 00-001
+      birth_date: '1990-01-01'
+      pesel: '90010112345'
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "user": {
+              "id": 3,
+              "email": "jan@example.com",
+              "role": "tenant"
+            }
+          }
+        headers: []
+        description: ''
     responseFields: []
     auth:
       - headers

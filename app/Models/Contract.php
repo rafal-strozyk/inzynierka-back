@@ -16,6 +16,7 @@ class Contract extends Model
     protected $fillable = [
         'property_id',
         'contract_number',
+        'properties_name',
         'start_date',
         'end_date',
         'monthly_rent',
@@ -24,6 +25,7 @@ class Contract extends Model
         'path',
         'filename',
         'payment_method',
+        'created_at',
     ];
 
     protected function casts(): array

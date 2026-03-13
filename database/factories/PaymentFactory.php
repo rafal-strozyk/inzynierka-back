@@ -16,12 +16,16 @@ class PaymentFactory extends Factory
 
     public function definition(): array
     {
+        $tenant = User::factory()->state(['role' => 'tenant'])->create();
+        $contract = Contract::factory()->create();
         $amount = fake()->randomFloat(2, 500, 9000);
 
         return [
-            'contract_id' => Contract::factory(),
-            'paid_by_user_id' => User::factory()->state(['role' => 'tenant']),
-            'payment_number' => strtoupper(fake()->bothify('PAY-######')),
+            'contract_id' => $contract->id,
+            'paid_by_user_id' => $tenant->id,
+            'username' => $tenant->username,
+            'contract_number' => $contract->contract_number,
+            'payment_number' => strtoupper(fake()->unique()->bothify('PAY-######')),
             'invoice_title' => fake()->optional()->sentence(3),
             'invoice_description' => fake()->optional()->sentence(),
             'amount' => $amount,

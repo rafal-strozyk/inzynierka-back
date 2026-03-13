@@ -13,6 +13,14 @@ use Illuminate\Validation\Rule;
 
 class AdminUserController extends Controller
 {
+    /**
+     * @group Admin Users
+     *
+     * Lista użytkowników.
+     *
+     * @authenticated
+     * @queryParam per_page int Ilość elementów na stronę. Example: 10
+     */
     public function index(Request $request)
     {
         $perPage = (int) $request->query('per_page', 10);
@@ -21,6 +29,14 @@ class AdminUserController extends Controller
         return UserResource::collection(User::query()->latest()->paginate($perPage));
     }
 
+    /**
+     * @group Admin Users
+     * @authenticated
+     *
+     * Lista właścicieli.
+     *
+     * @queryParam per_page int Ilość elementów na stronę. Example: 10
+     */
     public function owners(Request $request)
     {
         $perPage = (int) $request->query('per_page', 10);
@@ -34,11 +50,45 @@ class AdminUserController extends Controller
         );
     }
 
+    /**
+     * @group Admin Users
+     * @authenticated
+     *
+     * Szczegóły użytkownika.
+     *
+     * @pathParam user int ID użytkownika.
+     * @response
+     * {
+     *   "id": 3,
+     *   "name": "Jan",
+     *   "surname": "Kowalski",
+     *   "email": "jan@example.com",
+     *   "role": "tenant"
+     * }
+     */
     public function show(User $user): UserResource
     {
         return new UserResource($user);
     }
 
+    /**
+     * @group Admin Users
+     * @authenticated
+     *
+     * Tworzy nowego użytkownika.
+     *
+     * @bodyParam name string required Imię. Example: Jan
+     * @bodyParam surname string Nazwisko. Example: Kowalski
+     * @bodyParam username string Login. Example: jan.kowalski
+     * @bodyParam email string required Email. Example: jan@example.com
+     * @bodyParam password string required Min. 8 znaków. Example: haslo1234
+     * @bodyParam role string Rola (`admin`, `owner`, `tenant`). Example: tenant
+     * @bodyParam phone string Telefon. Example: +48111111111
+     * @bodyParam address string Adres. Example: ul. Testowa 10
+     * @bodyParam postal_code string Kod pocztowy. Example: 00-001
+     * @bodyParam birth_date date Data urodzenia. Example: 1990-01-01
+     * @bodyParam pesel string PESEL (11 cyfr). Example: 90010112345
+     */
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -72,6 +122,33 @@ class AdminUserController extends Controller
         return response()->json(['user' => $user], 201);
     }
 
+    /**
+     * @group Admin Users
+     * @authenticated
+     *
+     * Aktualizuje użytkownika.
+     *
+     * @pathParam user int ID użytkownika.
+     * @bodyParam name string Imię. Example: Jan
+     * @bodyParam surname string Nazwisko. Example: Kowalski
+     * @bodyParam username string Login. Example: jan.kowalski
+     * @bodyParam email string Email. Example: jan@example.com
+     * @bodyParam password string Min. 8 znaków. Example: haslo1234
+     * @bodyParam role string Rola (`admin`, `owner`, `tenant`). Example: owner
+     * @bodyParam phone string Telefon. Example: +48111111111
+     * @bodyParam address string Adres. Example: ul. Testowa 10
+     * @bodyParam postal_code string Kod pocztowy. Example: 00-001
+     * @bodyParam birth_date date Data urodzenia. Example: 1990-01-01
+     * @bodyParam pesel string PESEL (11 cyfr). Example: 90010112345
+     * @response
+     * {
+     *   "user": {
+     *     "id": 3,
+     *     "email": "jan@example.com",
+     *     "role": "tenant"
+     *   }
+     * }
+     */
     public function update(Request $request, User $user): JsonResponse
     {
         $validated = $request->validate([

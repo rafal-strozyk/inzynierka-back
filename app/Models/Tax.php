@@ -18,6 +18,8 @@ class Tax extends Model
         'owner_user_id',
         'period_from',
         'period_to',
+        'username',
+        'contract_number',
         'tax_rate_percent',
         'income_base_amount',
         'tax_amount',
