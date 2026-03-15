@@ -132,6 +132,13 @@ class PropertyController extends Controller
     {
         $user = $request->user();
 
+        $input = $request->all();
+        if (!array_key_exists('owner_user_id', $input) && array_key_exists('owner_id', $input)) {
+            $input['owner_user_id'] = $input['owner_id'];
+        }
+
+        $request->merge($input);
+
         $rules = $this->basePropertyRules();
         $rules['type'] = ['prohibited'];
         if ($user?->role === 'admin') {
@@ -147,7 +154,40 @@ class PropertyController extends Controller
         }
         $validated['type'] = 'flat';
 
-        $property = Property::query()->create($validated);
+        try {
+            $property = Property::query()->create($validated);
+        } catch (QueryException $e) {
+            $sqlState = (string) ($e->errorInfo[0] ?? '');
+            $driverCode = (string) ($e->errorInfo[1] ?? '');
+            $message = mb_strtolower($e->getMessage());
+
+            if (
+                $sqlState === '23000' && $driverCode === '1062'
+                || $sqlState === '23505'
+                || str_contains($message, 'duplicate entry')
+            ) {
+                return response()->json([
+                    'message' => 'Property name already exists.',
+                    'errors' => ['name' => ['A property with this name already exists.']],
+                ], 409);
+            }
+
+            if (
+                $sqlState === '23000' && $driverCode === '1452'
+                || $sqlState === '23503'
+                || str_contains($message, 'foreign key constraint fails')
+                || str_contains($message, 'foreign key constraint failed')
+            ) {
+                return response()->json([
+                    'message' => 'Invalid owner.',
+                    'errors' => ['owner_user_id' => ['The selected owner does not exist.']],
+                ], 422);
+            }
+
+            return response()->json([
+                'message' => 'Could not create property.',
+            ], 409);
+        }
 
         return response()->json(['property' => new PropertyDetailsResource($property->load('photos'))], 201);
     }
@@ -160,14 +200,27 @@ class PropertyController extends Controller
             return response()->json(['message' => 'Forbidden.'], 403);
         }
 
+        $input = $request->all();
+        if (!array_key_exists('owner_user_id', $input) && array_key_exists('owner_id', $input)) {
+            $input['owner_user_id'] = $input['owner_id'];
+        }
+
+        if ($user?->role !== 'admin') {
+            unset($input['owner_user_id'], $input['owner_id']);
+        }
+
+        $request->replace($input);
+
         $rules = $this->basePropertyRules(true);
         if ($user?->role === 'admin') {
             $rules['owner_user_id'] = ['sometimes', Rule::exists('users', 'id')->where('role', 'owner')];
-        } else {
-            $rules['owner_user_id'] = ['prohibited'];
         }
 
         $validated = $request->validate($rules);
+
+        if ($user?->role !== 'admin') {
+            $validated['owner_user_id'] = $property->owner_user_id;
+        }
 
         $property->fill($validated)->save();
 
