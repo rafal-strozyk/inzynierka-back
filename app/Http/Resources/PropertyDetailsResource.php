@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Storage;
@@ -10,9 +11,40 @@ class PropertyDetailsResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
+        $hasRooms = Room::query()
+            ->where('owner_user_id', $this->owner_user_id)
+            ->where('city', $this->city)
+            ->where('street', $this->street)
+            ->where('street_number', $this->street_number)
+            ->where('apartment_number', $this->apartment_number)
+            ->where('postal_code', $this->postal_code)
+            ->exists();
+
+        $isRentedOnRooms = Room::query()
+            ->where('owner_user_id', $this->owner_user_id)
+            ->where('city', $this->city)
+            ->where('street', $this->street)
+            ->where('street_number', $this->street_number)
+            ->where('apartment_number', $this->apartment_number)
+            ->where('postal_code', $this->postal_code)
+            ->whereHas('contracts', function ($query): void {
+                $query->whereIn('status', ['active', 'draft']);
+            })
+            ->exists();
+
+        $status = 'available';
+        if ($this->contracts()->where('status', 'active')->exists()) {
+            $status = 'active';
+        } elseif ($this->contracts()->where('status', 'draft')->exists()) {
+            $status = 'draft';
+        } elseif ($isRentedOnRooms) {
+            $status = 'rented_on_rooms';
+        }
+
         return [
             'id' => $this->id,
             'owner_user_id' => $this->owner_user_id,
+            'owner_id' => $this->owner_user_id,
             'name' => $this->name,
             'street' => $this->street,
             'street_number' => $this->street_number,
@@ -28,6 +60,9 @@ class PropertyDetailsResource extends JsonResource
             'additional_costs' => (float) $this->additional_costs,
             'type' => $this->type,
             'description' => $this->description,
+            'status' => $status,
+            'has_rooms' => (bool) $hasRooms,
+            'is_rented_on_rooms' => (bool) $isRentedOnRooms,
             'photos' => $this->whenLoaded('photos', function () {
                 return $this->photos->map(function ($photo) {
                     return [

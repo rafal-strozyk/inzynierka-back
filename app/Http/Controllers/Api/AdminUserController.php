@@ -7,8 +7,10 @@ use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Validation\Rule;
 
 class AdminUserController extends Controller
@@ -91,6 +93,17 @@ class AdminUserController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
+        $actor = $request->user();
+        if (!$actor || $actor->role !== 'admin') {
+            return response()->json(['message' => 'Forbidden.'], 403);
+        }
+
+        $hasAssignedTo = Schema::hasColumn('users', 'assigned_to');
+        $role = $request->input('role', 'tenant');
+        $assignedToRules = $role === 'tenant' && $hasAssignedTo
+            ? ['nullable', Rule::exists('users', 'id')->where('role', 'owner')]
+            : ['prohibited'];
+
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:100'],
             'surname' => ['nullable', 'string', 'max:120'],
@@ -98,6 +111,7 @@ class AdminUserController extends Controller
             'email' => ['required', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => ['nullable', Rule::in(['admin', 'owner', 'tenant'])],
+            'assigned_to' => $assignedToRules,
             'phone' => ['nullable', 'string', 'max:30'],
             'address' => ['nullable', 'string', 'max:255'],
             'postal_code' => ['nullable', 'string', 'max:12'],
@@ -105,7 +119,7 @@ class AdminUserController extends Controller
             'pesel' => ['nullable', 'string', 'size:11', 'unique:users,pesel'],
         ]);
 
-        $user = User::query()->create([
+        $userData = [
             'username' => $validated['username'] ?? $this->generateUniqueUsername($validated['name'], $validated['surname'] ?? null),
             'role' => $validated['role'] ?? 'tenant',
             'name' => $validated['name'],
@@ -117,7 +131,49 @@ class AdminUserController extends Controller
             'postal_code' => $validated['postal_code'] ?? null,
             'birth_date' => $validated['birth_date'] ?? null,
             'pesel' => $validated['pesel'] ?? null,
-        ]);
+        ];
+
+        if ($hasAssignedTo && ($validated['role'] ?? 'tenant') === 'tenant') {
+            $userData['assigned_to'] = $validated['assigned_to'] ?? null;
+        }
+
+        $userColumns = array_flip(Schema::getColumnListing('users'));
+        $userData = array_intersect_key($userData, $userColumns);
+
+        try {
+            $user = User::query()->create($userData);
+        } catch (QueryException $e) {
+            $sqlState = (string) ($e->errorInfo[0] ?? '');
+            $driverCode = (string) ($e->errorInfo[1] ?? '');
+            $message = mb_strtolower($e->getMessage());
+
+            if (
+                $sqlState === '23000' && $driverCode === '1062'
+                || $sqlState === '23505'
+                || str_contains($message, 'duplicate entry')
+            ) {
+                return response()->json([
+                    'message' => 'User data already exists.',
+                    'errors' => ['email' => ['Email/username/PESEL already exists.']],
+                ], 409);
+            }
+
+            if (
+                $sqlState === '23000' && $driverCode === '1452'
+                || $sqlState === '23503'
+                || str_contains($message, 'foreign key constraint fails')
+                || str_contains($message, 'foreign key constraint failed')
+            ) {
+                return response()->json([
+                    'message' => 'Invalid owner assignment.',
+                    'errors' => ['assigned_to' => ['The selected owner does not exist.']],
+                ], 422);
+            }
+
+            return response()->json([
+                'message' => 'Could not create user.',
+            ], 409);
+        }
 
         return response()->json(['user' => $user], 201);
     }
